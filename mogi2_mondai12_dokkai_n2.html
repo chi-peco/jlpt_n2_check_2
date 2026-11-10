@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模擬試験第2回｜N2 読解 問題12</title>
+<style>
+:root{--bg:#f8f8f6;--surface:#fff;--surface2:#f0f0ee;--border:#d8d8d4;--text:#222;--text-light:#666;--accent:#3a6b8a;--accent-light:#e8f0f5;--tag-bg:#222;--tag-text:#fff;--btn:#bbb;--btn-text:#555;--ruby-color:#3a6b8a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.85}
+header{background:var(--accent);color:#fff;padding:20px 24px 16px;position:sticky;top:0;z-index:100}
+header h1{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+header p{font-size:.78rem;opacity:.8;margin-top:2px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;position:sticky;top:57px;z-index:99}
+nav a{color:var(--accent);text-decoration:none;padding:3px 8px;border-radius:3px;border:1px solid var(--accent-light)}
+nav a:hover{background:var(--accent-light)}
+main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+main.wide{max-width:1100px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.section-header{background:var(--accent);color:#fff;padding:10px 18px;font-size:1rem;font-weight:700}
+.section-body{padding:18px}
+.mondai-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 4px;background:var(--tag-bg);color:#fff;border-radius:3px;font-size:.85rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.important-box{background:#fff8e1;border-left:3px solid #f0a500;padding:12px 16px;border-radius:0 4px 4px 0;font-size:.9rem;font-weight:700;margin:12px 0}
+.rei-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:14px 16px;margin:10px 0 16px;font-size:.93rem}
+.rei-label{display:inline-block;background:var(--tag-bg);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:2px;margin-bottom:8px}
+.line-wrap{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.line-text{flex:1;min-width:0}
+.btn-group{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding-top:2px}
+.btn-r,.btn-s{font-size:.65rem;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:1px 5px;cursor:pointer;line-height:1.4;white-space:nowrap}
+.btn-r:hover,.btn-s:hover{background:#eee}
+.btn-r.open,.btn-s.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+ruby rt{display:none;font-size:.6em;color:var(--ruby-color)}
+ruby.show rt{display:revert}
+.ans-box ruby rt{display:revert}
+.sent-id{display:none;font-size:.8rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:4px 8px;margin-top:4px;font-weight:400}
+.sent-id.show{display:block}
+u{text-decoration-color:var(--accent);text-underline-offset:3px}
+sup{font-size:.7em}
+.note-box{font-size:.82rem;color:var(--text-light);margin-top:8px;padding-left:4px}
+.chuu-box{background:var(--surface2);border-left:3px solid var(--border);border-radius:0 4px 4px 0;padding:8px 14px;margin:8px 0 0;font-size:.85rem;color:var(--text-light)}
+.p9-cols{display:grid;grid-template-columns:54% 46%;gap:0;align-items:start;margin:12px 0}
+.p9-left{padding-right:18px;border-right:2px solid var(--border);font-size:.93rem;line-height:1.85}
+.p9-right{padding-left:22px;font-size:.9rem}
+.p9-context-label{font-size:.82rem;color:var(--text-light);border-bottom:1px dashed var(--border);padding-bottom:6px}
+.p9-btn-row{display:flex;gap:4px;margin:4px 0 8px}
+.p9-q-label{font-size:.93rem;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:4px}
+.p9-q-label .sent-id{color:#1a3a6b}
+.p9-qblock{margin-bottom:22px}
+.p9-choices{list-style:none;padding:0;margin:8px 0 0;counter-reset:cc}
+.p9-choices li{counter-increment:cc;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.7}
+.p9-choices li:last-child{border-bottom:none}
+.p9-choices li::before{content:counter(cc);display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.p9-choices li.p9-ans-correct::before{background:#27ae60;color:#fff;border-color:#27ae60}
+.p9-choice-text{flex:1;min-width:0}
+.p9-choice-btns{display:flex;flex-direction:row;align-items:flex-start;gap:3px;flex-shrink:0}
+.p9-choices li .ans-box{flex-basis:100%;margin-left:26px;margin-top:4px}
+.btn-ans{font-size:.68rem;font-weight:700;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;margin-top:1px}
+.btn-ans:hover{background:#eee}
+.btn-ans.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ans-correct.open{background:#27ae60;color:#fff;border-color:#27ae60}
+.ans-box{display:none;margin-top:6px;background:var(--surface2);border-left:3px solid #bbb;border-radius:0 4px 4px 0;padding:8px 10px;font-size:.82rem;line-height:1.7;color:#555}
+.ans-box.show{display:block}
+.ans-box-correct{color:#1a5c2a;background:#edf7f0;border-left-color:#27ae60}
+.maru{color:#27ae60;font-weight:700}
+.batsu{color:#c0392b;font-weight:700}
+.ans-trans{display:block;margin-top:5px;font-size:.78rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:3px 7px}
+.hl-correct{background:#fff59d;border-radius:3px;padding:1px 2px}
+.hl-wrong{background:#ffcdd2;border-radius:3px;padding:1px 2px}
+.doc-box{border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:12px;background:#fafaf8;font-size:.9rem;line-height:1.9}
+.kanji-wrap{display:inline;position:relative}
+.kanji-btn{display:inline;cursor:pointer;border:none;border-bottom:1px dotted #aaa;color:inherit;background:none;padding:0;font:inherit;line-height:inherit}
+.kanji-btn:hover{background:#f0f5f0;border-radius:2px}
+.kanji-pop{display:none;position:absolute;left:0;top:100%;margin-top:4px;background:#1a6b3a;color:#fff;font-size:.75rem;line-height:1.5;padding:3px 8px;border-radius:4px;white-space:nowrap;z-index:200;pointer-events:none;font-weight:400}
+.kanji-wrap.open .kanji-pop{display:block}
+.q-header{display:flex;align-items:flex-start;gap:8px;margin:16px 0 10px}
+.q-header .line-text{flex:1;font-weight:700;font-size:.95rem}
+ol.content-list{padding-left:20px;margin-left:8px}
+ol.content-list li{margin-bottom:6px}
+.passage-para{text-indent:1em;margin-bottom:.7em}
+.passage-label{font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:4px}
+.poster-box{border:2px solid var(--border);border-radius:6px;overflow:hidden;margin:12px 0 16px;font-size:.9rem;background:#fff}
+.poster-title{background:var(--tag-bg);color:#fff;text-align:center;padding:12px 14px;font-weight:700;font-size:1.05rem;letter-spacing:.05em}
+.poster-info{padding:14px 18px;font-size:.88rem;line-height:1.9}
+.poster-info .sec-title{font-weight:700;background:var(--surface2);border-left:3px solid var(--accent);padding:3px 10px;border-radius:0 3px 3px 0;margin:10px 0 4px;font-size:.88rem}
+.poster-info hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.poster-contact{background:var(--surface2);border-top:1px solid var(--border);padding:8px 18px;font-size:.78rem;color:var(--text-light);text-align:right}
+table.fee{border-collapse:collapse;width:100%;font-size:.8rem;text-align:center;background:#fff}
+table.fee th,table.fee td{border:1px solid #555;padding:5px 6px}
+table.fee th{background:var(--surface2)}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+@media(max-width:700px){.p9-cols{grid-template-columns:1fr}.p9-left{border-right:none;border-bottom:2px solid var(--border);padding-right:0;padding-bottom:14px;margin-bottom:10px}.p9-right{padding-left:0}body{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>模擬試験 第2回｜N2 読解　問題12　比較読解（AとB）</h1>
+  <p>比較読解（AとB）｜Membandingkan Dua Teks — インドネシア語訳付き</p>
+</header>
+<nav id="main-nav"><a href="#intro">問題12について</a><a href="#passageA">本文 A</a><a href="#passageB">本文 B</a><a href="#q67">問67</a><a href="#q68">問68</a></nav>
+<main class="">
+<div id="intro" class="section">
+<div class="section-header">問題12｜比較読解（AとB）</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-intro"><ruby>問題<rt>もんだい</rt></ruby>12　<ruby>次<rt>つぎ</rt></ruby>のAとBの<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、<ruby>後<rt>あと</rt></ruby>の<ruby>問<rt>と</rt></ruby>いに<ruby>対<rt>たい</rt></ruby>する<ruby>答<rt>こた</rt></ruby>えとして<ruby>最<rt>もっと</rt></ruby>もよいものを、1・2・3・4から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。<div class="sent-id" id="s-intro">Soal 12: Bacalah teks A dan B berikut, lalu pilih satu jawaban yang paling tepat dari 1・2・3・4 untuk pertanyaan setelahnya.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-intro',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="passageA" class="section">
+<div class="section-header">本文 A｜スポーツの上達とイメージ・練習</div>
+<div class="section-body">
+<div class="passage-label">A</div>
+<div class="line-wrap"><div class="line-text" id="t-pa">どうやったらスポーツができるようになるのか。もともと<ruby>才能<rt>さいのう</rt></ruby>がある<ruby>人<rt>ひと</rt></ruby>だけが、スポーツができるのだと<ruby>落<rt>お</rt></ruby>ち<ruby>込<rt>こ</rt></ruby>むことはない。<span data-hl="a_t">スポーツ<ruby>選手<rt>せんしゅ</rt></ruby>にインタビューをすると、<ruby>自分<rt>じぶん</rt></ruby>が<ruby>選手<rt>せんしゅ</rt></ruby>になれたのは<ruby>才能<rt>さいのう</rt></ruby>ではなく<ruby>努力<rt>どりょく</rt></ruby>だと<ruby>語<rt>かた</rt></ruby>る<ruby>人<rt>ひと</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い</span>。しかし、<span data-hl="a_c"><ruby>練習<rt>れんしゅう</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けていれば、<ruby>必<rt>かなら</rt></ruby>ず<ruby>上手<rt>じょうず</rt></ruby>になれるのかと<ruby>言<rt>い</rt></ruby>われるとそうではない</span>。<span data-hl="a_v">なんとなく<ruby>練習<rt>れんしゅう</rt></ruby>するのでは<ruby>意味<rt>いみ</rt></ruby>がないのだ</span>。<span data-hl="a_i"><ruby>頭<rt>あたま</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<span class="kanji-wrap"><button class="kanji-btn"><ruby>成功<rt>せいこう</rt></ruby></button><span class="kanji-pop">berhasil / sukses</span></span>のイメージがあることが<ruby>大切<rt>たいせつ</rt></ruby>だ</span>。そして、<span data-hl="a_b">どんなときでもそのイメージを<ruby>形<rt>かたち</rt></ruby>にできるように、<ruby>体<rt>からだ</rt></ruby>に<ruby>覚<rt>おぼ</rt></ruby>えさせる<ruby>練習<rt>れんしゅう</rt></ruby>をすることが<ruby>大切<rt>たいせつ</rt></ruby>なのである</span>。そのためには、<span data-hl="a_m">まず<ruby>上手<rt>じょうず</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>のプレーを<ruby>何度<rt>なんど</rt></ruby>も<ruby>見<rt>み</rt></ruby>て、プレーする<ruby>際<rt>さい</rt></ruby>の<ruby>体<rt>からだ</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>や<ruby>体<rt>からだ</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かすタイミング<sup>（<ruby>注<rt>ちゅう</rt></ruby>）</sup>をしっかり<ruby>記憶<rt>きおく</rt></ruby>する<ruby>必要<rt>ひつよう</rt></ruby>があるのだ</span>。<div class="sent-id" id="s-pa">Bagaimana caranya agar bisa berolahraga? Tidak perlu putus asa dengan berpikir bahwa hanya orang yang berbakat sejak awal yang bisa berolahraga. Jika atlet diwawancarai, banyak yang mengatakan bahwa mereka bisa menjadi atlet bukan karena bakat, melainkan karena usaha. Namun, jika ditanya apakah pasti menjadi mahir asalkan terus berlatih, jawabannya tidak. Berlatih asal-asalan tidak ada artinya. Yang penting adalah memiliki bayangan keberhasilan di dalam kepala. Dan agar bayangan itu bisa diwujudkan dalam bentuk nyata kapan pun, penting berlatih sampai tubuh mengingatnya. Untuk itu, pertama-tama kita perlu berkali-kali melihat permainan orang yang mahir, dan mengingat dengan kuat bentuk tubuh saat bermain serta waktu yang tepat (catatan) untuk menggerakkan tubuh.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-pa',this)">ル</button><button class="btn-s" onclick="toggleSent('s-pa',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-pa-n">（<ruby>注<rt>ちゅう</rt></ruby>）タイミング：あることをするのにちょうど<ruby>良<rt>よ</rt></ruby>いとき<div class="sent-id" id="s-pa-n">(Catatan) Timing: saat yang pas/tepat untuk melakukan sesuatu.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-pa-n',this)">ル</button><button class="btn-s" onclick="toggleSent('s-pa-n',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="passageB" class="section">
+<div class="section-header">本文 B｜基礎体力とチームスポーツ</div>
+<div class="section-body">
+<div class="passage-label">B</div>
+<div class="line-wrap"><div class="line-text" id="t-pb">スポーツをする<ruby>上<rt>うえ</rt></ruby>で<ruby>大切<rt>たいせつ</rt></ruby>なことは、<span data-hl="b_base">まず<span class="kanji-wrap"><button class="kanji-btn"><ruby>基礎体力<rt>きそたいりょく</rt></ruby></button><span class="kanji-pop">kekuatan fisik dasar</span></span>をつけることである</span>。どのスポーツも<ruby>筋力<rt>きんりょく</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>1）</sup>や<ruby>持久力<rt>じきゅうりょく</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>2）</sup>などの<ruby>基本的<rt>きほんてき</rt></ruby>な<ruby>力<rt>ちから</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>とされている。<ruby>基礎体力<rt>きそたいりょく</rt></ruby>をつけると、それぞれのスポーツで<ruby>最大<rt>さいだい</rt></ruby>の<ruby>力<rt>ちから</rt></ruby>を<span class="kanji-wrap"><button class="kanji-btn"><ruby>発揮<rt>はっき</rt></ruby></button><span class="kanji-pop">menunjukkan / mengerahkan</span></span>することができるようになる。しかし、チームスポーツではそれ<ruby>以上<rt>いじょう</rt></ruby>に<span data-hl="b_j"><ruby>判断力<rt>はんだんりょく</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>とされる。<ruby>今<rt>いま</rt></ruby><ruby>自分<rt>じぶん</rt></ruby>は<ruby>動<rt>うご</rt></ruby>くべきか、そうではないか。<ruby>誰<rt>だれ</rt></ruby>にボールを<ruby>渡<rt>わた</rt></ruby>すべきか。<ruby>周<rt>まわ</rt></ruby>りの<ruby>状況<rt>じょうきょう</rt></ruby>を<span class="kanji-wrap"><button class="kanji-btn"><ruby>一瞬<rt>いっしゅん</rt></ruby></button><span class="kanji-pop">sekejap</span></span>で<ruby>見<rt>み</rt></ruby>て、その<ruby>状況<rt>じょうきょう</rt></ruby>に<ruby>合<rt>あ</rt></ruby>った<ruby>判断<rt>はんだん</rt></ruby>をしなければならない</span>。<span data-hl="b_c"><ruby>試合<rt>しあい</rt></ruby>に<ruby>強<rt>つよ</rt></ruby>いチームは<ruby>普段<rt>ふだん</rt></ruby>からチームでコミュニケーションをとり</span>、<ruby>色々<rt>いろいろ</rt></ruby>な<ruby>場面<rt>ばめん</rt></ruby>を<ruby>想定<rt>そうてい</rt></ruby>した<ruby>練習<rt>れんしゅう</rt></ruby>を<ruby>何度<rt>なんど</rt></ruby>もするようにしているようだ。<span data-hl="b_b"><ruby>考<rt>かんが</rt></ruby>えるより<ruby>先<rt>さき</rt></ruby>に<ruby>体<rt>からだ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>くまで<ruby>練習<rt>れんしゅう</rt></ruby>することで、どの<ruby>試合<rt>しあい</rt></ruby>でも<ruby>動<rt>うご</rt></ruby>きが<ruby>合<rt>あ</rt></ruby>ったプレーをすることができるようになるという</span>。<div class="sent-id" id="s-pb">Hal yang penting dalam berolahraga adalah pertama-tama membangun kekuatan fisik dasar. Setiap olahraga membutuhkan kekuatan dasar seperti kekuatan otot (catatan 1) dan daya tahan (catatan 2). Jika kekuatan fisik dasar terbentuk, kita bisa mengerahkan kekuatan maksimal dalam masing-masing olahraga. Namun, dalam olahraga tim dibutuhkan kemampuan menilai (pengambilan keputusan) lebih dari itu. Apakah sekarang saya harus bergerak atau tidak? Kepada siapa bola harus diberikan? Kita harus melihat situasi di sekitar dalam sekejap dan mengambil keputusan yang sesuai dengan situasi itu. Tim yang kuat dalam pertandingan tampaknya sehari-hari berkomunikasi dalam tim dan berlatih berkali-kali dengan membayangkan berbagai situasi. Dikatakan bahwa dengan berlatih sampai tubuh bergerak lebih dulu daripada berpikir, mereka bisa bermain dengan gerakan yang kompak di pertandingan mana pun.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-pb',this)">ル</button><button class="btn-s" onclick="toggleSent('s-pb',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-pb-n1">（<ruby>注<rt>ちゅう</rt></ruby>1）<ruby>筋力<rt>きんりょく</rt></ruby>：<ruby>筋肉<rt>きんにく</rt></ruby>の<ruby>力<rt>ちから</rt></ruby><div class="sent-id" id="s-pb-n1">(Catatan 1) Kekuatan otot: tenaga otot.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-pb-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-pb-n1',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-pb-n2">（<ruby>注<rt>ちゅう</rt></ruby>2）<ruby>持久力<rt>じきゅうりょく</rt></ruby>：<ruby>長時間<rt>ちょうじかん</rt></ruby><ruby>運動<rt>うんどう</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けることができる<ruby>力<rt>ちから</rt></ruby><div class="sent-id" id="s-pb-n2">(Catatan 2) Daya tahan: kemampuan untuk terus berolahraga dalam waktu lama.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-pb-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-pb-n2',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="q67" class="section">
+<div class="section-header">問67</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q67-q"><strong>67　スポーツが<ruby>上達<rt>じょうたつ</rt></ruby>しない<ruby>人<rt>ひと</rt></ruby>の<ruby>問題点<rt>もんだいてん</rt></ruby>として、AとBが<ruby>指摘<rt>してき</rt></ruby>している<ruby>点<rt>てん</rt></ruby>は<ruby>何<rt>なに</rt></ruby>か。</strong><div class="sent-id" id="s-q67-q">67. Apa poin yang ditunjukkan A dan B sebagai masalah orang yang tidak mahir berolahraga?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q67-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q67-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q67-c1">Aは<ruby>能力<rt>のうりょく</rt></ruby>がないことだと<ruby>述<rt>の</rt></ruby>べ、Bは<ruby>基礎体力<rt>きそたいりょく</rt></ruby>がついていないのにチームでの<ruby>練習<rt>れんしゅう</rt></ruby>ばかりしてしまうことだと<ruby>述<rt>の</rt></ruby>べている。<div class="sent-id" id="s-q67-c1">A menyatakan bahwa itu adalah tidak punya kemampuan, B menyatakan bahwa itu adalah hanya berlatih dalam tim padahal kekuatan fisik dasarnya belum terbentuk.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q67-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q67-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q67-1',this)">答</button></div>
+<div class="ans-box" id="ans-q67-1" data-hl-target="a_t b_base" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Aは「<ruby>才能<rt>さいのう</rt></ruby>ではなく<ruby>努力<rt>どりょく</rt></ruby>」と<ruby>述<rt>の</rt></ruby>べている。Bも<ruby>基礎体力<rt>きそたいりょく</rt></ruby>がない<ruby>人<rt>ひと</rt></ruby>がチーム<ruby>練習<rt>れんしゅう</rt></ruby>ばかりすることは<ruby>問題<rt>もんだい</rt></ruby>にしていない。<br><span class="ans-trans">(×) A menyebut "bukan bakat melainkan usaha". B juga tidak mempermasalahkan orang yang hanya berlatih tim tanpa kekuatan dasar.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q67-c2">Aは<ruby>一度<rt>いちど</rt></ruby><ruby>練習<rt>れんしゅう</rt></ruby>したら<ruby>満足<rt>まんぞく</rt></ruby>してしまうことだと<ruby>述<rt>の</rt></ruby>べ、Bはその<ruby>場<rt>ば</rt></ruby>に<ruby>適<rt>てき</rt></ruby>した<ruby>動<rt>うご</rt></ruby>きができないことだと<ruby>述<rt>の</rt></ruby>べている。<div class="sent-id" id="s-q67-c2">A menyatakan bahwa itu adalah merasa puas setelah berlatih sekali, B menyatakan bahwa itu adalah tidak bisa bergerak sesuai situasi.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q67-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q67-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q67-2',this)">答</button></div>
+<div class="ans-box" id="ans-q67-2" data-hl-target="a_v" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Aは「<ruby>満足<rt>まんぞく</rt></ruby>してしまう」とは<ruby>書<rt>か</rt></ruby>いていない。「なんとなく<ruby>練習<rt>れんしゅう</rt></ruby>する」ことを<ruby>問題<rt>もんだい</rt></ruby>にしている。<br><span class="ans-trans">(×) A tidak menulis "merasa puas". A mempermasalahkan "berlatih asal-asalan".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q67-c3">Aは<ruby>練習<rt>れんしゅう</rt></ruby>を<ruby>継続<rt>けいぞく</rt></ruby>しないことだと<ruby>述<rt>の</rt></ruby>べ、Bは<ruby>周<rt>まわ</rt></ruby>りの<ruby>人<rt>ひと</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きまで<ruby>考<rt>かんが</rt></ruby>えないことだと<ruby>述<rt>の</rt></ruby>べている。<div class="sent-id" id="s-q67-c3">A menyatakan bahwa itu adalah tidak melanjutkan latihan, B menyatakan bahwa itu adalah tidak memikirkan gerakan orang di sekitar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q67-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q67-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q67-3',this)">答</button></div>
+<div class="ans-box" id="ans-q67-3" data-hl-target="a_c b_j" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Aは<ruby>練習<rt>れんしゅう</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けていても、<ruby>必<rt>かなら</rt></ruby>ず<ruby>上手<rt>じょうず</rt></ruby>になるとは<ruby>限<rt>かぎ</rt></ruby>らないと<ruby>述<rt>の</rt></ruby>べている。<ruby>継続<rt>けいぞく</rt></ruby>しないことが<ruby>問題<rt>もんだい</rt></ruby>ではない。<br><span class="ans-trans">(×) A menyatakan bahwa meskipun terus berlatih, belum tentu pasti mahir. Masalahnya bukan tidak melanjutkan latihan.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q67-c4">Aはうまくいった<ruby>自分<rt>じぶん</rt></ruby>の<ruby>姿<rt>すがた</rt></ruby>を<ruby>想像<rt>そうぞう</rt></ruby>しないで<ruby>練習<rt>れんしゅう</rt></ruby>することだと<ruby>述<rt>の</rt></ruby>べ、Bは<ruby>自分<rt>じぶん</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きのことしか<ruby>考<rt>かんが</rt></ruby>えていないことだと<ruby>述<rt>の</rt></ruby>べている。<div class="sent-id" id="s-q67-c4">A menyatakan bahwa itu adalah berlatih tanpa membayangkan diri sendiri yang berhasil, B menyatakan bahwa itu adalah hanya memikirkan gerakan diri sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q67-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q67-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q67-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q67-4" data-hl-target="a_i b_j" data-hl-type="correct"><strong class="maru">（○）</strong>　Aは<ruby>頭<rt>あたま</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>成功<rt>せいこう</rt></ruby>のイメージを<ruby>持<rt>も</rt></ruby>つことが<ruby>大切<rt>たいせつ</rt></ruby>と<ruby>述<rt>の</rt></ruby>べている。Bは<ruby>周<rt>まわ</rt></ruby>りの<ruby>状況<rt>じょうきょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>る<ruby>判断力<rt>はんだんりょく</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>と<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(○) A menyatakan pentingnya memiliki bayangan keberhasilan di kepala. B menyatakan perlunya kemampuan menilai dengan melihat situasi di sekitar.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+<div id="q68" class="section">
+<div class="section-header">問68</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q68-q"><strong>68　スポーツが<ruby>上達<rt>じょうたつ</rt></ruby>するのに、AとBが<ruby>共通<rt>きょうつう</rt></ruby>して<ruby>必要<rt>ひつよう</rt></ruby>だと<ruby>述<rt>の</rt></ruby>べていることは<ruby>何<rt>なに</rt></ruby>か。</strong><div class="sent-id" id="s-q68-q">68. Apa yang dinyatakan A dan B sama-sama diperlukan agar mahir berolahraga?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q68-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q68-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q68-c1">コミュニケーションをとること<div class="sent-id" id="s-q68-c1">Melakukan komunikasi.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q68-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q68-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q68-1',this)">答</button></div>
+<div class="ans-box" id="ans-q68-1" data-hl-target="b_c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Bだけが<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(×) Hanya B yang menyebutkannya.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q68-c2"><ruby>手本<rt>てほん</rt></ruby>になるプレーを<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>し<ruby>見<rt>み</rt></ruby>ること<div class="sent-id" id="s-q68-c2">Melihat berulang-ulang permainan yang menjadi contoh.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q68-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q68-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q68-2',this)">答</button></div>
+<div class="ans-box" id="ans-q68-2" data-hl-target="a_m" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Aだけが<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(×) Hanya A yang menyebutkannya.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q68-c3"><ruby>基礎体力<rt>きそたいりょく</rt></ruby>をつけること<div class="sent-id" id="s-q68-c3">Membangun kekuatan fisik dasar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q68-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q68-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q68-3',this)">答</button></div>
+<div class="ans-box" id="ans-q68-3" data-hl-target="b_base" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Bだけが<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(×) Hanya B yang menyebutkannya.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q68-c4"><ruby>体<rt>からだ</rt></ruby>が<ruby>自然<rt>しぜん</rt></ruby>に<ruby>動<rt>うご</rt></ruby>くまで<ruby>練習<rt>れんしゅう</rt></ruby>すること<div class="sent-id" id="s-q68-c4">Berlatih sampai tubuh bergerak secara alami.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q68-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q68-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q68-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q68-4" data-hl-target="a_b b_b" data-hl-type="correct"><strong class="maru">（○）</strong>　Aは「<ruby>体<rt>からだ</rt></ruby>に<ruby>覚<rt>おぼ</rt></ruby>えさせる<ruby>練習<rt>れんしゅう</rt></ruby>」、Bは「<ruby>考<rt>かんが</rt></ruby>えるより<ruby>先<rt>さき</rt></ruby>に<ruby>体<rt>からだ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>くまで<ruby>練習<rt>れんしゅう</rt></ruby>」と<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(○) A menyebut "latihan agar tubuh mengingatnya", B menyebut "berlatih sampai tubuh bergerak lebih dulu daripada berpikir". Keduanya sama.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+
+</main>
+<script>
+(function(){var h=document.querySelector('header'),n=document.getElementById('main-nav');function s(){if(h&&n)n.style.top=h.offsetHeight+'px';}s();window.addEventListener('resize',s);})();
+function toggleRuby(id,btn){var el=document.getElementById(id);if(!el)return;var on=btn.classList.toggle('open');el.querySelectorAll('ruby').forEach(function(r){r.classList.toggle('show',on);});}
+function toggleSent(id,btn){var el=document.getElementById(id);if(!el)return;el.classList.toggle('show');btn.classList.toggle('open');}
+function toggleAnsBox(id,btn){
+  var box=document.getElementById(id);if(!box)return;
+  var opening=!box.classList.contains('show');
+  box.classList.toggle('show');btn.classList.toggle('open');
+  var li=btn.closest('li');
+  if(li&&btn.classList.contains('btn-ans-correct')){li.classList.toggle('p9-ans-correct',opening);}
+  var t=box.getAttribute('data-hl-target'),ty=box.getAttribute('data-hl-type');
+  if(!t)return;
+  t.split(' ').forEach(function(k){
+    document.querySelectorAll('[data-hl="'+k+'"]').forEach(function(sp){
+      if(opening){sp.classList.add(ty==='correct'?'hl-correct':'hl-wrong');}
+      else{sp.classList.remove('hl-correct','hl-wrong');}
+    });
+  });
+}
+function closePops(){document.querySelectorAll('.kanji-wrap.open').forEach(function(w){w.classList.remove('open');});}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.kanji-btn');
+  if(b){var w=b.closest('.kanji-wrap');var o=w.classList.contains('open');closePops();if(!o)w.classList.add('open');return;}
+  closePops();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模擬試験第2回｜N2 読解 問題10</title>
+<style>
+:root{--bg:#f8f8f6;--surface:#fff;--surface2:#f0f0ee;--border:#d8d8d4;--text:#222;--text-light:#666;--accent:#3a6b8a;--accent-light:#e8f0f5;--tag-bg:#222;--tag-text:#fff;--btn:#bbb;--btn-text:#555;--ruby-color:#3a6b8a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.85}
+header{background:var(--accent);color:#fff;padding:20px 24px 16px;position:sticky;top:0;z-index:100}
+header h1{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+header p{font-size:.78rem;opacity:.8;margin-top:2px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;position:sticky;top:57px;z-index:99}
+nav a{color:var(--accent);text-decoration:none;padding:3px 8px;border-radius:3px;border:1px solid var(--accent-light)}
+nav a:hover{background:var(--accent-light)}
+main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+main.wide{max-width:1100px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.section-header{background:var(--accent);color:#fff;padding:10px 18px;font-size:1rem;font-weight:700}
+.section-body{padding:18px}
+.mondai-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 4px;background:var(--tag-bg);color:#fff;border-radius:3px;font-size:.85rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.important-box{background:#fff8e1;border-left:3px solid #f0a500;padding:12px 16px;border-radius:0 4px 4px 0;font-size:.9rem;font-weight:700;margin:12px 0}
+.rei-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:14px 16px;margin:10px 0 16px;font-size:.93rem}
+.rei-label{display:inline-block;background:var(--tag-bg);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:2px;margin-bottom:8px}
+.line-wrap{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.line-text{flex:1;min-width:0}
+.btn-group{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding-top:2px}
+.btn-r,.btn-s{font-size:.65rem;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:1px 5px;cursor:pointer;line-height:1.4;white-space:nowrap}
+.btn-r:hover,.btn-s:hover{background:#eee}
+.btn-r.open,.btn-s.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+ruby rt{display:none;font-size:.6em;color:var(--ruby-color)}
+ruby.show rt{display:revert}
+.ans-box ruby rt{display:revert}
+.sent-id{display:none;font-size:.8rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:4px 8px;margin-top:4px;font-weight:400}
+.sent-id.show{display:block}
+u{text-decoration-color:var(--accent);text-underline-offset:3px}
+sup{font-size:.7em}
+.note-box{font-size:.82rem;color:var(--text-light);margin-top:8px;padding-left:4px}
+.chuu-box{background:var(--surface2);border-left:3px solid var(--border);border-radius:0 4px 4px 0;padding:8px 14px;margin:8px 0 0;font-size:.85rem;color:var(--text-light)}
+.p9-cols{display:grid;grid-template-columns:54% 46%;gap:0;align-items:start;margin:12px 0}
+.p9-left{padding-right:18px;border-right:2px solid var(--border);font-size:.93rem;line-height:1.85}
+.p9-right{padding-left:22px;font-size:.9rem}
+.p9-context-label{font-size:.82rem;color:var(--text-light);border-bottom:1px dashed var(--border);padding-bottom:6px}
+.p9-btn-row{display:flex;gap:4px;margin:4px 0 8px}
+.p9-q-label{font-size:.93rem;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:4px}
+.p9-q-label .sent-id{color:#1a3a6b}
+.p9-qblock{margin-bottom:22px}
+.p9-choices{list-style:none;padding:0;margin:8px 0 0;counter-reset:cc}
+.p9-choices li{counter-increment:cc;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.7}
+.p9-choices li:last-child{border-bottom:none}
+.p9-choices li::before{content:counter(cc);display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.p9-choices li.p9-ans-correct::before{background:#27ae60;color:#fff;border-color:#27ae60}
+.p9-choice-text{flex:1;min-width:0}
+.p9-choice-btns{display:flex;flex-direction:row;align-items:flex-start;gap:3px;flex-shrink:0}
+.p9-choices li .ans-box{flex-basis:100%;margin-left:26px;margin-top:4px}
+.btn-ans{font-size:.68rem;font-weight:700;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;margin-top:1px}
+.btn-ans:hover{background:#eee}
+.btn-ans.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ans-correct.open{background:#27ae60;color:#fff;border-color:#27ae60}
+.ans-box{display:none;margin-top:6px;background:var(--surface2);border-left:3px solid #bbb;border-radius:0 4px 4px 0;padding:8px 10px;font-size:.82rem;line-height:1.7;color:#555}
+.ans-box.show{display:block}
+.ans-box-correct{color:#1a5c2a;background:#edf7f0;border-left-color:#27ae60}
+.maru{color:#27ae60;font-weight:700}
+.batsu{color:#c0392b;font-weight:700}
+.ans-trans{display:block;margin-top:5px;font-size:.78rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:3px 7px}
+.hl-correct{background:#fff59d;border-radius:3px;padding:1px 2px}
+.hl-wrong{background:#ffcdd2;border-radius:3px;padding:1px 2px}
+.doc-box{border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:12px;background:#fafaf8;font-size:.9rem;line-height:1.9}
+.kanji-wrap{display:inline;position:relative}
+.kanji-btn{display:inline;cursor:pointer;border:none;border-bottom:1px dotted #aaa;color:inherit;background:none;padding:0;font:inherit;line-height:inherit}
+.kanji-btn:hover{background:#f0f5f0;border-radius:2px}
+.kanji-pop{display:none;position:absolute;left:0;top:100%;margin-top:4px;background:#1a6b3a;color:#fff;font-size:.75rem;line-height:1.5;padding:3px 8px;border-radius:4px;white-space:nowrap;z-index:200;pointer-events:none;font-weight:400}
+.kanji-wrap.open .kanji-pop{display:block}
+.q-header{display:flex;align-items:flex-start;gap:8px;margin:16px 0 10px}
+.q-header .line-text{flex:1;font-weight:700;font-size:.95rem}
+ol.content-list{padding-left:20px;margin-left:8px}
+ol.content-list li{margin-bottom:6px}
+.passage-para{text-indent:1em;margin-bottom:.7em}
+.passage-label{font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:4px}
+.poster-box{border:2px solid var(--border);border-radius:6px;overflow:hidden;margin:12px 0 16px;font-size:.9rem;background:#fff}
+.poster-title{background:var(--tag-bg);color:#fff;text-align:center;padding:12px 14px;font-weight:700;font-size:1.05rem;letter-spacing:.05em}
+.poster-info{padding:14px 18px;font-size:.88rem;line-height:1.9}
+.poster-info .sec-title{font-weight:700;background:var(--surface2);border-left:3px solid var(--accent);padding:3px 10px;border-radius:0 3px 3px 0;margin:10px 0 4px;font-size:.88rem}
+.poster-info hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.poster-contact{background:var(--surface2);border-top:1px solid var(--border);padding:8px 18px;font-size:.78rem;color:var(--text-light);text-align:right}
+table.fee{border-collapse:collapse;width:100%;font-size:.8rem;text-align:center;background:#fff}
+table.fee th,table.fee td{border:1px solid #555;padding:5px 6px}
+table.fee th{background:var(--surface2)}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+@media(max-width:700px){.p9-cols{grid-template-columns:1fr}.p9-left{border-right:none;border-bottom:2px solid var(--border);padding-right:0;padding-bottom:14px;margin-bottom:10px}.p9-right{padding-left:0}body{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>模擬試験 第2回｜N2 読解　問題10　内容理解（短文）</h1>
+  <p>内容理解（短文）｜Pemahaman Isi Teks (Pendek) — インドネシア語訳付き</p>
+</header>
+<nav id="main-nav"><a href="#intro">問題10について</a><a href="#q1">（1）勉強</a><a href="#q2">（2）お知らせ</a><a href="#q3">（3）経験</a><a href="#q4">（4）メール</a><a href="#q5">（5）食品ロス</a></nav>
+<main class="wide">
+<div id="intro" class="section">
+<div class="section-header">問題10｜内容理解（短文）</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-intro">問題10　<ruby>次<rt>つぎ</rt></ruby>の（1）から（5）の<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、<ruby>後<rt>あと</rt></ruby>の<ruby>問<rt>と</rt></ruby>いに<ruby>対<rt>たい</rt></ruby>する<ruby>答<rt>こた</rt></ruby>えとして<ruby>最<rt>もっと</rt></ruby>もよいものを、1・2・3・4から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。<div class="sent-id" id="s-intro">Soal 10: Bacalah teks (1) sampai (5) berikut, lalu pilih satu jawaban yang paling tepat dari 1・2・3・4 untuk pertanyaan setelahnya.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-intro',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="q1" class="section">
+<div class="section-header">（1）　<ruby>問53<rt>もんごじゅうさん</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（1）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="line-wrap" style="margin-top:10px;"><div class="line-text" id="t-q1-body"><ruby>何<rt>なに</rt></ruby>か<ruby>新<rt>あたら</rt></ruby>しいことがしたいと<ruby>思<rt>おも</rt></ruby>い、<span class="kanji-wrap"><button class="kanji-btn"><ruby>会計<rt>かいけい</rt></ruby></button><span class="kanji-pop">akuntansi</span></span>の<ruby>勉強<rt>べんきょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めた。<ruby>会計士<rt>かいけいし</rt></ruby>になる<ruby>予定<rt>よてい</rt></ruby>や<ruby>金融系<rt>きんゆうけい</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<ruby>気<rt>き</rt></ruby>もないのに、<span data-hl="q1c4"><ruby>勉強自体<rt>べんきょうじたい</rt></ruby>が<ruby>楽<rt>たの</rt></ruby>しくなってもう<ruby>数<rt>すう</rt></ruby>か<ruby>月<rt>げつ</rt></ruby><ruby>続<rt>つづ</rt></ruby>けている</span>。その<ruby>理由<rt>りゆう</rt></ruby>は、<ruby>昔<rt>むかし</rt></ruby>に<ruby>比<rt>くら</rt></ruby>べて<ruby>勉強方法<rt>べんきょうほうほう</rt></ruby>が<span class="kanji-wrap"><button class="kanji-btn"><ruby>多様<rt>たよう</rt></ruby></button><span class="kanji-pop">beragam</span></span>になったためである。<span data-hl="q1c2"><ruby>昔<rt>むかし</rt></ruby>は<ruby>教科書<rt>きょうかしょ</rt></ruby>とノートを<ruby>使<rt>つか</rt></ruby>って、<ruby>決<rt>き</rt></ruby>まった<ruby>時間<rt>じかん</rt></ruby>に<ruby>決<rt>き</rt></ruby>まった<ruby>場所<rt>ばしょ</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>するというのが<span class="kanji-wrap"><button class="kanji-btn"><ruby>常識<rt>じょうしき</rt></ruby></button><span class="kanji-pop">hal yang lazim</span></span>だった</span>。<br>でも、<ruby>今<rt>いま</rt></ruby>は<ruby>違<rt>ちが</rt></ruby>う。<ruby>携帯電話<rt>けいたいでんわ</rt></ruby>を<ruby>使<rt>つか</rt></ruby>っていつでもどこでも<ruby>勉強<rt>べんきょう</rt></ruby>することができる。<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>先生<rt>せんせい</rt></ruby>のすばらしい<ruby>授業<rt>じゅぎょう</rt></ruby>がどこにいても<ruby>安<rt>やす</rt></ruby>く<ruby>受<rt>う</rt></ruby>けられるのだ。アプリ<sup>（<ruby>注<rt>ちゅう</rt></ruby>）</sup>の<ruby>種類<rt>しゅるい</rt></ruby>も<ruby>様々<rt>さまざま</rt></ruby>で、<span data-hl="q1c3">ゲーム<ruby>感覚<rt>かんかく</rt></ruby>で<ruby>楽<rt>たの</rt></ruby>しく<ruby>問題<rt>もんだい</rt></ruby>を<ruby>解<rt>と</rt></ruby>くことができる</span>。<ruby>会計<rt>かいけい</rt></ruby>の<ruby>勉強<rt>べんきょう</rt></ruby>だけではなく、<ruby>語学<rt>ごがく</rt></ruby>や<ruby>数学<rt>すうがく</rt></ruby>、<ruby>歴史<rt>れきし</rt></ruby>など<ruby>学生<rt>がくせい</rt></ruby>たちにとって<ruby>最高<rt>さいこう</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>がすぐに<ruby>手<rt>て</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<ruby>時代<rt>じだい</rt></ruby>だ。こんな<ruby>時代<rt>じだい</rt></ruby>に<ruby>生<rt>う</rt></ruby>まれた<ruby>学生<rt>がくせい</rt></ruby>たちは、<span class="kanji-wrap"><button class="kanji-btn"><ruby>本当<rt>ほんとう</rt></ruby>に<ruby>恵<rt>めぐ</rt></ruby>まれている</button><span class="kanji-pop">sungguh beruntung</span></span>と<ruby>思<rt>おも</rt></ruby>う。<div class="sent-id" id="s-q1-body">Saya ingin mencoba sesuatu yang baru, jadi saya mulai belajar akuntansi. Meskipun saya tidak berencana menjadi akuntan atau masuk ke perusahaan di bidang keuangan, belajar itu sendiri terasa menyenangkan dan sudah saya lanjutkan selama beberapa bulan. Alasannya, cara belajar sekarang menjadi lebih beragam dibandingkan dahulu. Dahulu sudah lazim belajar dengan buku pelajaran dan buku catatan, pada waktu dan di tempat yang ditentukan.<br>Tetapi sekarang berbeda. Dengan ponsel, kita bisa belajar kapan saja dan di mana saja. Pelajaran luar biasa dari guru-guru terkenal bisa diikuti dengan murah di mana pun kita berada. Jenis aplikasi (catatan) juga beragam, dan kita bisa mengerjakan soal dengan menyenangkan seperti bermain game. Ini adalah zaman di mana pelajaran terbaik bagi para pelajar — bukan hanya akuntansi, tetapi juga bahasa asing, matematika, dan sejarah — bisa langsung didapatkan. Saya rasa para pelajar yang lahir di zaman seperti ini sungguh beruntung.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q1-body',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-body',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-q1-note">（<ruby>注<rt>ちゅう</rt></ruby>）アプリ：アプリケーションソフトウェアの<ruby>略<rt>りゃく</rt></ruby>。<ruby>利用者<rt>りようしゃ</rt></ruby>の<ruby>目的<rt>もくてき</rt></ruby>にあった<ruby>専用<rt>せんよう</rt></ruby>ソフトウェアのこと。<div class="sent-id" id="s-q1-note">(Catatan) Aplikasi: singkatan dari "application software". Perangkat lunak khusus yang sesuai dengan tujuan pengguna.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q1-note',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-note',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q1-q"><strong>53　<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>学生時代<rt>がくせいじだい</rt></ruby>は、<ruby>勉強<rt>べんきょう</rt></ruby>とはどのようなものだったか。</strong><div class="sent-id" id="s-q1-q">53. Bagaimana belajar pada masa pelajar penulis?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q1-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q1-c1"><ruby>決<rt>き</rt></ruby>められた<ruby>方法<rt>ほうほう</rt></ruby>でするもの<div class="sent-id" id="s-q1-c1">Sesuatu yang dilakukan dengan metode yang sudah ditentukan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q1-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q1-1',this)">答</button></div>
+<div class="ans-box" id="ans-q1-1"><strong class="batsu">（×）</strong>　「<ruby>決<rt>き</rt></ruby>められた<ruby>方法<rt>ほうほう</rt></ruby>」とは<ruby>書<rt>か</rt></ruby>いていない。<ruby>決<rt>き</rt></ruby>まっていたのは<ruby>時間<rt>じかん</rt></ruby>と<ruby>場所<rt>ばしょ</rt></ruby>。<br><span class="ans-trans">(×) Teks tidak menyebut "metode yang ditentukan". Yang ditentukan adalah waktu dan tempat.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q1-c2"><ruby>勉強<rt>べんきょう</rt></ruby>する<ruby>場所<rt>ばしょ</rt></ruby>や<ruby>時間<rt>じかん</rt></ruby>に<ruby>制限<rt>せいげん</rt></ruby>があるもの<div class="sent-id" id="s-q1-c2">Sesuatu yang tempat dan waktu belajarnya dibatasi.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q1-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-c2',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q1-2',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q1-2" data-hl-target="q1c2" data-hl-type="correct"><strong class="maru">（○）</strong>　「<ruby>決<rt>き</rt></ruby>まった<ruby>時間<rt>じかん</rt></ruby>に<ruby>決<rt>き</rt></ruby>まった<ruby>場所<rt>ばしょ</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>するというのが<ruby>常識<rt>じょうしき</rt></ruby>だった」と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(○) Sesuai teks: "sudah lazim belajar pada waktu dan di tempat yang ditentukan".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q1-c3">ゲームのように<ruby>遊<rt>あそ</rt></ruby>びながらするもの<div class="sent-id" id="s-q1-c3">Sesuatu yang dilakukan sambil bermain seperti game.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q1-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q1-3',this)">答</button></div>
+<div class="ans-box" id="ans-q1-3" data-hl-target="q1c3" data-hl-type="wrong"><strong class="batsu">（×）</strong>　ゲーム<ruby>感覚<rt>かんかく</rt></ruby>で<ruby>解<rt>と</rt></ruby>ける<ruby>問題<rt>もんだい</rt></ruby>は、<ruby>今<rt>いま</rt></ruby>のアプリの<ruby>話<rt>はなし</rt></ruby>。<br><span class="ans-trans">(×) Soal ala game adalah cerita tentang aplikasi masa kini, bukan masa pelajar penulis.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q1-c4"><ruby>会計士<rt>かいけいし</rt></ruby>や<ruby>金融系<rt>きんゆうけい</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>るためにするもの<div class="sent-id" id="s-q1-c4">Sesuatu yang dilakukan untuk menjadi akuntan atau masuk perusahaan di bidang keuangan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q1-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q1-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q1-4',this)">答</button></div>
+<div class="ans-box" id="ans-q1-4" data-hl-target="q1c4" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>会計士<rt>かいけいし</rt></ruby>や<ruby>金融系<rt>きんゆうけい</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<ruby>気<rt>き</rt></ruby>はないと<ruby>書<rt>か</rt></ruby>いてある。<ruby>今<rt>いま</rt></ruby>の<ruby>勉強<rt>べんきょう</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>。<br><span class="ans-trans">(×) Teks menyebut penulis tidak berniat menjadi akuntan atau masuk perusahaan keuangan. Ini cerita belajarnya saat ini.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q2" class="section">
+<div class="section-header">（2）　<ruby>問54<rt>もんごじゅうよん</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（2）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="p9-context-label" id="t-q2-note"><ruby>以下<rt>いか</rt></ruby>は、ある<ruby>出版社<rt>しゅっぱんしゃ</rt></ruby>がホームページに<span class="kanji-wrap"><button class="kanji-btn"><ruby>掲載<rt>けいさい</rt></ruby></button><span class="kanji-pop">memuat / memublikasikan</span></span>したお<ruby>知<rt>し</rt></ruby>らせである。<div class="sent-id" id="s-q2-note">Berikut adalah pengumuman yang dimuat sebuah penerbit di situs webnya.</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q2-note',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-note',this)">文</button></div>
+<div class="doc-box">
+<div class="line-wrap"><div class="line-text" id="t-q2-h">MJ<ruby>出版<rt>しゅっぱん</rt></ruby>&gt;ご<ruby>報告<rt>ほうこく</rt></ruby>とお<ruby>詫<rt>わ</rt></ruby>び<div class="sent-id" id="s-q2-h">MJ Penerbit ＞ Laporan dan Permohonan Maaf</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-h',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-h',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-d">2022<ruby>年<rt>ねん</rt></ruby>7<ruby>月<rt>がつ</rt></ruby>22<ruby>日<rt>にち</rt></ruby><div class="sent-id" id="s-q2-d">22 Juli 2022</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-d',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-d',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-t">「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」に<ruby>関<rt>かん</rt></ruby>するご<ruby>報告<rt>ほうこく</rt></ruby>とお<ruby>詫<rt>わ</rt></ruby>び<div class="sent-id" id="s-q2-t">Laporan dan permohonan maaf mengenai "Sejarah Nihongo no Mori"</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-t',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-t',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-1"><span class="kanji-wrap"><button class="kanji-btn"><ruby>弊社<rt>へいしゃ</rt></ruby></button><span class="kanji-pop">perusahaan kami (bentuk sopan)</span></span>の<ruby>出版物<rt>しゅっぱんぶつ</rt></ruby>「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」に<ruby>印刷<rt>いんさつ</rt></ruby>ミスがありました。<div class="sent-id" id="s-q2-1">Terdapat kesalahan cetak pada terbitan perusahaan kami, "Sejarah Nihongo no Mori".</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-2"><span data-hl="q2c2"><ruby>先月<rt>せんげつ</rt></ruby>、<ruby>京都府<rt>きょうとふ</rt></ruby>のはんなり<ruby>書店<rt>しょてん</rt></ruby>（<ruby>丸々<rt>まるまる</rt></ruby>デパート5<ruby>階<rt>かい</rt></ruby>）と<ruby>大阪府<rt>おおさかふ</rt></ruby>のなにわブック（<ruby>大阪駅<rt>おおさかえき</rt></ruby><ruby>改札内<rt>かいさつない</rt></ruby>）に<span class="kanji-wrap"><button class="kanji-btn"><ruby>納品<rt>のうひん</rt></ruby></button><span class="kanji-pop">mengirim barang</span></span>した50<ruby>冊<rt>さつ</rt></ruby>に<ruby>印刷<rt>いんさつ</rt></ruby>のミスがあることがわかりました</span>。<div class="sent-id" id="s-q2-2">Bulan lalu diketahui bahwa terdapat kesalahan cetak pada 50 eksemplar yang dikirim ke toko buku Hannari di Prefektur Kyoto (Lantai 5 Maru-maru Department Store) dan Naniwa Book di Prefektur Osaka (di dalam gerbang tiket Stasiun Osaka).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-2',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-3"><span data-hl="q2c3"><ruby>大変<rt>たいへん</rt></ruby><ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありませんが、<ruby>先月<rt>せんげつ</rt></ruby><ruby>対象<rt>たいしょう</rt></ruby>の<ruby>書店<rt>しょてん</rt></ruby>で「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」を<ruby>購入<rt>こうにゅう</rt></ruby>されたお<ruby>客様<rt>きゃくさま</rt></ruby>がいらっしゃいましたら、<ruby>無料<rt>むりょう</rt></ruby>で<ruby>新<rt>あたら</rt></ruby>しいものを<span class="kanji-wrap"><button class="kanji-btn"><ruby>郵送<rt>ゆうそう</rt></ruby></button><span class="kanji-pop">mengirim lewat pos</span></span>させていただきますので、<ruby>下記<rt>かき</rt></ruby>メールアドレスまでご<ruby>連絡<rt>れんらく</rt></ruby>ください</span>。<div class="sent-id" id="s-q2-3">Mohon maaf yang sebesar-besarnya. Jika ada pelanggan yang bulan lalu membeli "Sejarah Nihongo no Mori" di toko buku sasaran, kami akan mengirimkan yang baru secara gratis lewat pos, jadi silakan hubungi alamat email di bawah ini.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-3',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-4">なお、<span data-hl="q2c4"><ruby>上記<rt>じょうき</rt></ruby><ruby>書店<rt>しょてん</rt></ruby>での<ruby>交換<rt>こうかん</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>っておりません</span>ので、お<ruby>気<rt>き</rt></ruby>をつけください。<div class="sent-id" id="s-q2-4">Perlu diperhatikan bahwa penukaran di toko buku tersebut di atas tidak dilakukan.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-4',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-w">MJ<ruby>出版<rt>しゅっぱん</rt></ruby>お<ruby>客様<rt>きゃくさま</rt></ruby><ruby>窓口<rt>まどぐち</rt></ruby><div class="sent-id" id="s-q2-w">Layanan Pelanggan MJ Penerbit</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-w',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-w',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-m">メールアドレス：XXX-XXXX@.XXX.XX<div class="sent-id" id="s-q2-m">Alamat email: XXX-XXXX@.XXX.XX</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-m',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-m',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q2-p">TEL：008-002-0005<div class="sent-id" id="s-q2-p">Telepon: 008-002-0005</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q2-p',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-p',this)">文</button></div></div>
+</div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q2-q"><strong>54　このお<ruby>知<rt>し</rt></ruby>らせで<ruby>最<rt>もっと</rt></ruby>も<ruby>伝<rt>つた</rt></ruby>えたいことは<ruby>何<rt>なん</rt></ruby>か。</strong><div class="sent-id" id="s-q2-q">54. Apa yang paling ingin disampaikan oleh pengumuman ini?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q2-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q2-c1">「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」に<ruby>印刷<rt>いんさつ</rt></ruby>ミスがないかどうか、<ruby>確認<rt>かくにん</rt></ruby>してほしい。<div class="sent-id" id="s-q2-c1">Mohon periksa apakah "Sejarah Nihongo no Mori" memiliki kesalahan cetak.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q2-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q2-1',this)">答</button></div>
+<div class="ans-box" id="ans-q2-1"><strong class="batsu">（×）</strong>　<ruby>確認<rt>かくにん</rt></ruby>ではなく、<ruby>対象<rt>たいしょう</rt></ruby>のお<ruby>客様<rt>きゃくさま</rt></ruby>に<ruby>連絡<rt>れんらく</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いしている。<br><span class="ans-trans">(×) Bukan meminta memeriksa, melainkan meminta pelanggan sasaran untuk menghubungi.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q2-c2">「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」は<ruby>全<rt>すべ</rt></ruby>て<ruby>無料<rt>むりょう</rt></ruby>で<ruby>交換<rt>こうかん</rt></ruby>するので、<ruby>連絡<rt>れんらく</rt></ruby>してほしい。<div class="sent-id" id="s-q2-c2">"Sejarah Nihongo no Mori" akan ditukar semuanya secara gratis, jadi mohon hubungi kami.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q2-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q2-2',this)">答</button></div>
+<div class="ans-box" id="ans-q2-2" data-hl-target="q2c2" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>全<rt>すべ</rt></ruby>てではなく、<ruby>先月<rt>せんげつ</rt></ruby><ruby>対象<rt>たいしょう</rt></ruby>の<ruby>書店<rt>しょてん</rt></ruby>に<ruby>納品<rt>のうひん</rt></ruby>した50<ruby>冊<rt>さつ</rt></ruby>のみ。<br><span class="ans-trans">(×) Bukan semuanya, hanya 50 eksemplar yang dikirim bulan lalu ke toko buku sasaran.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q2-c3"><ruby>先月<rt>せんげつ</rt></ruby><ruby>対象<rt>たいしょう</rt></ruby>の<ruby>書店<rt>しょてん</rt></ruby>で「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」を<ruby>買<rt>か</rt></ruby>った<ruby>方<rt>かた</rt></ruby>に<ruby>無料<rt>むりょう</rt></ruby>で<ruby>本<rt>ほん</rt></ruby>を<ruby>送<rt>おく</rt></ruby>るので、<ruby>連絡<rt>れんらく</rt></ruby>してほしい。<div class="sent-id" id="s-q2-c3">Kami akan mengirim buku gratis kepada yang membeli "Sejarah Nihongo no Mori" bulan lalu di toko buku sasaran, jadi mohon hubungi kami.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q2-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-c3',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q2-3',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q2-3" data-hl-target="q2c3" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>無料<rt>むりょう</rt></ruby>で<ruby>新<rt>あたら</rt></ruby>しいものを<ruby>郵送<rt>ゆうそう</rt></ruby>するので<ruby>連絡<rt>れんらく</rt></ruby>してほしい、という<ruby>内容<rt>ないよう</rt></ruby>と<ruby>合<rt>あ</rt></ruby>っている。<br><span class="ans-trans">(○) Sesuai isi pengumuman: dikirim yang baru secara gratis, dan pelanggan diminta menghubungi.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q2-c4"><ruby>対象<rt>たいしょう</rt></ruby>の<ruby>書店<rt>しょてん</rt></ruby>で「<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>森<rt>もり</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>」を<ruby>買<rt>か</rt></ruby>った<ruby>方<rt>かた</rt></ruby>は<ruby>無料<rt>むりょう</rt></ruby>で<ruby>本<rt>ほん</rt></ruby>を<ruby>交換<rt>こうかん</rt></ruby>するので、<ruby>確認<rt>かくにん</rt></ruby>してほしい。<div class="sent-id" id="s-q2-c4">Yang membeli "Sejarah Nihongo no Mori" di toko buku sasaran dapat menukar buku secara gratis, jadi mohon periksa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q2-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q2-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q2-4',this)">答</button></div>
+<div class="ans-box" id="ans-q2-4" data-hl-target="q2c4" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>書店<rt>しょてん</rt></ruby>での<ruby>交換<rt>こうかん</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>っていない。<ruby>郵送<rt>ゆうそう</rt></ruby>で<ruby>送<rt>おく</rt></ruby>る。<ruby>確認<rt>かくにん</rt></ruby>ではなく<ruby>連絡<rt>れんらく</rt></ruby>。<br><span class="ans-trans">(×) Penukaran di toko buku tidak dilakukan. Buku dikirim lewat pos. Yang diminta bukan "memeriksa" melainkan "menghubungi".</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q3" class="section">
+<div class="section-header">（3）　<ruby>問55<rt>もんごじゅうご</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（3）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="line-wrap" style="margin-top:10px;"><div class="line-text" id="t-q3-body"><span data-hl="q3c3a"><ruby>子<rt>こ</rt></ruby>どものころに、<ruby>何<rt>なに</rt></ruby>かを<ruby>通<rt>とお</rt></ruby>して<ruby>深<rt>ふか</rt></ruby>い<ruby>経験<rt>けいけん</rt></ruby>をした<ruby>人<rt>ひと</rt></ruby>は、<ruby>大人<rt>おとな</rt></ruby>になってもずっとその<ruby>経験<rt>けいけん</rt></ruby>が<span class="kanji-wrap"><button class="kanji-btn"><ruby>活<rt>い</rt></ruby>きる</button><span class="kanji-pop">bermanfaat / terpakai</span></span>ものです</span>。<ruby>例<rt>たと</rt></ruby>えば、スポーツチームに<ruby>入<rt>はい</rt></ruby>って<ruby>大会<rt>たいかい</rt></ruby>で<ruby>優勝<rt>ゆうしょう</rt></ruby>したとか、<span class="kanji-wrap"><button class="kanji-btn"><ruby>書道<rt>しょどう</rt></ruby>の<ruby>段<rt>だん</rt></ruby></button><span class="kanji-pop">tingkat (dan) kaligrafi</span></span><sup>（<ruby>注<rt>ちゅう</rt></ruby>）</sup>をとったとか、もしくは<ruby>具体的<rt>ぐたいてき</rt></ruby>な<ruby>結果<rt>けっか</rt></ruby>がなかったとしても、<ruby>何<rt>なに</rt></ruby>か<ruby>一<rt>ひと</rt></ruby>つのことに<span class="kanji-wrap"><button class="kanji-btn"><ruby>夢中<rt>むちゅう</rt></ruby></button><span class="kanji-pop">asyik / larut</span></span>になって<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>頑張<rt>がんば</rt></ruby>ったという<ruby>経験<rt>けいけん</rt></ruby>です。そういう<ruby>経験<rt>けいけん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っている<ruby>人<rt>ひと</rt></ruby>は<ruby>強<rt>つよ</rt></ruby>いと<ruby>思<rt>おも</rt></ruby>います。<br>そのような<ruby>経験<rt>けいけん</rt></ruby>は、<span data-hl="q3c4"><ruby>大人<rt>おとな</rt></ruby>になって<ruby>困難<rt>こんなん</rt></ruby>なことや<span class="kanji-wrap"><button class="kanji-btn"><ruby>壁<rt>かべ</rt></ruby>にぶつかる</button><span class="kanji-pop">menghadapi hambatan</span></span>ようなことがあったとしても</span>、<span data-hl="q3c3b"><ruby>自分<rt>じぶん</rt></ruby>はできるんだという<ruby>自信<rt>じしん</rt></ruby>になり、チャレンジする<ruby>勇気<rt>ゆうき</rt></ruby>を<ruby>与<rt>あた</rt></ruby>えてくれます</span>。<div class="sent-id" id="s-q3-body">Orang yang pernah memiliki pengalaman mendalam melalui sesuatu pada masa kecilnya, pengalaman itu akan terus bermanfaat hingga dewasa. Misalnya, bergabung dengan tim olahraga dan menjuarai turnamen, meraih tingkat (dan) kaligrafi, atau, meskipun tidak ada hasil yang konkret, pengalaman asyik menekuni satu hal dan berusaha sungguh-sungguh. Saya rasa orang yang memiliki pengalaman seperti itu kuat.<br>Pengalaman seperti itu, meskipun setelah dewasa menghadapi kesulitan atau hambatan, menjadi kepercayaan diri bahwa "aku bisa", dan memberi keberanian untuk menantang.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q3-body',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-body',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-q3-note">（<ruby>注<rt>ちゅう</rt></ruby>）<ruby>書道<rt>しょどう</rt></ruby>の<ruby>段<rt>だん</rt></ruby>：<ruby>書道<rt>しょどう</rt></ruby>のレベルを<ruby>示<rt>しめ</rt></ruby>す、<ruby>資格<rt>しかく</rt></ruby>のようなもの<div class="sent-id" id="s-q3-note">(Catatan) Tingkat (dan) kaligrafi: sejenis kualifikasi yang menunjukkan level kaligrafi.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q3-note',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-note',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q3-q"><strong>55　<ruby>筆者<rt>ひっしゃ</rt></ruby>によると、<ruby>困難<rt>こんなん</rt></ruby>なことにチャレンジするためには、<ruby>何<rt>なに</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>か。</strong><div class="sent-id" id="s-q3-q">55. Menurut penulis, apa yang diperlukan untuk menantang hal yang sulit?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q3-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q3-c1"><ruby>大人<rt>おとな</rt></ruby>になってから<ruby>夢中<rt>むちゅう</rt></ruby>になることを<ruby>見<rt>み</rt></ruby>つけた<ruby>経験<rt>けいけん</rt></ruby><div class="sent-id" id="s-q3-c1">Pengalaman menemukan sesuatu yang membuat asyik setelah dewasa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q3-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q3-1',this)">答</button></div>
+<div class="ans-box" id="ans-q3-1"><strong class="batsu">（×）</strong>　「<ruby>大人<rt>おとな</rt></ruby>になってから」ではなく「<ruby>子<rt>こ</rt></ruby>どものころ」の<ruby>経験<rt>けいけん</rt></ruby>。<br><span class="ans-trans">(×) Bukan "setelah dewasa", melainkan pengalaman "pada masa kecil".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q3-c2"><ruby>努力<rt>どりょく</rt></ruby>して<ruby>自分<rt>じぶん</rt></ruby>のことを<ruby>考<rt>かんが</rt></ruby>え<ruby>直<rt>なお</rt></ruby>す<ruby>経験<rt>けいけん</rt></ruby><div class="sent-id" id="s-q3-c2">Pengalaman berusaha dan memikirkan ulang tentang diri sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q3-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q3-2',this)">答</button></div>
+<div class="ans-box" id="ans-q3-2"><strong class="batsu">（×）</strong>　「<ruby>自分<rt>じぶん</rt></ruby>のことを<ruby>考<rt>かんが</rt></ruby>え<ruby>直<rt>なお</rt></ruby>す」とは<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak menyebut "memikirkan ulang tentang diri sendiri".</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q3-c3"><ruby>子<rt>こ</rt></ruby>どものころに<ruby>何<rt>なに</rt></ruby>かに<ruby>熱中<rt>ねっちゅう</rt></ruby>して<ruby>努力<rt>どりょく</rt></ruby>した<ruby>経験<rt>けいけん</rt></ruby><div class="sent-id" id="s-q3-c3">Pengalaman asyik dan berusaha keras pada sesuatu pada masa kecil.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q3-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-c3',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q3-3',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q3-3" data-hl-target="q3c3a q3c3b" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>子<rt>こ</rt></ruby>どものころの<ruby>夢中<rt>むちゅう</rt></ruby>で<ruby>頑張<rt>がんば</rt></ruby>った<ruby>経験<rt>けいけん</rt></ruby>が、<ruby>自信<rt>じしん</rt></ruby>とチャレンジする<ruby>勇気<rt>ゆうき</rt></ruby>になる。<br><span class="ans-trans">(○) Pengalaman asyik dan berjuang pada masa kecil menjadi kepercayaan diri dan keberanian untuk menantang.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q3-c4"><ruby>子<rt>こ</rt></ruby>どものころに<ruby>壁<rt>かべ</rt></ruby>にぶつかった<ruby>経験<rt>けいけん</rt></ruby><div class="sent-id" id="s-q3-c4">Pengalaman menghadapi hambatan pada masa kecil.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q3-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q3-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q3-4',this)">答</button></div>
+<div class="ans-box" id="ans-q3-4" data-hl-target="q3c4" data-hl-type="wrong"><strong class="batsu">（×）</strong>　「<ruby>壁<rt>かべ</rt></ruby>にぶつかる」のは<ruby>大人<rt>おとな</rt></ruby>になってからの<ruby>話<rt>はなし</rt></ruby>。<ruby>必要<rt>ひつよう</rt></ruby>なのは<ruby>夢中<rt>むちゅう</rt></ruby>で<ruby>頑張<rt>がんば</rt></ruby>った<ruby>経験<rt>けいけん</rt></ruby>。<br><span class="ans-trans">(×) "Menghadapi hambatan" adalah cerita setelah dewasa. Yang diperlukan adalah pengalaman asyik dan berusaha keras.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q4" class="section">
+<div class="section-header">（4）　<ruby>問56<rt>もんごじゅうろく</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（4）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="p9-context-label" id="t-q4-note"><ruby>以下<rt>いか</rt></ruby>は、ある<ruby>動画<rt>どうが</rt></ruby>サービスの<ruby>会社<rt>かいしゃ</rt></ruby>から<ruby>届<rt>とど</rt></ruby>いたメールである。<div class="sent-id" id="s-q4-note">Berikut adalah email yang diterima dari sebuah perusahaan layanan video.</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q4-note',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-note',this)">文</button></div>
+<div class="doc-box">
+<div class="line-wrap"><div class="line-text" id="t-q4-h">「<ruby>映画<rt>えいが</rt></ruby>の<ruby>森<rt>もり</rt></ruby>」<ruby>会員<rt>かいいん</rt></ruby>のお<ruby>客様<rt>きゃくさま</rt></ruby>へのご<ruby>案内<rt>あんない</rt></ruby><div class="sent-id" id="s-q4-h">Informasi untuk pelanggan anggota "Eiga no Mori"</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-h',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-h',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q4-1">いつも<ruby>映画<rt>えいが</rt></ruby>の<ruby>森<rt>もり</rt></ruby>をご<ruby>利用<rt>りよう</rt></ruby>くださりありがとうございます。<div class="sent-id" id="s-q4-1">Terima kasih telah selalu menggunakan Eiga no Mori.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q4-2"><ruby>会員<rt>かいいん</rt></ruby>の<ruby>方<rt>かた</rt></ruby>にはこれまで<span class="kanji-wrap"><button class="kanji-btn"><ruby>月額<rt>げつがく</rt></ruby></button><span class="kanji-pop">biaya bulanan</span></span>1,000<ruby>円<rt>えん</rt></ruby>（<ruby>利用開始日<rt>りようかいしび</rt></ruby>から1か<ruby>月分<rt>げつぶん</rt></ruby>）をお<ruby>支払<rt>しはら</rt></ruby>いしていただいておりましたが、<ruby>来年<rt>らいねん</rt></ruby>1<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>ついたち</rt></ruby>より<ruby>一年分<rt>いちねんぶん</rt></ruby>まとめてお<ruby>支払<rt>しはら</rt></ruby>いしていただける<ruby>新<rt>あたら</rt></ruby>しいプランが<ruby>始<rt>はじ</rt></ruby>まります。<div class="sent-id" id="s-q4-2">Selama ini para anggota membayar 1.000 yen per bulan (untuk 1 bulan sejak tanggal mulai penggunaan), tetapi mulai 1 Januari tahun depan akan dimulai paket baru yang dibayar sekaligus untuk satu tahun.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-2',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q4-3"><span data-hl="q4c1a"><span class="kanji-wrap"><button class="kanji-btn"><ruby>年額<rt>ねんがく</rt></ruby></button><span class="kanji-pop">biaya tahunan</span></span>（12か<ruby>月分<rt>げつぶん</rt></ruby>）は10,800<ruby>円<rt>えん</rt></ruby></span>で、1か<ruby>月<rt>げつ</rt></ruby>あたり900<ruby>円<rt>えん</rt></ruby>でご<ruby>利用<rt>りよう</rt></ruby>いただけるので、<span class="kanji-wrap"><button class="kanji-btn"><ruby>長期契約<rt>ちょうきけいやく</rt></ruby></button><span class="kanji-pop">kontrak jangka panjang</span></span>の<ruby>場合<rt>ばあい</rt></ruby>はお<ruby>得<rt>とく</rt></ruby>です。<div class="sent-id" id="s-q4-3">Biaya tahunan (untuk 12 bulan) adalah 10.800 yen, dan bisa digunakan dengan 900 yen per bulan, sehingga hemat untuk kontrak jangka panjang.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-3',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q4-4">お<ruby>客様<rt>きゃくさま</rt></ruby>は、<ruby>今年<rt>ことし</rt></ruby>の11<ruby>月<rt>がつ</rt></ruby>10<ruby>日<rt>とおか</rt></ruby>から<span class="kanji-wrap"><button class="kanji-btn"><ruby>契約<rt>けいやく</rt></ruby></button><span class="kanji-pop">kontrak</span></span>されているので、<ruby>一年分<rt>いちねんぶん</rt></ruby>まとめてお<ruby>支払<rt>しはら</rt></ruby>いしていただく<ruby>場合<rt>ばあい</rt></ruby>、<span data-hl="q4c1b">12<ruby>月<rt>がつ</rt></ruby>のお<ruby>支払<rt>しはら</rt></ruby>いは12<ruby>月<rt>がつ</rt></ruby>10<ruby>日<rt>とおか</rt></ruby>から31<ruby>日<rt>にち</rt></ruby>の<ruby>分<rt>ぶん</rt></ruby>の500<ruby>円<rt>えん</rt></ruby>のみお<ruby>支払<rt>しはら</rt></ruby>いください</span>。<div class="sent-id" id="s-q4-4">Karena Anda berlangganan sejak 10 November tahun ini, jika membayar sekaligus untuk satu tahun, pembayaran bulan Desember cukup 500 yen saja untuk 10 sampai 31 Desember.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-4',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-q4-f"><ruby>動画<rt>どうが</rt></ruby>サービス「<ruby>映画<rt>えいが</rt></ruby>の<ruby>森<rt>もり</rt></ruby>」<div class="sent-id" id="s-q4-f">Layanan video "Eiga no Mori"</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q4-f',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-f',this)">文</button></div></div>
+</div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q4-q"><strong>56　この<ruby>会員<rt>かいいん</rt></ruby>のお<ruby>客様<rt>きゃくさま</rt></ruby>は、<ruby>今年<rt>ことし</rt></ruby>の12<ruby>月<rt>がつ</rt></ruby>から<ruby>来年<rt>らいねん</rt></ruby>12<ruby>月<rt>がつ</rt></ruby>までの<ruby>会費<rt>かいひ</rt></ruby>をどのように<ruby>支払<rt>しはら</rt></ruby>うとお<ruby>得<rt>とく</rt></ruby>になるか。</strong><div class="sent-id" id="s-q4-q">56. Bagaimana pelanggan anggota ini membayar iuran dari Desember tahun ini sampai Desember tahun depan agar lebih hemat?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q4-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-q',this)">文</button></div>
+<ol class="p9-choices">
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q4-c1"><ruby>今年<rt>ことし</rt></ruby>の12<ruby>月分<rt>がつぶん</rt></ruby>の500<ruby>円<rt>えん</rt></ruby>と、<ruby>来年<rt>らいねん</rt></ruby>1<ruby>年分<rt>ねんぶん</rt></ruby>の10,800<ruby>円<rt>えん</rt></ruby>を<ruby>支払<rt>しはら</rt></ruby>う。<div class="sent-id" id="s-q4-c1">Membayar 500 yen untuk Desember tahun ini, dan 10.800 yen untuk 1 tahun tahun depan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q4-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-c1',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q4-1',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q4-1" data-hl-target="q4c1a q4c1b" data-hl-type="correct"><strong class="maru">（○）</strong>　12<ruby>月<rt>がつ</rt></ruby>は500<ruby>円<rt>えん</rt></ruby>のみ、<ruby>来年<rt>らいねん</rt></ruby>は<ruby>年額<rt>ねんがく</rt></ruby>10,800<ruby>円<rt>えん</rt></ruby>。<ruby>本文<rt>ほんぶん</rt></ruby>と<ruby>合<rt>あ</rt></ruby>っている。<br><span class="ans-trans">(○) Desember cukup 500 yen, tahun depan biaya tahunan 10.800 yen. Sesuai teks.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q4-c2"><ruby>今年<rt>ことし</rt></ruby>の12<ruby>月分<rt>がつぶん</rt></ruby>の500<ruby>円<rt>えん</rt></ruby>と、<ruby>来年<rt>らいねん</rt></ruby>の1<ruby>月分<rt>がつぶん</rt></ruby>の900<ruby>円<rt>えん</rt></ruby>を<ruby>支払<rt>しはら</rt></ruby>う。<div class="sent-id" id="s-q4-c2">Membayar 500 yen untuk Desember tahun ini, dan 900 yen untuk Januari tahun depan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q4-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q4-2',this)">答</button></div>
+<div class="ans-box" id="ans-q4-2"><strong class="batsu">（×）</strong>　900<ruby>円<rt>えん</rt></ruby>は1か<ruby>月<rt>げつ</rt></ruby>あたりの<ruby>金額<rt>きんがく</rt></ruby>。<ruby>支払<rt>しはら</rt></ruby>いは<ruby>一年分<rt>いちねんぶん</rt></ruby>まとめて。<br><span class="ans-trans">(×) 900 yen adalah jumlah per bulan. Pembayarannya sekaligus untuk satu tahun.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q4-c3"><ruby>今年<rt>ことし</rt></ruby>の12<ruby>月分<rt>がつぶん</rt></ruby>の500<ruby>円<rt>えん</rt></ruby>と、<ruby>来年<rt>らいねん</rt></ruby>の1<ruby>月分<rt>がつぶん</rt></ruby>の1,000<ruby>円<rt>えん</rt></ruby>を<ruby>支払<rt>しはら</rt></ruby>う。<div class="sent-id" id="s-q4-c3">Membayar 500 yen untuk Desember tahun ini, dan 1.000 yen untuk Januari tahun depan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q4-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q4-3',this)">答</button></div>
+<div class="ans-box" id="ans-q4-3"><strong class="batsu">（×）</strong>　1,000<ruby>円<rt>えん</rt></ruby>はこれまでの<ruby>月額<rt>げつがく</rt></ruby>。<ruby>新<rt>あたら</rt></ruby>しいプランではない。<br><span class="ans-trans">(×) 1.000 yen adalah biaya bulanan yang lama, bukan paket baru.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q4-c4"><ruby>今年<rt>ことし</rt></ruby>の12<ruby>月分<rt>がつぶん</rt></ruby>の500<ruby>円<rt>えん</rt></ruby>と、<ruby>来年<rt>らいねん</rt></ruby>1<ruby>年分<rt>ねんぶん</rt></ruby>の12,000<ruby>円<rt>えん</rt></ruby>を<ruby>支払<rt>しはら</rt></ruby>う。<div class="sent-id" id="s-q4-c4">Membayar 500 yen untuk Desember tahun ini, dan 12.000 yen untuk 1 tahun tahun depan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q4-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q4-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q4-4',this)">答</button></div>
+<div class="ans-box" id="ans-q4-4"><strong class="batsu">（×）</strong>　12,000<ruby>円<rt>えん</rt></ruby>は1,000<ruby>円<rt>えん</rt></ruby>×12か<ruby>月<rt>げつ</rt></ruby>。<ruby>年額<rt>ねんがく</rt></ruby>は10,800<ruby>円<rt>えん</rt></ruby>。<br><span class="ans-trans">(×) 12.000 yen adalah 1.000 yen × 12 bulan. Biaya tahunannya 10.800 yen.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q5" class="section">
+<div class="section-header">（5）　<ruby>問57<rt>もんごじゅうなな</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（5）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="line-wrap" style="margin-top:10px;"><div class="line-text" id="t-q5-body"><ruby>多様<rt>たよう</rt></ruby>な<ruby>食品<rt>しょくひん</rt></ruby>をたくさんの<span class="kanji-wrap"><button class="kanji-btn"><ruby>選択肢<rt>せんたくし</rt></ruby></button><span class="kanji-pop">pilihan</span></span>の<ruby>中<rt>なか</rt></ruby>から<ruby>選<rt>えら</rt></ruby>ぶことができる<ruby>現代社会<rt>げんだいしゃかい</rt></ruby>では、「<ruby>食品<rt>しょくひん</rt></ruby>ロス」<sup>（<ruby>注<rt>ちゅう</rt></ruby>1）</sup>が<ruby>社会問題<rt>しゃかいもんだい</rt></ruby>となっている。もちろん、<ruby>生活<rt>せいかつ</rt></ruby>を<ruby>豊<rt>ゆた</rt></ruby>かで<ruby>便利<rt>べんり</rt></ruby>にするために、<span data-hl="q5c2"><ruby>選択肢<rt>せんたくし</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いのは<ruby>良<rt>よ</rt></ruby>いことなのだが</span>、<ruby>選択肢<rt>せんたくし</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いために、<ruby>選択<rt>せんたく</rt></ruby>されずに<span class="kanji-wrap"><button class="kanji-btn"><ruby>賞味期限<rt>しょうみきげん</rt></ruby></button><span class="kanji-pop">batas waktu terbaik dikonsumsi</span></span>が<ruby>切<rt>き</rt></ruby>れた<ruby>食品<rt>しょくひん</rt></ruby>、また<span data-hl="q5c1"><ruby>形<rt>かたち</rt></ruby>や<ruby>色<rt>いろ</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>い<ruby>野菜<rt>やさい</rt></ruby>などは<ruby>大量<rt>たいりょう</rt></ruby>に<span class="kanji-wrap"><button class="kanji-btn"><ruby>廃棄<rt>はいき</rt></ruby></button><span class="kanji-pop">membuang</span></span><sup>（<ruby>注<rt>ちゅう</rt></ruby>2）</sup>されている</span>のが<ruby>現状<rt>げんじょう</rt></ruby>だ。<br>これは、<span data-hl="q5c3"><ruby>消費者<rt>しょうひしゃ</rt></ruby>が<ruby>質<rt>しつ</rt></ruby>の<ruby>高<rt>たか</rt></ruby>い<ruby>食品<rt>しょくひん</rt></ruby>を<ruby>求<rt>もと</rt></ruby>めすぎている</span>のも<ruby>一<rt>ひと</rt></ruby>つの<ruby>原因<rt>げんいん</rt></ruby>と<ruby>言<rt>い</rt></ruby>えるだろう。<span data-hl="q5c4"><ruby>食品<rt>しょくひん</rt></ruby>ロスの<span class="kanji-wrap"><button class="kanji-btn"><ruby>悪循環<rt>あくじゅんかん</rt></ruby></button><span class="kanji-pop">lingkaran setan</span></span><sup>（<ruby>注<rt>ちゅう</rt></ruby>3）</sup>を<ruby>止<rt>と</rt></ruby>めるためには、まずは<ruby>消費者個人<rt>しょうひしゃこじん</rt></ruby>の<ruby>意識<rt>いしき</rt></ruby>を<ruby>改<rt>あらた</rt></ruby>めなければいけないのではないか</span>。<div class="sent-id" id="s-q5-body">Di masyarakat modern yang bisa memilih beragam makanan dari banyak pilihan, "food loss" (makanan terbuang) menjadi masalah sosial. Tentu saja, banyaknya pilihan itu baik untuk membuat hidup kaya dan nyaman, tetapi karena pilihan yang banyak, makanan yang tidak terpilih dan melewati batas waktu terbaik dikonsumsi, serta sayuran dengan bentuk dan warna yang buruk, dibuang dalam jumlah besar. Itulah kenyataannya.<br>Hal ini bisa dikatakan salah satu penyebabnya adalah konsumen terlalu menuntut makanan berkualitas tinggi. Untuk menghentikan lingkaran setan food loss, bukankah pertama-tama kesadaran masing-masing konsumen harus diubah?</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q5-body',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-body',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-q5-n1">（<ruby>注<rt>ちゅう</rt></ruby>1）<ruby>食品<rt>しょくひん</rt></ruby>ロス：<ruby>食品<rt>しょくひん</rt></ruby>が<ruby>食<rt>た</rt></ruby>べられないで<ruby>捨<rt>す</rt></ruby>てられること<div class="sent-id" id="s-q5-n1">(Catatan 1) Food loss: makanan dibuang tanpa dimakan.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q5-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-n1',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-q5-n2">（<ruby>注<rt>ちゅう</rt></ruby>2）<ruby>廃棄<rt>はいき</rt></ruby>：<ruby>捨<rt>す</rt></ruby>てること<div class="sent-id" id="s-q5-n2">(Catatan 2) Haiki: membuang.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q5-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-n2',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-q5-n3">（<ruby>注<rt>ちゅう</rt></ruby>3）<ruby>悪循環<rt>あくじゅんかん</rt></ruby>：<ruby>互<rt>たが</rt></ruby>いに<ruby>影響<rt>えいきょう</rt></ruby>しあって、どんどん<ruby>悪<rt>わる</rt></ruby>くなること<div class="sent-id" id="s-q5-n3">(Catatan 3) Lingkaran setan: saling memengaruhi dan semakin lama semakin buruk.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-q5-n3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-n3',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q5-q"><strong>57　<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>えに<ruby>合<rt>あ</rt></ruby>うのはどれか。</strong><div class="sent-id" id="s-q5-q">57. Manakah yang sesuai dengan pendapat penulis?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q5-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q5-c1"><ruby>食品<rt>しょくひん</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>や<ruby>形<rt>かたち</rt></ruby>にこだわることは、<ruby>意識<rt>いしき</rt></ruby>を<ruby>変<rt>か</rt></ruby>える<ruby>上<rt>うえ</rt></ruby>で<ruby>重要<rt>じゅうよう</rt></ruby>だ。<div class="sent-id" id="s-q5-c1">Mementingkan warna dan bentuk makanan itu penting untuk mengubah kesadaran.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q5-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q5-1',this)">答</button></div>
+<div class="ans-box" id="ans-q5-1" data-hl-target="q5c1" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>形<rt>かたち</rt></ruby>や<ruby>色<rt>いろ</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>い<ruby>野菜<rt>やさい</rt></ruby>が<ruby>捨<rt>す</rt></ruby>てられていることが<ruby>問題<rt>もんだい</rt></ruby>。こだわることが<ruby>重要<rt>じゅうよう</rt></ruby>とは<ruby>言<rt>い</rt></ruby>っていない。<br><span class="ans-trans">(×) Sayuran dengan bentuk/warna buruk yang dibuang itulah masalahnya. Penulis tidak mengatakan bahwa mementingkannya itu penting.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q5-c2">たくさんの<ruby>選択肢<rt>せんたくし</rt></ruby>の<ruby>中<rt>なか</rt></ruby>から<ruby>食品<rt>しょくひん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>べることは、<ruby>大<rt>おお</rt></ruby>きな<ruby>問題<rt>もんだい</rt></ruby>だ。<div class="sent-id" id="s-q5-c2">Bisa memilih makanan dari banyak pilihan adalah masalah besar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q5-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q5-2',this)">答</button></div>
+<div class="ans-box" id="ans-q5-2" data-hl-target="q5c2" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>選択肢<rt>せんたくし</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いのは<ruby>良<rt>よ</rt></ruby>いこと、と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(×) Teks menyebut bahwa banyaknya pilihan adalah hal yang baik.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q5-c3"><ruby>悪循環<rt>あくじゅんかん</rt></ruby>を<ruby>止<rt>と</rt></ruby>めるには、もっと<ruby>質<rt>しつ</rt></ruby>の<ruby>良<rt>よ</rt></ruby>い<ruby>食品<rt>しょくひん</rt></ruby>を<ruby>求<rt>もと</rt></ruby>めるべきだ。<div class="sent-id" id="s-q5-c3">Untuk menghentikan lingkaran setan, harus menuntut makanan yang lebih berkualitas.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q5-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q5-3',this)">答</button></div>
+<div class="ans-box" id="ans-q5-3" data-hl-target="q5c3" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>質<rt>しつ</rt></ruby>の<ruby>高<rt>たか</rt></ruby>い<ruby>食品<rt>しょくひん</rt></ruby>を<ruby>求<rt>もと</rt></ruby>めすぎていることが<ruby>原因<rt>げんいん</rt></ruby>の<ruby>一<rt>ひと</rt></ruby>つ。<ruby>逆<rt>ぎゃく</rt></ruby>の<ruby>内容<rt>ないよう</rt></ruby>。<br><span class="ans-trans">(×) Menuntut makanan berkualitas tinggi secara berlebihan adalah salah satu penyebabnya. Isinya berlawanan.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q5-c4"><ruby>消費者<rt>しょうひしゃ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>え<ruby>方<rt>かた</rt></ruby>を<ruby>変<rt>か</rt></ruby>えることが、<ruby>食品<rt>しょくひん</rt></ruby>ロスを<ruby>減<rt>へ</rt></ruby>らすことにつながる。<div class="sent-id" id="s-q5-c4">Mengubah cara berpikir konsumen akan mengarah pada berkurangnya food loss.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q5-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q5-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q5-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q5-4" data-hl-target="q5c4" data-hl-type="correct"><strong class="maru">（○）</strong>　「<ruby>消費者個人<rt>しょうひしゃこじん</rt></ruby>の<ruby>意識<rt>いしき</rt></ruby>を<ruby>改<rt>あらた</rt></ruby>めなければいけない」と<ruby>書<rt>か</rt></ruby>いてある。<ruby>本文<rt>ほんぶん</rt></ruby>と<ruby>合<rt>あ</rt></ruby>っている。<br><span class="ans-trans">(○) Teks menyebut "kesadaran masing-masing konsumen harus diubah". Sesuai teks.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<script>
+(function(){var h=document.querySelector('header'),n=document.getElementById('main-nav');function s(){if(h&&n)n.style.top=h.offsetHeight+'px';}s();window.addEventListener('resize',s);})();
+function toggleRuby(id,btn){var el=document.getElementById(id);if(!el)return;var on=btn.classList.toggle('open');el.querySelectorAll('ruby').forEach(function(r){r.classList.toggle('show',on);});}
+function toggleSent(id,btn){var el=document.getElementById(id);if(!el)return;el.classList.toggle('show');btn.classList.toggle('open');}
+function toggleAnsBox(id,btn){
+  var box=document.getElementById(id);if(!box)return;
+  var opening=!box.classList.contains('show');
+  box.classList.toggle('show');btn.classList.toggle('open');
+  var li=btn.closest('li');
+  if(li&&btn.classList.contains('btn-ans-correct')){li.classList.toggle('p9-ans-correct',opening);}
+  var t=box.getAttribute('data-hl-target'),ty=box.getAttribute('data-hl-type');
+  if(!t)return;
+  t.split(' ').forEach(function(k){
+    document.querySelectorAll('[data-hl="'+k+'"]').forEach(function(sp){
+      if(opening){sp.classList.add(ty==='correct'?'hl-correct':'hl-wrong');}
+      else{sp.classList.remove('hl-correct','hl-wrong');}
+    });
+  });
+}
+function closePops(){document.querySelectorAll('.kanji-wrap.open').forEach(function(w){w.classList.remove('open');});}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.kanji-btn');
+  if(b){var w=b.closest('.kanji-wrap');var o=w.classList.contains('open');closePops();if(!o)w.classList.add('open');return;}
+  closePops();
+});
+</script>
+</body>
+</html>

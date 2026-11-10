@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模擬試験第2回｜N2 読解 問題14</title>
+<style>
+:root{--bg:#f8f8f6;--surface:#fff;--surface2:#f0f0ee;--border:#d8d8d4;--text:#222;--text-light:#666;--accent:#3a6b8a;--accent-light:#e8f0f5;--tag-bg:#222;--tag-text:#fff;--btn:#bbb;--btn-text:#555;--ruby-color:#3a6b8a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.85}
+header{background:var(--accent);color:#fff;padding:20px 24px 16px;position:sticky;top:0;z-index:100}
+header h1{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+header p{font-size:.78rem;opacity:.8;margin-top:2px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;position:sticky;top:57px;z-index:99}
+nav a{color:var(--accent);text-decoration:none;padding:3px 8px;border-radius:3px;border:1px solid var(--accent-light)}
+nav a:hover{background:var(--accent-light)}
+main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+main.wide{max-width:1100px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.section-header{background:var(--accent);color:#fff;padding:10px 18px;font-size:1rem;font-weight:700}
+.section-body{padding:18px}
+.mondai-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 4px;background:var(--tag-bg);color:#fff;border-radius:3px;font-size:.85rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.important-box{background:#fff8e1;border-left:3px solid #f0a500;padding:12px 16px;border-radius:0 4px 4px 0;font-size:.9rem;font-weight:700;margin:12px 0}
+.rei-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:14px 16px;margin:10px 0 16px;font-size:.93rem}
+.rei-label{display:inline-block;background:var(--tag-bg);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:2px;margin-bottom:8px}
+.line-wrap{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.line-text{flex:1;min-width:0}
+.btn-group{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding-top:2px}
+.btn-r,.btn-s{font-size:.65rem;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:1px 5px;cursor:pointer;line-height:1.4;white-space:nowrap}
+.btn-r:hover,.btn-s:hover{background:#eee}
+.btn-r.open,.btn-s.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+ruby rt{display:none;font-size:.6em;color:var(--ruby-color)}
+ruby.show rt{display:revert}
+.ans-box ruby rt{display:revert}
+.sent-id{display:none;font-size:.8rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:4px 8px;margin-top:4px;font-weight:400}
+.sent-id.show{display:block}
+u{text-decoration-color:var(--accent);text-underline-offset:3px}
+sup{font-size:.7em}
+.note-box{font-size:.82rem;color:var(--text-light);margin-top:8px;padding-left:4px}
+.chuu-box{background:var(--surface2);border-left:3px solid var(--border);border-radius:0 4px 4px 0;padding:8px 14px;margin:8px 0 0;font-size:.85rem;color:var(--text-light)}
+.p9-cols{display:grid;grid-template-columns:54% 46%;gap:0;align-items:start;margin:12px 0}
+.p9-left{padding-right:18px;border-right:2px solid var(--border);font-size:.93rem;line-height:1.85}
+.p9-right{padding-left:22px;font-size:.9rem}
+.p9-context-label{font-size:.82rem;color:var(--text-light);border-bottom:1px dashed var(--border);padding-bottom:6px}
+.p9-btn-row{display:flex;gap:4px;margin:4px 0 8px}
+.p9-q-label{font-size:.93rem;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:4px}
+.p9-q-label .sent-id{color:#1a3a6b}
+.p9-qblock{margin-bottom:22px}
+.p9-choices{list-style:none;padding:0;margin:8px 0 0;counter-reset:cc}
+.p9-choices li{counter-increment:cc;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.7}
+.p9-choices li:last-child{border-bottom:none}
+.p9-choices li::before{content:counter(cc);display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.p9-choices li.p9-ans-correct::before{background:#27ae60;color:#fff;border-color:#27ae60}
+.p9-choice-text{flex:1;min-width:0}
+.p9-choice-btns{display:flex;flex-direction:row;align-items:flex-start;gap:3px;flex-shrink:0}
+.p9-choices li .ans-box{flex-basis:100%;margin-left:26px;margin-top:4px}
+.btn-ans{font-size:.68rem;font-weight:700;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;margin-top:1px}
+.btn-ans:hover{background:#eee}
+.btn-ans.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ans-correct.open{background:#27ae60;color:#fff;border-color:#27ae60}
+.ans-box{display:none;margin-top:6px;background:var(--surface2);border-left:3px solid #bbb;border-radius:0 4px 4px 0;padding:8px 10px;font-size:.82rem;line-height:1.7;color:#555}
+.ans-box.show{display:block}
+.ans-box-correct{color:#1a5c2a;background:#edf7f0;border-left-color:#27ae60}
+.maru{color:#27ae60;font-weight:700}
+.batsu{color:#c0392b;font-weight:700}
+.ans-trans{display:block;margin-top:5px;font-size:.78rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:3px 7px}
+.hl-correct{background:#fff59d;border-radius:3px;padding:1px 2px}
+.hl-wrong{background:#ffcdd2;border-radius:3px;padding:1px 2px}
+.doc-box{border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:12px;background:#fafaf8;font-size:.9rem;line-height:1.9}
+.kanji-wrap{display:inline;position:relative}
+.kanji-btn{display:inline;cursor:pointer;border:none;border-bottom:1px dotted #aaa;color:inherit;background:none;padding:0;font:inherit;line-height:inherit}
+.kanji-btn:hover{background:#f0f5f0;border-radius:2px}
+.kanji-pop{display:none;position:absolute;left:0;top:100%;margin-top:4px;background:#1a6b3a;color:#fff;font-size:.75rem;line-height:1.5;padding:3px 8px;border-radius:4px;white-space:nowrap;z-index:200;pointer-events:none;font-weight:400}
+.kanji-wrap.open .kanji-pop{display:block}
+.q-header{display:flex;align-items:flex-start;gap:8px;margin:16px 0 10px}
+.q-header .line-text{flex:1;font-weight:700;font-size:.95rem}
+ol.content-list{padding-left:20px;margin-left:8px}
+ol.content-list li{margin-bottom:6px}
+.passage-para{text-indent:1em;margin-bottom:.7em}
+.passage-label{font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:4px}
+.poster-box{border:2px solid var(--border);border-radius:6px;overflow:hidden;margin:12px 0 16px;font-size:.9rem;background:#fff}
+.poster-title{background:var(--tag-bg);color:#fff;text-align:center;padding:12px 14px;font-weight:700;font-size:1.05rem;letter-spacing:.05em}
+.poster-info{padding:14px 18px;font-size:.88rem;line-height:1.9}
+.poster-info .sec-title{font-weight:700;background:var(--surface2);border-left:3px solid var(--accent);padding:3px 10px;border-radius:0 3px 3px 0;margin:10px 0 4px;font-size:.88rem}
+.poster-info hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.poster-contact{background:var(--surface2);border-top:1px solid var(--border);padding:8px 18px;font-size:.78rem;color:var(--text-light);text-align:right}
+table.fee{border-collapse:collapse;width:100%;font-size:.8rem;text-align:center;background:#fff}
+table.fee th,table.fee td{border:1px solid #555;padding:5px 6px}
+table.fee th{background:var(--surface2)}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+@media(max-width:700px){.p9-cols{grid-template-columns:1fr}.p9-left{border-right:none;border-bottom:2px solid var(--border);padding-right:0;padding-bottom:14px;margin-bottom:10px}.p9-right{padding-left:0}body{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>模擬試験 第2回｜N2 読解　問題14　情報検索</h1>
+  <p>情報検索｜Pencarian Informasi — インドネシア語訳付き</p>
+</header>
+<nav id="main-nav"><a href="#intro">問題14について</a><a href="#poster">利用案内</a><a href="#q72">問72</a><a href="#q73">問73</a></nav>
+<main class="">
+<div id="intro" class="section">
+<div class="section-header">問題14｜情報検索</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-intro"><ruby>問題<rt>もんだい</rt></ruby>14　<ruby>右<rt>みぎ</rt></ruby>のページは、ある<ruby>山<rt>やま</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby>の<ruby>利用案内<rt>りようあんない</rt></ruby>である。<ruby>下<rt>した</rt></ruby>の<ruby>問<rt>と</rt></ruby>いに<ruby>対<rt>たい</rt></ruby>する<ruby>答<rt>こた</rt></ruby>えとして<ruby>最<rt>もっと</rt></ruby>もよいものを、1・2・3・4から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。<div class="sent-id" id="s-intro">Soal 14: Halaman di sebelah kanan adalah informasi penggunaan sebuah arena ski di pegunungan. Pilih satu jawaban yang paling tepat dari 1・2・3・4 untuk pertanyaan di bawah.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-intro',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="poster" class="section">
+<div class="section-header">利用案内｜2031-2032シーズン特別期間利用料金</div>
+<div class="section-body">
+<div class="poster-box">
+<div class="poster-title">2031-2032シーズン<ruby>特別期間<rt>とくべつきかん</rt></ruby><ruby>利用料金<rt>りょうきん</rt></ruby></div>
+<div class="poster-info">
+<div class="line-wrap"><div class="line-text" id="t-k-title">2031-2032シーズン<ruby>特別期間<rt>とくべつきかん</rt></ruby><ruby>利用料金<rt>りょうきん</rt></ruby><div class="sent-id" id="s-k-title">Tarif penggunaan periode khusus musim 2031-2032</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-title',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-title',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-intro">2032<ruby>年<rt>ねん</rt></ruby>3<ruby>月<rt>がつ</rt></ruby>30<ruby>日<rt>にち</rt></ruby>でスキー<ruby>場<rt>じょう</rt></ruby>の<ruby>営業<rt>えいぎょう</rt></ruby>を<ruby>終了<rt>しゅうりょう</rt></ruby>する<ruby>予定<rt>よてい</rt></ruby>でしたが、2032<ruby>年<rt>ねん</rt></ruby>4<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>ついたち</rt></ruby>から2032<ruby>年<rt>ねん</rt></ruby>4<ruby>月<rt>がつ</rt></ruby>10<ruby>日<rt>とおか</rt></ruby>まで、<ruby>特別<rt>とくべつ</rt></ruby>にトッカリ<ruby>町<rt>ちょう</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby>の<ruby>営業<rt>えいぎょう</rt></ruby>を<span class="kanji-wrap"><button class="kanji-btn"><ruby>延長<rt>えんちょう</rt></ruby></button><span class="kanji-pop">memperpanjang</span></span>し、10<ruby>日間<rt>かかん</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby><ruby>利用券<rt>りようけん</rt></ruby>を<ruby>販売<rt>はんばい</rt></ruby>します。<div class="sent-id" id="s-k-intro">Operasional arena ski rencananya berakhir pada 30 Maret 2032, tetapi khusus dari 1 April 2032 sampai 10 April 2032, operasional arena ski Kota Tokkari diperpanjang, dan tiket arena ski untuk 10 hari dijual.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-intro',this)">文</button></div></div>
+<div class="tbl-scroll"><table class="fee">
+<tr><th rowspan="3" colspan="2">スキー<ruby>場<rt>じょう</rt></ruby><br><small>(arena ski)</small></th><th colspan="4"><ruby>特別期間<rt>とくべつきかん</rt></ruby><ruby>利用料金<rt>りょうきん</rt></ruby>（10<ruby>日間<rt>かかん</rt></ruby>）</th><th rowspan="3"><span class="kanji-wrap"><button class="kanji-btn"><ruby>設備<rt>せつび</rt></ruby></button><span class="kanji-pop">fasilitas</span></span></th></tr>
+<tr><th colspan="2"><span class="kanji-wrap"><button class="kanji-btn"><ruby>町民<rt>ちょうみん</rt></ruby></button><span class="kanji-pop">warga kota/desa</span></span>*の<ruby>方<rt>かた</rt></ruby></th><th colspan="2"><ruby>町民<rt>ちょうみん</rt></ruby>*<ruby>以外<rt>いがい</rt></ruby>の<ruby>方<rt>かた</rt></ruby></th></tr>
+<tr><th><ruby>大人<rt>おとな</rt></ruby></th><th><ruby>中学生<rt>ちゅうがくせい</rt></ruby><ruby>以下<rt>いか</rt></ruby><br>(15<ruby>歳以下<rt>さいいか</rt></ruby>)</th><th><ruby>大人<rt>おとな</rt></ruby></th><th><ruby>中学生<rt>ちゅうがくせい</rt></ruby><ruby>以下<rt>いか</rt></ruby><br>(15<ruby>歳以下<rt>さいいか</rt></ruby>)</th></tr>
+<tr><td style="width:28px">A</td><td>トッカリユナイテッド</td><td>6,000円</td><td>4,000円</td><td>8,000円</td><td>5,000円</td><td><span class="kanji-wrap"><button class="kanji-btn">ナイター</button><span class="kanji-pop">ski malam (sesi malam)</span></span>あり<br><span class="kanji-wrap"><button class="kanji-btn">初心者コース</button><span class="kanji-pop">jalur pemula</span></span>なし</td></tr>
+<tr><td style="width:28px">B</td><td>トッカリSHISAMUリゾート</td><td>5,500円</td><td>3,500円</td><td>7,500円</td><td>4,500円</td><td><span class="kanji-wrap"><button class="kanji-btn">ナイター</button><span class="kanji-pop">ski malam (sesi malam)</span></span>あり<br><span data-hl="h72_b"><span class="kanji-wrap"><button class="kanji-btn">初心者コース</button><span class="kanji-pop">jalur pemula</span></span>なし</span></td></tr>
+<tr><td style="width:28px">C</td><td>トッカリ国際スキー場</td><td>7,000円</td><td>5,000円</td><td>9,000円</td><td>6,000円</td><td><span class="kanji-wrap"><button class="kanji-btn">ナイター</button><span class="kanji-pop">ski malam (sesi malam)</span></span>あり<br><span data-hl="h72_c"><span class="kanji-wrap"><button class="kanji-btn">初心者コース</button><span class="kanji-pop">jalur pemula</span></span>なし</span></td></tr>
+<tr><td style="width:28px">D</td><td>トッカリオハナ・グランド</td><td><span data-hl="h72_d">7,000円</span></td><td>5,000円</td><td><span data-hl="h72_o">9,000円</span></td><td>5,000円</td><td><span class="kanji-wrap"><button class="kanji-btn">ナイター</button><span class="kanji-pop">ski malam (sesi malam)</span></span>あり<br><span data-hl="h72_bd"><span class="kanji-wrap"><button class="kanji-btn">初心者コース</button><span class="kanji-pop">jalur pemula</span></span>あり</span></td></tr>
+<tr><td style="width:28px">E</td><td>馬頭山スキー場</td><td><span data-hl="h72_e">5,500円</span></td><td>3,500円</td><td><span data-hl="h72_o">7,500円</span></td><td>4,500円</td><td><span class="kanji-wrap"><button class="kanji-btn">ナイター</button><span class="kanji-pop">ski malam (sesi malam)</span></span>なし<br><span data-hl="h72_be"><span class="kanji-wrap"><button class="kanji-btn">初心者コース</button><span class="kanji-pop">jalur pemula</span></span>あり</span></td></tr>
+</table></div>
+<div class="line-wrap"><div class="line-text" id="t-k-n1">※ナイターは17:00〜の<ruby>営業<rt>えいぎょう</rt></ruby>のことです。（<ruby>照明<rt>しょうめい</rt></ruby>がつきます。）<div class="sent-id" id="s-k-n1">※ "Nighter" berarti operasional mulai pukul 17:00. (Dilengkapi penerangan.)</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-n1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-n2">※<ruby>町民<rt>ちょうみん</rt></ruby>は、<ruby>以下<rt>いか</rt></ruby>の①〜③のいずれかに<ruby>当<rt>あ</rt></ruby>てはまる<ruby>方<rt>かた</rt></ruby>です。<div class="sent-id" id="s-k-n2">※ Warga kota/desa adalah orang yang memenuhi salah satu dari ① sampai ③ berikut.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-n2',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-n3">①トッカリ<ruby>町<rt>ちょう</rt></ruby>にお<ruby>住<rt>す</rt></ruby>まいの<ruby>方<rt>かた</rt></ruby>　②トッカリ<ruby>町<rt>ちょう</rt></ruby>に<ruby>通勤<rt>つうきん</rt></ruby>されている<ruby>方<rt>かた</rt></ruby>　<span data-hl="h72_res">③トッカリ<ruby>町<rt>ちょう</rt></ruby>に<ruby>通学<rt>つうがく</rt></ruby>されている<ruby>方<rt>かた</rt></ruby></span><div class="sent-id" id="s-k-n3">① Orang yang tinggal di Kota Tokkari　② Orang yang pulang-pergi bekerja ke Kota Tokkari　③ Orang yang pulang-pergi bersekolah ke Kota Tokkari</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-n3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-n3',this)">文</button></div></div>
+<hr>
+<div class="sec-title">【<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>期間<rt>きかん</rt></ruby>】</div>
+<div class="line-wrap"><div class="line-text" id="t-k-p1"><span data-hl="h73_old">トッカリ<ruby>町<rt>ちょう</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby>を<ruby>利用<rt>りよう</rt></ruby>したことがある<ruby>方<rt>かた</rt></ruby>：2032<ruby>年<rt>ねん</rt></ruby>2<ruby>月<rt>がつ</rt></ruby>15<ruby>日<rt>にち</rt></ruby>から2<ruby>月<rt>がつ</rt></ruby>29<ruby>日<rt>にち</rt></ruby>まで</span><div class="sent-id" id="s-k-p1">Orang yang pernah menggunakan arena ski Kota Tokkari: dari 15 Februari 2032 sampai 29 Februari.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-p1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-p1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-p2"><span data-hl="h73_new"><ruby>初<rt>はじ</rt></ruby>めて<ruby>利用<rt>りよう</rt></ruby>される<ruby>方<rt>かた</rt></ruby>：2032<ruby>年<rt>ねん</rt></ruby>3<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>ついたち</rt></ruby>から3<ruby>月<rt>がつ</rt></ruby>30<ruby>日<rt>にち</rt></ruby>まで</span><div class="sent-id" id="s-k-p2">Orang yang menggunakan untuk pertama kali: dari 1 Maret 2032 sampai 30 Maret.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-p2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-p2',this)">文</button></div></div>
+<div class="sec-title">【<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>窓口<rt>まどぐち</rt></ruby>】</div>
+<div class="line-wrap"><div class="line-text" id="t-k-w1"><span data-hl="h73_ab">A・B：トッカリホテル<ruby>横<rt>よこ</rt></ruby>リフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>（<ruby>受付<rt>うけつけ</rt></ruby>：<ruby>午前<rt>ごぜん</rt></ruby>8<ruby>時<rt>じ</rt></ruby>〜<ruby>午後<rt>ごご</rt></ruby>7<ruby>時<rt>じ</rt></ruby>まで）</span><div class="sent-id" id="s-k-w1">A・B: Loket tiket lift di samping Hotel Tokkari (penerimaan: pukul 8 pagi sampai pukul 7 malam).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-w1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-w1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-w2"><span data-hl="h73_ce">C〜E：<ruby>各<rt>かく</rt></ruby>スキー<ruby>場<rt>じょう</rt></ruby>のリフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>（<ruby>受付<rt>うけつけ</rt></ruby>：<ruby>午前<rt>ごぜん</rt></ruby>7<ruby>時<rt>じ</rt></ruby>〜<ruby>午後<rt>ごご</rt></ruby>6<ruby>時<rt>じ</rt></ruby>まで）</span><div class="sent-id" id="s-k-w2">C〜E: Loket tiket lift di masing-masing arena ski (penerimaan: pukul 7 pagi sampai pukul 6 sore).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-w2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-w2',this)">文</button></div></div>
+<div class="sec-title">【<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>方法<rt>ほうほう</rt></ruby>】</div>
+<div class="line-wrap"><div class="line-text" id="t-k-m1">・<span data-hl="h73_doc1"><ruby>指定<rt>してい</rt></ruby>の<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>窓口<rt>まどぐち</rt></ruby>で、<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>用紙<rt>ようし</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>してください。<ruby>提出<rt>ていしゅつ</rt></ruby>する<ruby>際<rt>さい</rt></ruby>には、<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>をご<ruby>提示<rt>ていじ</rt></ruby>ください。</span><div class="sent-id" id="s-k-m1">・ Serahkan formulir pendaftaran di loket pendaftaran yang ditentukan. Saat menyerahkan, tunjukkan kartu identitas.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-m1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-m1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-k-m2">・<span data-hl="h73_doc2">トッカリ<ruby>町<rt>ちょう</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby>を<ruby>利用<rt>りよう</rt></ruby>したことがある<ruby>方<rt>かた</rt></ruby>は、そのとき<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>をご<ruby>提示<rt>ていじ</rt></ruby>ください。</span><div class="sent-id" id="s-k-m2">・ Bagi yang pernah menggunakan arena ski Kota Tokkari, tunjukkan tiket lift yang digunakan saat itu.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-m2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-m2',this)">文</button></div></div>
+<div class="sec-title">【<ruby>支払<rt>しはら</rt></ruby>い】</div>
+<div class="line-wrap"><div class="line-text" id="t-k-pay">その<ruby>場<rt>ば</rt></ruby>でお<ruby>支払<rt>しはら</rt></ruby>いいただくか、3<ruby>月<rt>がつ</rt></ruby>31<ruby>日<rt>にち</rt></ruby>までに<ruby>指定<rt>してい</rt></ruby>の<ruby>金融機関<rt>きんゆうきかん</rt></ruby>で<ruby>利用料金<rt>りようりょうきん</rt></ruby>をお<ruby>支払<rt>しはら</rt></ruby>いください。<div class="sent-id" id="s-k-pay">Silakan bayar di tempat, atau bayar biaya penggunaan di lembaga keuangan yang ditentukan paling lambat 31 Maret.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-k-pay',this)">ル</button><button class="btn-s" onclick="toggleSent('s-k-pay',this)">文</button></div></div>
+</div>
+<div class="poster-contact">トッカリ<ruby>町<rt>ちょう</rt></ruby>スキー<ruby>場<rt>じょう</rt></ruby><ruby>運営委員会<rt>うんえいいいんかい</rt></ruby>　リフト<ruby>券係<rt>けんがかり</rt></ruby>　<ruby>電話<rt>でんわ</rt></ruby>：123－456－789</div>
+</div>
+
+</div>
+</div>
+<div id="q72" class="section">
+<div class="section-header">問72</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q72-q"><strong>72　トッカリ<ruby>町<rt>ちょう</rt></ruby>の<ruby>高校<rt>こうこう</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っているイさんは、トッカリ<ruby>町<rt>ちょう</rt></ruby>のスキー<ruby>場<rt>じょう</rt></ruby>の<ruby>特別期間<rt>とくべつきかん</rt></ruby>の<ruby>利用券<rt>りようけん</rt></ruby>を<ruby>購入<rt>こうにゅう</rt></ruby>したいと<ruby>思<rt>おも</rt></ruby>っている。<ruby>初心者<rt>しょしんしゃ</rt></ruby>コースがあるスキー<ruby>場<rt>じょう</rt></ruby>が<ruby>良<rt>よ</rt></ruby>い。イさんの<ruby>希望<rt>きぼう</rt></ruby>に<ruby>合<rt>あ</rt></ruby>うスキー<ruby>場<rt>じょう</rt></ruby>はどれで、<ruby>払<rt>はら</rt></ruby>うことになる<ruby>料金<rt>りょうきん</rt></ruby>はいくらか。</strong><div class="sent-id" id="s-q72-q">72. Yi yang bersekolah di SMA di Kota Tokkari ingin membeli tiket periode khusus arena ski Kota Tokkari. Ia menginginkan arena ski yang punya jalur pemula. Arena ski mana yang sesuai dengan keinginan Yi, dan berapa biaya yang harus dibayar?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q72-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q72-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q72-c1">Bの5,500円か、CかDの7,000円<div class="sent-id" id="s-q72-c1">B 5.500 yen, atau C atau D 7.000 yen.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q72-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q72-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q72-1',this)">答</button></div>
+<div class="ans-box" id="ans-q72-1" data-hl-target="h72_b h72_c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　BとCには<ruby>初心者<rt>しょしんしゃ</rt></ruby>コースがない。<br><span class="ans-trans">(×) B dan C tidak memiliki jalur pemula.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q72-c2">Dの9,000円か、Eの7,500円<div class="sent-id" id="s-q72-c2">D 9.000 yen, atau E 7.500 yen.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q72-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q72-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q72-2',this)">答</button></div>
+<div class="ans-box" id="ans-q72-2" data-hl-target="h72_o h72_res" data-hl-type="wrong"><strong class="batsu">（×）</strong>　9,000<ruby>円<rt>えん</rt></ruby>と7,500<ruby>円<rt>えん</rt></ruby>は<ruby>町民<rt>ちょうみん</rt></ruby><ruby>以外<rt>いがい</rt></ruby>の<ruby>大人<rt>おとな</rt></ruby>の<ruby>料金<rt>りょうきん</rt></ruby>。イさんは<ruby>通学<rt>つうがく</rt></ruby>しているので<ruby>町民<rt>ちょうみん</rt></ruby>。<br><span class="ans-trans">(×) 9.000 yen dan 7.500 yen adalah tarif dewasa non-warga. Yi bersekolah di Kota Tokkari, sehingga termasuk warga.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q72-c3">CかDの7,000円<div class="sent-id" id="s-q72-c3">C atau D 7.000 yen.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q72-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q72-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q72-3',this)">答</button></div>
+<div class="ans-box" id="ans-q72-3" data-hl-target="h72_c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　Cには<ruby>初心者<rt>しょしんしゃ</rt></ruby>コースがない。<br><span class="ans-trans">(×) C tidak memiliki jalur pemula.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q72-c4">Dの7,000円か、Eの5,500円<div class="sent-id" id="s-q72-c4">D 7.000 yen, atau E 5.500 yen.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q72-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q72-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q72-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q72-4" data-hl-target="h72_res h72_d h72_e h72_bd h72_be" data-hl-type="correct"><strong class="maru">（○）</strong>　トッカリ<ruby>町<rt>ちょう</rt></ruby>に<ruby>通学<rt>つうがく</rt></ruby>しているので<ruby>町民<rt>ちょうみん</rt></ruby>。<ruby>高校生<rt>こうこうせい</rt></ruby>は「<ruby>中学生<rt>ちゅうがくせい</rt></ruby><ruby>以下<rt>いか</rt></ruby>」ではないので<ruby>大人<rt>おとな</rt></ruby>の<ruby>料金<rt>りょうきん</rt></ruby>。<ruby>初心者<rt>しょしんしゃ</rt></ruby>コースがあるのはDとE。<br><span class="ans-trans">(○) Karena bersekolah di Kota Tokkari, ia adalah warga. Siswa SMA bukan "SMP ke bawah", jadi tarif dewasa. Yang punya jalur pemula adalah D dan E.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+<div id="q73" class="section">
+<div class="section-header">問73</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q73-q"><strong>73　ゴックさんは2032<ruby>年<rt>ねん</rt></ruby>2<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>ついたち</rt></ruby>に「トッカリオハナ・グランド」を<ruby>利用<rt>りよう</rt></ruby>した。2032<ruby>年<rt>ねん</rt></ruby>4<ruby>月<rt>がつ</rt></ruby>2<ruby>日<rt>ふつか</rt></ruby>にも<ruby>同<rt>おな</rt></ruby>じスキー<ruby>場<rt>じょう</rt></ruby>を<ruby>利用<rt>りよう</rt></ruby>したい<ruby>場合<rt>ばあい</rt></ruby>は、どのように<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>まなければならないか。</strong><div class="sent-id" id="s-q73-q">73. Gok menggunakan "Tokkari Ohana Grand" pada 1 Februari 2032. Jika ia ingin menggunakan arena ski yang sama juga pada 2 April 2032, bagaimana ia harus mendaftar?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q73-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q73-q',this)">文</button></div>
+<ol class="p9-choices">
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q73-c1">2<ruby>月<rt>がつ</rt></ruby>15<ruby>日<rt>にち</rt></ruby>から2<ruby>月<rt>がつ</rt></ruby>29<ruby>日<rt>にち</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に「トッカリオハナ・グランド」のリフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>に<ruby>行<rt>い</rt></ruby>き、<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>書<rt>しょ</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>し、<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>と<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>を<ruby>提示<rt>ていじ</rt></ruby>する。<div class="sent-id" id="s-q73-c1">Antara 15 Februari dan 29 Februari, pergi ke loket tiket lift "Tokkari Ohana Grand", menyerahkan formulir pendaftaran, serta menunjukkan kartu identitas dan tiket lift yang telah digunakan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q73-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q73-c1',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q73-1',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q73-1" data-hl-target="h73_old h73_ce h73_doc1 h73_doc2" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>利用<rt>りよう</rt></ruby>したことがある<ruby>方<rt>かた</rt></ruby>は2/15〜2/29。Dのリフト券売り場でC〜Eの<ruby>窓口<rt>まどぐち</rt></ruby>。<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>用紙<rt>ようし</rt></ruby>・<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>・<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>。<br><span class="ans-trans">(○) Yang pernah menggunakan mendaftar 15/2–29/2. D termasuk C〜E sehingga mendaftar di loket tiket lift masing-masing arena. Diperlukan formulir, kartu identitas, dan tiket lift yang telah digunakan.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q73-c2">2<ruby>月<rt>がつ</rt></ruby>15<ruby>日<rt>にち</rt></ruby>から2<ruby>月<rt>がつ</rt></ruby>29<ruby>日<rt>にち</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に「トッカリオハナ・グランド」のリフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>に<ruby>行<rt>い</rt></ruby>き、<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>書<rt>しょ</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>し、<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>を<ruby>提示<rt>ていじ</rt></ruby>する。<div class="sent-id" id="s-q73-c2">Antara 15 Februari dan 29 Februari, pergi ke loket tiket lift "Tokkari Ohana Grand", menyerahkan formulir pendaftaran, dan menunjukkan kartu identitas.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q73-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q73-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q73-2',this)">答</button></div>
+<div class="ans-box" id="ans-q73-2" data-hl-target="h73_doc2" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>の<ruby>提示<rt>ていじ</rt></ruby>も<ruby>必要<rt>ひつよう</rt></ruby>。<br><span class="ans-trans">(×) Tiket lift yang telah digunakan juga harus ditunjukkan.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q73-c3">2<ruby>月<rt>がつ</rt></ruby>15<ruby>日<rt>にち</rt></ruby>から2<ruby>月<rt>がつ</rt></ruby>29<ruby>日<rt>にち</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>にトッカリホテル<ruby>横<rt>よこ</rt></ruby>リフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>に<ruby>行<rt>い</rt></ruby>き、<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>書<rt>しょ</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>し、<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>と<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>を<ruby>提示<rt>ていじ</rt></ruby>する。<div class="sent-id" id="s-q73-c3">Antara 15 Februari dan 29 Februari, pergi ke loket tiket lift di samping Hotel Tokkari, menyerahkan formulir pendaftaran, serta menunjukkan kartu identitas dan tiket lift yang telah digunakan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q73-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q73-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q73-3',this)">答</button></div>
+<div class="ans-box" id="ans-q73-3" data-hl-target="h73_ab" data-hl-type="wrong"><strong class="batsu">（×）</strong>　トッカリホテル<ruby>横<rt>よこ</rt></ruby>の<ruby>窓口<rt>まどぐち</rt></ruby>はA・B。DはC〜Eの<ruby>各<rt>かく</rt></ruby>スキー<ruby>場<rt>じょう</rt></ruby>の<ruby>窓口<rt>まどぐち</rt></ruby>。<br><span class="ans-trans">(×) Loket di samping Hotel Tokkari adalah untuk A・B. D menggunakan loket masing-masing arena ski (C〜E).</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q73-c4">3<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>ついたち</rt></ruby>から3<ruby>月<rt>がつ</rt></ruby>30<ruby>日<rt>にち</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>にトッカリホテル<ruby>横<rt>よこ</rt></ruby>リフト<ruby>券売<rt>けんう</rt></ruby>り<ruby>場<rt>ば</rt></ruby>に<ruby>行<rt>い</rt></ruby>き、<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>書<rt>しょ</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>し、<ruby>身分証明書<rt>みぶんしょうめいしょ</rt></ruby>と<ruby>使用<rt>しよう</rt></ruby>したリフト<ruby>券<rt>けん</rt></ruby>を<ruby>提示<rt>ていじ</rt></ruby>する。<div class="sent-id" id="s-q73-c4">Antara 1 Maret dan 30 Maret, pergi ke loket tiket lift di samping Hotel Tokkari, menyerahkan formulir pendaftaran, serta menunjukkan kartu identitas dan tiket lift yang telah digunakan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q73-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q73-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q73-4',this)">答</button></div>
+<div class="ans-box" id="ans-q73-4" data-hl-target="h73_new h73_ab" data-hl-type="wrong"><strong class="batsu">（×）</strong>　3/1〜3/30は<ruby>初<rt>はじ</rt></ruby>めて<ruby>利用<rt>りよう</rt></ruby>する<ruby>方<rt>かた</rt></ruby>の<ruby>期間<rt>きかん</rt></ruby>。<ruby>窓口<rt>まどぐち</rt></ruby>もA・Bのもの。<br><span class="ans-trans">(×) 1/3–30/3 adalah periode bagi yang pertama kali menggunakan. Loketnya juga untuk A・B.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+
+</main>
+<script>
+(function(){var h=document.querySelector('header'),n=document.getElementById('main-nav');function s(){if(h&&n)n.style.top=h.offsetHeight+'px';}s();window.addEventListener('resize',s);})();
+function toggleRuby(id,btn){var el=document.getElementById(id);if(!el)return;var on=btn.classList.toggle('open');el.querySelectorAll('ruby').forEach(function(r){r.classList.toggle('show',on);});}
+function toggleSent(id,btn){var el=document.getElementById(id);if(!el)return;el.classList.toggle('show');btn.classList.toggle('open');}
+function toggleAnsBox(id,btn){
+  var box=document.getElementById(id);if(!box)return;
+  var opening=!box.classList.contains('show');
+  box.classList.toggle('show');btn.classList.toggle('open');
+  var li=btn.closest('li');
+  if(li&&btn.classList.contains('btn-ans-correct')){li.classList.toggle('p9-ans-correct',opening);}
+  var t=box.getAttribute('data-hl-target'),ty=box.getAttribute('data-hl-type');
+  if(!t)return;
+  t.split(' ').forEach(function(k){
+    document.querySelectorAll('[data-hl="'+k+'"]').forEach(function(sp){
+      if(opening){sp.classList.add(ty==='correct'?'hl-correct':'hl-wrong');}
+      else{sp.classList.remove('hl-correct','hl-wrong');}
+    });
+  });
+}
+function closePops(){document.querySelectorAll('.kanji-wrap.open').forEach(function(w){w.classList.remove('open');});}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.kanji-btn');
+  if(b){var w=b.closest('.kanji-wrap');var o=w.classList.contains('open');closePops();if(!o)w.classList.add('open');return;}
+  closePops();
+});
+</script>
+</body>
+</html>

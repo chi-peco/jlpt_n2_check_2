@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模擬試験第2回｜N2 読解 問題11</title>
+<style>
+:root{--bg:#f8f8f6;--surface:#fff;--surface2:#f0f0ee;--border:#d8d8d4;--text:#222;--text-light:#666;--accent:#3a6b8a;--accent-light:#e8f0f5;--tag-bg:#222;--tag-text:#fff;--btn:#bbb;--btn-text:#555;--ruby-color:#3a6b8a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.85}
+header{background:var(--accent);color:#fff;padding:20px 24px 16px;position:sticky;top:0;z-index:100}
+header h1{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+header p{font-size:.78rem;opacity:.8;margin-top:2px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;position:sticky;top:57px;z-index:99}
+nav a{color:var(--accent);text-decoration:none;padding:3px 8px;border-radius:3px;border:1px solid var(--accent-light)}
+nav a:hover{background:var(--accent-light)}
+main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+main.wide{max-width:1100px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.section-header{background:var(--accent);color:#fff;padding:10px 18px;font-size:1rem;font-weight:700}
+.section-body{padding:18px}
+.mondai-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 4px;background:var(--tag-bg);color:#fff;border-radius:3px;font-size:.85rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.important-box{background:#fff8e1;border-left:3px solid #f0a500;padding:12px 16px;border-radius:0 4px 4px 0;font-size:.9rem;font-weight:700;margin:12px 0}
+.rei-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:14px 16px;margin:10px 0 16px;font-size:.93rem}
+.rei-label{display:inline-block;background:var(--tag-bg);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:2px;margin-bottom:8px}
+.line-wrap{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.line-text{flex:1;min-width:0}
+.btn-group{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding-top:2px}
+.btn-r,.btn-s{font-size:.65rem;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:1px 5px;cursor:pointer;line-height:1.4;white-space:nowrap}
+.btn-r:hover,.btn-s:hover{background:#eee}
+.btn-r.open,.btn-s.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+ruby rt{display:none;font-size:.6em;color:var(--ruby-color)}
+ruby.show rt{display:revert}
+.ans-box ruby rt{display:revert}
+.sent-id{display:none;font-size:.8rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:4px 8px;margin-top:4px;font-weight:400}
+.sent-id.show{display:block}
+u{text-decoration-color:var(--accent);text-underline-offset:3px}
+sup{font-size:.7em}
+.note-box{font-size:.82rem;color:var(--text-light);margin-top:8px;padding-left:4px}
+.chuu-box{background:var(--surface2);border-left:3px solid var(--border);border-radius:0 4px 4px 0;padding:8px 14px;margin:8px 0 0;font-size:.85rem;color:var(--text-light)}
+.p9-cols{display:grid;grid-template-columns:54% 46%;gap:0;align-items:start;margin:12px 0}
+.p9-left{padding-right:18px;border-right:2px solid var(--border);font-size:.93rem;line-height:1.85}
+.p9-right{padding-left:22px;font-size:.9rem}
+.p9-context-label{font-size:.82rem;color:var(--text-light);border-bottom:1px dashed var(--border);padding-bottom:6px}
+.p9-btn-row{display:flex;gap:4px;margin:4px 0 8px}
+.p9-q-label{font-size:.93rem;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:4px}
+.p9-q-label .sent-id{color:#1a3a6b}
+.p9-qblock{margin-bottom:22px}
+.p9-choices{list-style:none;padding:0;margin:8px 0 0;counter-reset:cc}
+.p9-choices li{counter-increment:cc;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.7}
+.p9-choices li:last-child{border-bottom:none}
+.p9-choices li::before{content:counter(cc);display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.p9-choices li.p9-ans-correct::before{background:#27ae60;color:#fff;border-color:#27ae60}
+.p9-choice-text{flex:1;min-width:0}
+.p9-choice-btns{display:flex;flex-direction:row;align-items:flex-start;gap:3px;flex-shrink:0}
+.p9-choices li .ans-box{flex-basis:100%;margin-left:26px;margin-top:4px}
+.btn-ans{font-size:.68rem;font-weight:700;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;margin-top:1px}
+.btn-ans:hover{background:#eee}
+.btn-ans.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ans-correct.open{background:#27ae60;color:#fff;border-color:#27ae60}
+.ans-box{display:none;margin-top:6px;background:var(--surface2);border-left:3px solid #bbb;border-radius:0 4px 4px 0;padding:8px 10px;font-size:.82rem;line-height:1.7;color:#555}
+.ans-box.show{display:block}
+.ans-box-correct{color:#1a5c2a;background:#edf7f0;border-left-color:#27ae60}
+.maru{color:#27ae60;font-weight:700}
+.batsu{color:#c0392b;font-weight:700}
+.ans-trans{display:block;margin-top:5px;font-size:.78rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:3px 7px}
+.hl-correct{background:#fff59d;border-radius:3px;padding:1px 2px}
+.hl-wrong{background:#ffcdd2;border-radius:3px;padding:1px 2px}
+.doc-box{border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:12px;background:#fafaf8;font-size:.9rem;line-height:1.9}
+.kanji-wrap{display:inline;position:relative}
+.kanji-btn{display:inline;cursor:pointer;border:none;border-bottom:1px dotted #aaa;color:inherit;background:none;padding:0;font:inherit;line-height:inherit}
+.kanji-btn:hover{background:#f0f5f0;border-radius:2px}
+.kanji-pop{display:none;position:absolute;left:0;top:100%;margin-top:4px;background:#1a6b3a;color:#fff;font-size:.75rem;line-height:1.5;padding:3px 8px;border-radius:4px;white-space:nowrap;z-index:200;pointer-events:none;font-weight:400}
+.kanji-wrap.open .kanji-pop{display:block}
+.q-header{display:flex;align-items:flex-start;gap:8px;margin:16px 0 10px}
+.q-header .line-text{flex:1;font-weight:700;font-size:.95rem}
+ol.content-list{padding-left:20px;margin-left:8px}
+ol.content-list li{margin-bottom:6px}
+.passage-para{text-indent:1em;margin-bottom:.7em}
+.passage-label{font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:4px}
+.poster-box{border:2px solid var(--border);border-radius:6px;overflow:hidden;margin:12px 0 16px;font-size:.9rem;background:#fff}
+.poster-title{background:var(--tag-bg);color:#fff;text-align:center;padding:12px 14px;font-weight:700;font-size:1.05rem;letter-spacing:.05em}
+.poster-info{padding:14px 18px;font-size:.88rem;line-height:1.9}
+.poster-info .sec-title{font-weight:700;background:var(--surface2);border-left:3px solid var(--accent);padding:3px 10px;border-radius:0 3px 3px 0;margin:10px 0 4px;font-size:.88rem}
+.poster-info hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.poster-contact{background:var(--surface2);border-top:1px solid var(--border);padding:8px 18px;font-size:.78rem;color:var(--text-light);text-align:right}
+table.fee{border-collapse:collapse;width:100%;font-size:.8rem;text-align:center;background:#fff}
+table.fee th,table.fee td{border:1px solid #555;padding:5px 6px}
+table.fee th{background:var(--surface2)}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+@media(max-width:700px){.p9-cols{grid-template-columns:1fr}.p9-left{border-right:none;border-bottom:2px solid var(--border);padding-right:0;padding-bottom:14px;margin-bottom:10px}.p9-right{padding-left:0}body{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>模擬試験 第2回｜N2 読解　問題11　内容理解（中文）</h1>
+  <p>内容理解（中文）｜Pemahaman Isi Teks (Sedang) — インドネシア語訳付き</p>
+</header>
+<nav id="main-nav"><a href="#intro">問題11について</a><a href="#q11-1">（1）児童期・思春期</a><a href="#q11-2">（2）泣ける映画</a><a href="#q11-3">（3）留学と言語</a></nav>
+<main class="wide">
+<div id="intro" class="section">
+<div class="section-header">問題11｜内容理解（中文）</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-intro">問題11　<ruby>次<rt>つぎ</rt></ruby>の（1）から（3）の<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、<ruby>後<rt>あと</rt></ruby>の<ruby>問<rt>と</rt></ruby>いに<ruby>対<rt>たい</rt></ruby>する<ruby>答<rt>こた</rt></ruby>えとして<ruby>最<rt>もっと</rt></ruby>もよいものを、1・2・3・4から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。<div class="sent-id" id="s-intro">Soal 11: Bacalah teks (1) sampai (3) berikut, lalu pilih satu jawaban yang paling tepat dari 1・2・3・4 untuk pertanyaan setelahnya.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-intro',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="q11-1" class="section">
+<div class="section-header">（1）　<ruby>問58<rt>もんごじゅうはち</rt></ruby>〜<ruby>問60<rt>もんろくじゅう</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（1）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="p9-context-label" id="t-p1-ctx"><ruby>以下<rt>いか</rt></ruby>は<ruby>子<rt>こ</rt></ruby>どもの<ruby>発達<rt>はったつ</rt></ruby>と<ruby>親<rt>おや</rt></ruby>の<ruby>教育<rt>きょういく</rt></ruby>について<ruby>述<rt>の</rt></ruby>べた<ruby>文章<rt>ぶんしょう</rt></ruby>である。<div class="sent-id" id="s-p1-ctx">Berikut adalah teks yang membahas perkembangan anak dan pendidikan orang tua.</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-p1-ctx',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-ctx',this)">文</button></div>
+<div class="line-wrap" style="margin-top:10px;"><div class="line-text" id="t-p1-a"><ruby>子<rt>こ</rt></ruby>どもは<ruby>小学生<rt>しょうがくせい</rt></ruby>ほどの<ruby>年齢<rt>ねんれい</rt></ruby>になると、<ruby>運動能力<rt>うんどうのうりょく</rt></ruby>や<ruby>知識<rt>ちしき</rt></ruby>もあるので、<ruby>色々<rt>いろいろ</rt></ruby>なことにチャレンジしてみたいと<ruby>思<rt>おも</rt></ruby>うようになる。<span data-hl="q58c"><ruby>色々<rt>いろいろ</rt></ruby>なことに<ruby>関心<rt>かんしん</rt></ruby>を<ruby>持<rt>も</rt></ruby>ち、やってみるのは<ruby>良<rt>よ</rt></ruby>いことだが</span>、<span data-hl="q58a"><ruby>児童期<rt>じどうき</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>1）</sup>の<ruby>子<rt>こ</rt></ruby>どもはまだ「やっていいこと」と「やってはいけないこと」の<span class="kanji-wrap"><button class="kanji-btn"><ruby>区別<rt>くべつ</rt></ruby></button><span class="kanji-pop">perbedaan</span></span>ができない</span>。そのため、この<ruby>時期<rt>じき</rt></ruby>に<span data-hl="q58b"><ruby>親<rt>おや</rt></ruby>や<ruby>教師<rt>きょうし</rt></ruby>などの<ruby>身近<rt>みぢか</rt></ruby>な<ruby>大人<rt>おとな</rt></ruby>が、<ruby>物事<rt>ものごと</rt></ruby>の<span class="kanji-wrap"><button class="kanji-btn"><ruby>善悪<rt>ぜんあく</rt></ruby></button><span class="kanji-pop">baik dan buruk</span></span><sup>（<ruby>注<rt>ちゅう</rt></ruby>2）</sup>について<ruby>教<rt>おし</rt></ruby>えていく<ruby>必要<rt>ひつよう</rt></ruby>がある</span>。そうすることで、<ruby>児童期<rt>じどうき</rt></ruby>の<ruby>子<rt>こ</rt></ruby>どもはだんだんと「<ruby>人<rt>ひと</rt></ruby>としてやっていいこと」、「<ruby>人<rt>ひと</rt></ruby>としてやってはいけないこと」の<ruby>区別<rt>くべつ</rt></ruby>がつくようになるのである。<div class="sent-id" id="s-p1-a">Ketika anak seusia murid sekolah dasar, mereka sudah memiliki kemampuan motorik dan pengetahuan, sehingga ingin mencoba menantang berbagai hal. Tertarik pada berbagai hal dan mencoba adalah hal yang baik, tetapi anak pada masa kanak-kanak (catatan 1) belum bisa membedakan antara "hal yang boleh dilakukan" dan "hal yang tidak boleh dilakukan". Karena itu, pada masa ini orang dewasa terdekat seperti orang tua dan guru perlu mengajarkan baik dan buruknya sesuatu (catatan 2). Dengan begitu, anak pada masa kanak-kanak lambat laun akan bisa membedakan "hal yang boleh dilakukan sebagai manusia" dan "hal yang tidak boleh dilakukan sebagai manusia".</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-a',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-a',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p1-b"><ruby>思春期<rt>ししゅんき</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>3）</sup>は<ruby>大人<rt>おとな</rt></ruby>のような<ruby>体<rt>からだ</rt></ruby>へ<ruby>変化<rt>へんか</rt></ruby>していく<ruby>段階<rt>だんかい</rt></ruby>である。<span data-hl="q59a"><ruby>体<rt>からだ</rt></ruby>の<ruby>発達<rt>はったつ</rt></ruby>に<ruby>伴<rt>ともな</rt></ruby>い、<ruby>心<rt>こころ</rt></ruby>も<ruby>大人<rt>おとな</rt></ruby>に<ruby>近<rt>ちか</rt></ruby>づこうとする</span>。これから<ruby>社会<rt>しゃかい</rt></ruby>に<ruby>出<rt>で</rt></ruby>るにあたって、「<ruby>自分<rt>じぶん</rt></ruby>の<span class="kanji-wrap"><button class="kanji-btn"><ruby>存在意義<rt>そんざいいぎ</rt></ruby></button><span class="kanji-pop">makna keberadaan</span></span>は<ruby>何<rt>なに</rt></ruby>か」<span data-hl="q59c">「<ruby>自分<rt>じぶん</rt></ruby>の<ruby>生<rt>い</rt></ruby>きる<ruby>目的<rt>もくてき</rt></ruby>は<ruby>何<rt>なに</rt></ruby>か」という<ruby>自分<rt>じぶん</rt></ruby>の<ruby>思考<rt>しこう</rt></ruby>に<ruby>意識<rt>いしき</rt></ruby>を<ruby>向<rt>む</rt></ruby>けるようになる</span>。このことをアイデンティティー（<ruby>自我同一性<rt>じがどういつせい</rt></ruby>）の<span class="kanji-wrap"><button class="kanji-btn"><ruby>確立<rt>かくりつ</rt></ruby></button><span class="kanji-pop">pembentukan / penetapan</span></span>と<ruby>言<rt>い</rt></ruby>う。<span data-hl="q60c">アイデンティティーが<ruby>確立<rt>かくりつ</rt></ruby>されると、<ruby>将来<rt>しょうらい</rt></ruby><ruby>社会<rt>しゃかい</rt></ruby>へ<ruby>出<rt>で</rt></ruby>てから、<ruby>自分<rt>じぶん</rt></ruby>が<ruby>社会<rt>しゃかい</rt></ruby>でどのような<ruby>役割<rt>やくわり</rt></ruby>を<ruby>果<rt>は</rt></ruby>たしたいのかがわかり、<ruby>自分<rt>じぶん</rt></ruby>が<ruby>今<rt>いま</rt></ruby>なにをすべきかが<ruby>自<rt>おの</rt></ruby>ずと<sup>（<ruby>注<rt>ちゅう</rt></ruby>4）</sup><ruby>明確<rt>めいかく</rt></ruby>になる</span>。しかし、<ruby>最近<rt>さいきん</rt></ruby>はアイデンティティーを<ruby>確立<rt>かくりつ</rt></ruby>することなく、<span data-hl="q59b"><ruby>体<rt>からだ</rt></ruby>だけ<ruby>大人<rt>おとな</rt></ruby>へと<ruby>成長<rt>せいちょう</rt></ruby>してしまう<ruby>人<rt>ひと</rt></ruby>も<ruby>少<rt>すく</rt></ruby>なくない</span>という。そうすると、<span data-hl="q60a"><ruby>大人<rt>おとな</rt></ruby>になっても<ruby>自分自身<rt>じぶんじしん</rt></ruby>で<ruby>行動<rt>こうどう</rt></ruby>を<ruby>選択<rt>せんたく</rt></ruby>できなかったり、<ruby>無力感<rt>むりょくかん</rt></ruby>に<ruby>陥<rt>おちい</rt></ruby>ってしまったり</span><sup>（<ruby>注<rt>ちゅう</rt></ruby>5）</sup>するという。<ruby>思春期<rt>ししゅんき</rt></ruby>の<ruby>親<rt>おや</rt></ruby>は<ruby>将来<rt>しょうらい</rt></ruby><ruby>子<rt>こ</rt></ruby>どもが<ruby>一人<rt>ひとり</rt></ruby>で<ruby>生<rt>い</rt></ruby>きていけるように、<ruby>自己<rt>じこ</rt></ruby>について<ruby>考<rt>かんが</rt></ruby>える<ruby>時間<rt>じかん</rt></ruby>を<ruby>与<rt>あた</rt></ruby>える<ruby>必要<rt>ひつよう</rt></ruby>がある。<div class="sent-id" id="s-p1-b">Masa pubertas (catatan 3) adalah tahap ketika tubuh berubah menjadi seperti orang dewasa. Seiring perkembangan tubuh, hati pun berusaha mendekati orang dewasa. Menjelang terjun ke masyarakat, anak mulai mengarahkan kesadarannya pada pikirannya sendiri, seperti "Apa makna keberadaanku?" dan "Apa tujuan hidupku?". Hal ini disebut pembentukan identitas (kesatuan diri). Jika identitas terbentuk, setelah terjun ke masyarakat ia mengerti peran apa yang ingin ia jalankan di masyarakat, dan apa yang harus ia lakukan sekarang menjadi jelas dengan sendirinya (catatan 4). Namun, belakangan ini dikatakan tidak sedikit orang yang tumbuh menjadi dewasa hanya secara fisik tanpa membentuk identitas. Jika demikian, meskipun sudah dewasa, mereka tidak bisa memilih tindakan sendiri atau terjerumus ke dalam perasaan tak berdaya (catatan 5). Orang tua anak pada masa pubertas perlu memberikan waktu bagi anak untuk memikirkan dirinya sendiri agar kelak ia bisa hidup mandiri.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-b',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-b',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p1-n1">（<ruby>注<rt>ちゅう</rt></ruby>1）<ruby>児童期<rt>じどうき</rt></ruby>：<ruby>小学生<rt>しょうがくせい</rt></ruby>ごろ<div class="sent-id" id="s-p1-n1">(Catatan 1) Masa kanak-kanak: sekitar usia sekolah dasar.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-n1',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p1-n2">（<ruby>注<rt>ちゅう</rt></ruby>2）<ruby>善悪<rt>ぜんあく</rt></ruby>：<ruby>良<rt>よ</rt></ruby>いことと<ruby>悪<rt>わる</rt></ruby>いこと<div class="sent-id" id="s-p1-n2">(Catatan 2) Zen'aku: hal yang baik dan hal yang buruk.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-n2',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p1-n3">（<ruby>注<rt>ちゅう</rt></ruby>3）<ruby>思春期<rt>ししゅんき</rt></ruby>：<ruby>中学生<rt>ちゅうがくせい</rt></ruby>ごろ<div class="sent-id" id="s-p1-n3">(Catatan 3) Masa pubertas: sekitar usia sekolah menengah pertama.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-n3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-n3',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p1-n4">（<ruby>注<rt>ちゅう</rt></ruby>4）<ruby>自<rt>おの</rt></ruby>ずと：<ruby>自然<rt>しぜん</rt></ruby>に<div class="sent-id" id="s-p1-n4">(Catatan 4) Onozuto: secara alami.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-n4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-n4',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p1-n5">（<ruby>注<rt>ちゅう</rt></ruby>5）<ruby>無力感<rt>むりょくかん</rt></ruby>に<ruby>陥<rt>おちい</rt></ruby>る：<ruby>自分<rt>じぶん</rt></ruby>には<ruby>能力<rt>のうりょく</rt></ruby>がなく<ruby>価値<rt>かち</rt></ruby>がないと<ruby>思<rt>おも</rt></ruby>う<ruby>気持<rt>きも</rt></ruby>ち<div class="sent-id" id="s-p1-n5">(Catatan 5) Terjerumus perasaan tak berdaya: perasaan bahwa diri sendiri tidak punya kemampuan dan tidak bernilai.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1-n5',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1-n5',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q58-q"><strong>58　<ruby>筆者<rt>ひっしゃ</rt></ruby>によると、<ruby>児童期<rt>じどうき</rt></ruby>の<ruby>子<rt>こ</rt></ruby>どもに<ruby>物事<rt>ものごと</rt></ruby>の<ruby>善悪<rt>ぜんあく</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていく<ruby>必要<rt>ひつよう</rt></ruby>があるのはなぜか。</strong><div class="sent-id" id="s-q58-q">58. Menurut penulis, mengapa perlu mengajarkan baik dan buruk kepada anak pada masa kanak-kanak?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q58-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q58-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q58-c1"><ruby>物事<rt>ものごと</rt></ruby>の<ruby>善悪<rt>ぜんあく</rt></ruby>について<ruby>小学校<rt>しょうがっこう</rt></ruby>では<ruby>教<rt>おし</rt></ruby>えないから。<div class="sent-id" id="s-q58-c1">Karena baik dan buruk tidak diajarkan di sekolah dasar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q58-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q58-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q58-1',this)">答</button></div>
+<div class="ans-box" id="ans-q58-1" data-hl-target="q58b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>小学校<rt>しょうがっこう</rt></ruby>で<ruby>教<rt>おし</rt></ruby>えないとは<ruby>書<rt>か</rt></ruby>いていない。<ruby>教<rt>おし</rt></ruby>えるのは<ruby>親<rt>おや</rt></ruby>や<ruby>教師<rt>きょうし</rt></ruby>などの<ruby>身近<rt>みぢか</rt></ruby>な<ruby>大人<rt>おとな</rt></ruby>。<br><span class="ans-trans">(×) Teks tidak menyebut bahwa sekolah dasar tidak mengajarkannya. Yang mengajar adalah orang dewasa terdekat seperti orang tua dan guru.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q58-c2"><ruby>物事<rt>ものごと</rt></ruby>の<ruby>善悪<rt>ぜんあく</rt></ruby>をきちんと<ruby>判断<rt>はんだん</rt></ruby>することができないから。<div class="sent-id" id="s-q58-c2">Karena mereka belum bisa menilai baik dan buruk sesuatu dengan benar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q58-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q58-c2',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q58-2',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q58-2" data-hl-target="q58a" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>児童期<rt>じどうき</rt></ruby>の<ruby>子<rt>こ</rt></ruby>どもは「やっていいこと」と「やってはいけないこと」の<ruby>区別<rt>くべつ</rt></ruby>ができない。だから<ruby>善悪<rt>ぜんあく</rt></ruby>を<ruby>教<rt>おし</rt></ruby>える<ruby>必要<rt>ひつよう</rt></ruby>がある。<br><span class="ans-trans">(○) Anak pada masa kanak-kanak belum bisa membedakan "yang boleh" dan "yang tidak boleh". Karena itu perlu diajarkan baik dan buruk.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q58-c3"><ruby>色々<rt>いろいろ</rt></ruby>なことに<ruby>関心<rt>かんしん</rt></ruby>をもつことで<ruby>良<rt>よ</rt></ruby>い<ruby>大人<rt>おとな</rt></ruby>になれるから。<div class="sent-id" id="s-q58-c3">Karena dengan tertarik pada berbagai hal, mereka bisa menjadi orang dewasa yang baik.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q58-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q58-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q58-3',this)">答</button></div>
+<div class="ans-box" id="ans-q58-3" data-hl-target="q58c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>関心<rt>かんしん</rt></ruby>を<ruby>持<rt>も</rt></ruby>つのは<ruby>良<rt>よ</rt></ruby>いことだが、<ruby>教<rt>おし</rt></ruby>える<ruby>理由<rt>りゆう</rt></ruby>ではない。<br><span class="ans-trans">(×) Tertarik pada berbagai hal memang baik, tetapi itu bukan alasan perlunya mengajarkan baik dan buruk.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q58-c4"><ruby>色々<rt>いろいろ</rt></ruby>なことにチャレンジすることは<ruby>人<rt>ひと</rt></ruby>としてやってはいけないことだから。<div class="sent-id" id="s-q58-c4">Karena menantang berbagai hal adalah hal yang tidak boleh dilakukan sebagai manusia.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q58-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q58-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q58-4',this)">答</button></div>
+<div class="ans-box" id="ans-q58-4" data-hl-target="q58c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　チャレンジしたいと<ruby>思<rt>おも</rt></ruby>うこと<ruby>自体<rt>じたい</rt></ruby>を<ruby>悪<rt>わる</rt></ruby>いとは<ruby>言<rt>い</rt></ruby>っていない。<br><span class="ans-trans">(×) Teks tidak mengatakan bahwa keinginan untuk menantang itu sendiri buruk.</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q59-q"><strong>59　<ruby>思春期<rt>ししゅんき</rt></ruby>とはどのような<ruby>時期<rt>じき</rt></ruby>か。</strong><div class="sent-id" id="s-q59-q">59. Masa pubertas adalah masa yang seperti apa?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q59-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q59-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q59-c1"><ruby>自分<rt>じぶん</rt></ruby>の<ruby>外見<rt>がいけん</rt></ruby>を<ruby>気<rt>き</rt></ruby>にするようになる<ruby>時期<rt>じき</rt></ruby><div class="sent-id" id="s-q59-c1">Masa mulai memperhatikan penampilan diri sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q59-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q59-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q59-1',this)">答</button></div>
+<div class="ans-box" id="ans-q59-1"><strong class="batsu">（×）</strong>　<ruby>外見<rt>がいけん</rt></ruby>については<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak membahas penampilan.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q59-c2"><ruby>自分<rt>じぶん</rt></ruby>の<ruby>生<rt>い</rt></ruby>きる<ruby>目的<rt>もくてき</rt></ruby>について<ruby>大人<rt>おとな</rt></ruby>と<ruby>考<rt>かんが</rt></ruby>える<ruby>時期<rt>じき</rt></ruby><div class="sent-id" id="s-q59-c2">Masa memikirkan tujuan hidup diri sendiri bersama orang dewasa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q59-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q59-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q59-2',this)">答</button></div>
+<div class="ans-box" id="ans-q59-2" data-hl-target="q59c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>考<rt>かんが</rt></ruby>えるのは「<ruby>自分<rt>じぶん</rt></ruby>の<ruby>思考<rt>しこう</rt></ruby>」に<ruby>意識<rt>いしき</rt></ruby>を<ruby>向<rt>む</rt></ruby>けること。<ruby>大人<rt>おとな</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>にとは<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Yang dilakukan adalah mengarahkan kesadaran pada "pikiran diri sendiri". Teks tidak menyebut "bersama orang dewasa".</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q59-c3"><ruby>体<rt>からだ</rt></ruby>が<ruby>大人<rt>おとな</rt></ruby>のように<ruby>変化<rt>へんか</rt></ruby>すると<ruby>同時<rt>どうじ</rt></ruby>に<ruby>心<rt>こころ</rt></ruby>も<ruby>成長<rt>せいちょう</rt></ruby>しようとする<ruby>時期<rt>じき</rt></ruby><div class="sent-id" id="s-q59-c3">Masa ketika tubuh berubah seperti orang dewasa dan pada saat yang sama hati pun berusaha tumbuh.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q59-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q59-c3',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q59-3',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q59-3" data-hl-target="q59a" data-hl-type="correct"><strong class="maru">（○）</strong>　「<ruby>体<rt>からだ</rt></ruby>の<ruby>発達<rt>はったつ</rt></ruby>に<ruby>伴<rt>ともな</rt></ruby>い、<ruby>心<rt>こころ</rt></ruby>も<ruby>大人<rt>おとな</rt></ruby>に<ruby>近<rt>ちか</rt></ruby>づこうとする」と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(○) Tertulis: "Seiring perkembangan tubuh, hati pun berusaha mendekati orang dewasa."</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q59-c4"><ruby>体<rt>からだ</rt></ruby>だけが<ruby>大人<rt>おとな</rt></ruby>のように<ruby>成長<rt>せいちょう</rt></ruby>する<ruby>時期<rt>じき</rt></ruby><div class="sent-id" id="s-q59-c4">Masa ketika hanya tubuh yang tumbuh seperti orang dewasa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q59-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q59-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q59-4',this)">答</button></div>
+<div class="ans-box" id="ans-q59-4" data-hl-target="q59b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>体<rt>からだ</rt></ruby>だけ<ruby>成長<rt>せいちょう</rt></ruby>してしまうのは、アイデンティティーを<ruby>確立<rt>かくりつ</rt></ruby>しない<ruby>場合<rt>ばあい</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>。<ruby>思春期<rt>ししゅんき</rt></ruby>そのものの<ruby>説明<rt>せつめい</rt></ruby>ではない。<br><span class="ans-trans">(×) Hanya tubuh yang tumbuh adalah cerita jika identitas tidak terbentuk. Itu bukan penjelasan tentang masa pubertas itu sendiri.</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q60-q"><strong>60　<ruby>筆者<rt>ひっしゃ</rt></ruby>によると、アイデンティティーを<ruby>確立<rt>かくりつ</rt></ruby>しないまま<ruby>大人<rt>おとな</rt></ruby>になるとどうなるか。</strong><div class="sent-id" id="s-q60-q">60. Menurut penulis, apa yang terjadi jika seseorang menjadi dewasa tanpa membentuk identitas?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q60-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q60-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q60-c1"><ruby>大人<rt>おとな</rt></ruby>になっても<ruby>体<rt>からだ</rt></ruby>だけが<ruby>成長<rt>せいちょう</rt></ruby>してしまうようになる。<div class="sent-id" id="s-q60-c1">Meskipun sudah dewasa, hanya tubuhnya yang terus tumbuh.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q60-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q60-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q60-1',this)">答</button></div>
+<div class="ans-box" id="ans-q60-1" data-hl-target="q59b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>体<rt>からだ</rt></ruby>だけ<ruby>成長<rt>せいちょう</rt></ruby>するのは、<ruby>確立<rt>かくりつ</rt></ruby>しないで<ruby>大人<rt>おとな</rt></ruby>になった<ruby>状態<rt>じょうたい</rt></ruby>。<ruby>結果<rt>けっか</rt></ruby>ではない。<br><span class="ans-trans">(×) Hanya tubuh yang tumbuh adalah keadaan orang yang menjadi dewasa tanpa membentuk identitas, bukan akibatnya.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q60-c2"><ruby>大人<rt>おとな</rt></ruby>になっても<ruby>自分<rt>じぶん</rt></ruby>の<ruby>思考<rt>しこう</rt></ruby>に<ruby>意識<rt>いしき</rt></ruby>を<ruby>向<rt>む</rt></ruby>けなければならなくなる。<div class="sent-id" id="s-q60-c2">Meskipun sudah dewasa, ia harus mengarahkan kesadaran pada pikirannya sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q60-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q60-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q60-2',this)">答</button></div>
+<div class="ans-box" id="ans-q60-2" data-hl-target="q59c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>自分<rt>じぶん</rt></ruby>の<ruby>思考<rt>しこう</rt></ruby>に<ruby>意識<rt>いしき</rt></ruby>を<ruby>向<rt>む</rt></ruby>けるのは<ruby>思春期<rt>ししゅんき</rt></ruby>で、アイデンティティー<ruby>確立<rt>かくりつ</rt></ruby>の<ruby>過程<rt>かてい</rt></ruby>。<br><span class="ans-trans">(×) Mengarahkan kesadaran pada pikiran sendiri terjadi pada masa pubertas, dalam proses pembentukan identitas.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q60-c3"><ruby>大人<rt>おとな</rt></ruby>になっても<ruby>自分<rt>じぶん</rt></ruby>のやるべきことがわからず、<ruby>自分<rt>じぶん</rt></ruby>には<ruby>何<rt>なに</rt></ruby>もできないと<ruby>感<rt>かん</rt></ruby>じる。<div class="sent-id" id="s-q60-c3">Meskipun sudah dewasa, ia tidak tahu apa yang harus dilakukan dan merasa tidak bisa berbuat apa-apa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q60-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q60-c3',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q60-3',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q60-3" data-hl-target="q60a" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>自分<rt>じぶん</rt></ruby>で<ruby>行動<rt>こうどう</rt></ruby>を<ruby>選択<rt>せんたく</rt></ruby>できず、<ruby>無力感<rt>むりょくかん</rt></ruby>（<ruby>自分<rt>じぶん</rt></ruby>には<ruby>能力<rt>のうりょく</rt></ruby>がなく<ruby>価値<rt>かち</rt></ruby>がないと<ruby>思<rt>おも</rt></ruby>う<ruby>気持<rt>きも</rt></ruby>ち）に<ruby>陥<rt>おちい</rt></ruby>ってしまう。<br><span class="ans-trans">(○) Tidak bisa memilih tindakan sendiri dan terjerumus perasaan tak berdaya (merasa tidak punya kemampuan dan tidak bernilai).</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q60-c4"><ruby>自分<rt>じぶん</rt></ruby>が<ruby>今<rt>いま</rt></ruby>すべきことがはっきりとわかるようになる。<div class="sent-id" id="s-q60-c4">Ia menjadi tahu dengan jelas apa yang harus dilakukannya sekarang.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q60-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q60-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q60-4',this)">答</button></div>
+<div class="ans-box" id="ans-q60-4" data-hl-target="q60c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　それはアイデンティティーが<ruby>確立<rt>かくりつ</rt></ruby>された<ruby>場合<rt>ばあい</rt></ruby>。<ruby>逆<rt>ぎゃく</rt></ruby>の<ruby>内容<rt>ないよう</rt></ruby>。<br><span class="ans-trans">(×) Itu terjadi jika identitas terbentuk. Isinya berlawanan.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q11-2" class="section">
+<div class="section-header">（2）　<ruby>問61<rt>もんろくじゅういち</rt></ruby>〜<ruby>問63<rt>もんろくじゅうさん</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（2）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="p9-context-label" style="margin-bottom:6px">（2）</div>
+<div class="line-wrap" style="margin-top:10px;"><div class="line-text" id="t-p2-a">「<ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby>」は「いい<ruby>映画<rt>えいが</rt></ruby>」なのだろうか。<ruby>確<rt>たし</rt></ruby>かに、<ruby>人々<rt>ひとびと</rt></ruby>を<ruby>泣<rt>な</rt></ruby>かせるというだけで、<ruby>人<rt>ひと</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>に<ruby>響<rt>ひび</rt></ruby>く<ruby>感動的<rt>かんどうてき</rt></ruby>なストーリーなのだと<ruby>思<rt>おも</rt></ruby>う。しかし、<span data-hl="q61c"><ruby>泣<rt>な</rt></ruby>いてはいても</span><span data-hl="q61a">「なんだかわざとらしいな」とか「これは、<ruby>観客<rt>かんきゃく</rt></ruby>を<ruby>泣<rt>な</rt></ruby>かせようと<ruby>必死<rt>ひっし</rt></ruby>だな」と<ruby>観客<rt>かんきゃく</rt></ruby>に<ruby>感<rt>かん</rt></ruby>じさせる<ruby>映画<rt>えいが</rt></ruby>もある</span>。<u>そんな<ruby>映画<rt>えいが</rt></ruby></u><sup>①</sup>を<ruby>観<rt>み</rt></ruby>た<ruby>後<rt>あと</rt></ruby>は、なんだか<ruby>空虚<rt>くうきょ</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>1）</sup>な<ruby>気持<rt>きも</rt></ruby>ちになる。<div class="sent-id" id="s-p2-a">Apakah "film yang bisa membuat menangis" itu "film yang bagus"? Memang, hanya dengan membuat orang menangis, saya kira itu adalah cerita mengharukan yang menyentuh hati orang. Tetapi, ada juga film yang, meskipun orang menangis, membuat penonton merasa "kok terasa dibuat-buat" atau "film ini mati-matian berusaha membuat penonton menangis". Setelah menonton film seperti itu (①), entah mengapa perasaan menjadi hampa (catatan 1).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-a',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-a',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p2-b">どうして<ruby>空虚感<rt>くうきょかん</rt></ruby>が<ruby>生<rt>う</rt></ruby>まれるのか。その<ruby>理由<rt>りゆう</rt></ruby>の<ruby>一<rt>ひと</rt></ruby>つに、<span data-hl="q61b"><ruby>非現実的<rt>ひげんじつてき</rt></ruby>で、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>に<ruby>重<rt>かさ</rt></ruby>なるところがない</span>というのもあるだろう。<ruby>現実的<rt>げんじつてき</rt></ruby>に<ruby>描<rt>えが</rt></ruby>かれたストーリーは、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>を<ruby>客観的<rt>きゃっかんてき</rt></ruby>に<ruby>見<rt>み</rt></ruby>ることができる。<span data-hl="q61d">すると、すぐに<ruby>理解<rt>りかい</rt></ruby>できるところと、「わからない」と<ruby>疑問<rt>ぎもん</rt></ruby>に<ruby>思<rt>おも</rt></ruby>うところが<ruby>出<rt>で</rt></ruby>てきて、<ruby>映画<rt>えいが</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>き<ruby>込<rt>こ</rt></ruby>まれる</span>。<div class="sent-id" id="s-p2-b">Mengapa rasa hampa itu muncul? Salah satu alasannya mungkin karena filmnya tidak realistis dan tidak ada bagian yang bersinggungan dengan pengalaman diri sendiri. Dalam cerita yang digambarkan secara realistis, kita bisa melihat pengalaman diri sendiri secara objektif. Lalu, muncul bagian yang langsung bisa dipahami dan bagian yang membuat kita bertanya-tanya "tidak mengerti", sehingga kita tertarik ke dalam film.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-b',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-b',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p2-c">そんな<ruby>映画<rt>えいが</rt></ruby>に<ruby>出会<rt>であ</rt></ruby>ったときは、<ruby>何度<rt>なんど</rt></ruby><ruby>観<rt>み</rt></ruby>ても<ruby>飽<rt>あ</rt></ruby>きることなく、むしろ<span data-hl="q62b"><u><ruby>観<rt>み</rt></ruby>るごとに<ruby>味<rt>あじ</rt></ruby>わいを<ruby>増<rt>ま</rt></ruby>していく</u><sup>②</sup></span>。おもしろいのは、<span data-hl="q62a">10<ruby>代<rt>だい</rt></ruby>のときに<ruby>観<rt>み</rt></ruby>た<ruby>映画<rt>えいが</rt></ruby>を20<ruby>代<rt>だい</rt></ruby>になってもう<ruby>一度<rt>いちど</rt></ruby><ruby>観<rt>み</rt></ruby>ると、<ruby>感<rt>かん</rt></ruby>じ<ruby>方<rt>かた</rt></ruby>が<ruby>全<rt>まった</rt></ruby>く<ruby>違<rt>ちが</rt></ruby>ったりすることだ。それは、その<ruby>映画<rt>えいが</rt></ruby>を<ruby>通<rt>とお</rt></ruby>して<ruby>自分自身<rt>じぶんじしん</rt></ruby>の<ruby>知識<rt>ちしき</rt></ruby>、<ruby>人生経験<rt>じんせいけいけん</rt></ruby>を<ruby>見直<rt>みなお</rt></ruby>すことにつながる</span>。<div class="sent-id" id="s-p2-c">Ketika bertemu film seperti itu, kita tidak bosan meskipun menontonnya berkali-kali, malah setiap kali menontonnya rasa ("aji") film itu semakin bertambah (②). Yang menarik, jika kita menonton lagi pada usia 20-an film yang dulu ditonton pada usia 10-an, cara merasakannya bisa sama sekali berbeda. Itu berkaitan dengan meninjau kembali pengetahuan dan pengalaman hidup diri sendiri melalui film tersebut.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-c',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-c',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p2-d"><span data-hl="q63a"><ruby>社会<rt>しゃかい</rt></ruby>における<ruby>立場<rt>たちば</rt></ruby>や、<ruby>人生<rt>じんせい</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>によって<ruby>見方<rt>みかた</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる<ruby>映画<rt>えいが</rt></ruby>は、いい<ruby>映画<rt>えいが</rt></ruby>だと<ruby>感<rt>かん</rt></ruby>じる</span>。<ruby>自分<rt>じぶん</rt></ruby>の<ruby>中<rt>なか</rt></ruby>のいい<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>つけた<ruby>人<rt>ひと</rt></ruby>は、その<ruby>映画<rt>えいが</rt></ruby>を<ruby>観<rt>み</rt></ruby>るたびに、<ruby>自分<rt>じぶん</rt></ruby>へのフィードバック<sup>（<ruby>注<rt>ちゅう</rt></ruby>2）</sup>を<ruby>得<rt>え</rt></ruby>て、また<ruby>人生<rt>じんせい</rt></ruby>を<ruby>歩<rt>あゆ</rt></ruby>んでゆく。<span data-hl="q63b">だから、「いい<ruby>映画<rt>えいが</rt></ruby>」は<ruby>人<rt>ひと</rt></ruby>それぞれ<ruby>違<rt>ちが</rt></ruby>うだろう</span>。<div class="sent-id" id="s-p2-d">Film yang cara pandangnya berubah sesuai posisi di masyarakat dan pengalaman hidup, saya rasa itulah film yang bagus. Orang yang menemukan film bagus bagi dirinya, setiap kali menonton film itu, mendapatkan umpan balik (catatan 2) untuk dirinya, lalu melanjutkan perjalanan hidup. Karena itu, "film yang bagus" tentu berbeda bagi setiap orang.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-d',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-d',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p2-e"><ruby>人<rt>ひと</rt></ruby>によっては<span data-hl="q63c">「いい<ruby>映画<rt>えいが</rt></ruby>」が<ruby>非現実的<rt>ひげんじつてき</rt></ruby>なストーリーであることもあるだろう</span>。しかしその<ruby>人自身<rt>ひとじしん</rt></ruby>が「いい<ruby>映画<rt>えいが</rt></ruby>」と<ruby>感<rt>かん</rt></ruby>じたのなら、それはその<ruby>人<rt>ひと</rt></ruby>にとっての「<ruby>現実的<rt>げんじつてき</rt></ruby>」なんだと<ruby>思<rt>おも</rt></ruby>う。<div class="sent-id" id="s-p2-e">Bagi sebagian orang, "film yang bagus" mungkin berupa cerita yang tidak realistis. Namun, jika orang itu sendiri merasa itu "film yang bagus", maka bagi orang itu hal tersebut adalah "realistis", demikian menurut saya.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-e',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-e',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p2-n1">（<ruby>注<rt>ちゅう</rt></ruby>1）<ruby>空虚<rt>くうきょ</rt></ruby>：なにもないこと、<ruby>内容<rt>ないよう</rt></ruby>がないこと<div class="sent-id" id="s-p2-n1">(Catatan 1) Kūkyo: tidak ada apa-apa, tidak ada isi.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-n1',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p2-n2">（<ruby>注<rt>ちゅう</rt></ruby>2）フィードバック：ここでは、<ruby>反省<rt>はんせい</rt></ruby>すべき<ruby>点<rt>てん</rt></ruby><div class="sent-id" id="s-p2-n2">(Catatan 2) Umpan balik: di sini berarti hal yang perlu direnungkan/dievaluasi.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2-n2',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q61-q"><strong>61　①<u>そんな<ruby>映画<rt>えいが</rt></ruby></u>とは<ruby>何<rt>なに</rt></ruby>か。</strong><div class="sent-id" id="s-q61-q">61. Apa yang dimaksud ① "film seperti itu"?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q61-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q61-q',this)">文</button></div>
+<ol class="p9-choices">
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q61-c1">わざとらしい<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q61-c1">Film yang terasa dibuat-buat.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q61-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q61-c1',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q61-1',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q61-1" data-hl-target="q61a" data-hl-type="correct"><strong class="maru">（○）</strong>　「なんだかわざとらしいな」「<ruby>観客<rt>かんきゃく</rt></ruby>を<ruby>泣<rt>な</rt></ruby>かせようと<ruby>必死<rt>ひっし</rt></ruby>だな」と<ruby>感<rt>かん</rt></ruby>じさせる<ruby>映画<rt>えいが</rt></ruby>を<ruby>指<rt>さ</rt></ruby>している。<br><span class="ans-trans">(○) Menunjuk pada film yang membuat penonton merasa "kok terasa dibuat-buat" atau "mati-matian ingin membuat menangis".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q61-c2"><ruby>現実的<rt>げんじつてき</rt></ruby>な<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q61-c2">Film yang realistis.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q61-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q61-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q61-2',this)">答</button></div>
+<div class="ans-box" id="ans-q61-2" data-hl-target="q61b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>空虚<rt>くうきょ</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ちになるのは<ruby>非現実的<rt>ひげんじつてき</rt></ruby>な<ruby>映画<rt>えいが</rt></ruby>。<ruby>現実的<rt>げんじつてき</rt></ruby>に<ruby>描<rt>えが</rt></ruby>かれた<ruby>映画<rt>えいが</rt></ruby>は<ruby>引<rt>ひ</rt></ruby>き<ruby>込<rt>こ</rt></ruby>まれる。<br><span class="ans-trans">(×) Perasaan hampa muncul dari film yang tidak realistis. Film yang digambarkan secara realistis menarik penonton.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q61-c3"><ruby>理解<rt>りかい</rt></ruby>できる<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q61-c3">Film yang bisa dipahami.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q61-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q61-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q61-3',this)">答</button></div>
+<div class="ans-box" id="ans-q61-3" data-hl-target="q61d" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>理解<rt>りかい</rt></ruby>できるところと<ruby>疑問<rt>ぎもん</rt></ruby>に<ruby>思<rt>おも</rt></ruby>うところがあって<ruby>引<rt>ひ</rt></ruby>き<ruby>込<rt>こ</rt></ruby>まれるのは、<ruby>現実的<rt>げんじつてき</rt></ruby>に<ruby>描<rt>えが</rt></ruby>かれた<ruby>映画<rt>えいが</rt></ruby>。<br><span class="ans-trans">(×) Film yang punya bagian yang dipahami dan yang dipertanyakan sehingga menarik adalah film yang digambarkan realistis.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q61-c4"><ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q61-c4">Film yang bisa membuat menangis.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q61-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q61-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q61-4',this)">答</button></div>
+<div class="ans-box" id="ans-q61-4" data-hl-target="q61c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にも、わざとらしい<ruby>映画<rt>えいが</rt></ruby>と、そうでない<ruby>映画<rt>えいが</rt></ruby>がある。<ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby>=そんな<ruby>映画<rt>えいが</rt></ruby>ではない。<br><span class="ans-trans">(×) Di antara film yang membuat menangis ada yang terasa dibuat-buat dan ada yang tidak. "Film yang membuat menangis" tidak sama dengan "film seperti itu".</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q62-q"><strong>62　②<u><ruby>観<rt>み</rt></ruby>るごとに<ruby>味<rt>あじ</rt></ruby>わいを<ruby>増<rt>ま</rt></ruby>していく</u>とあるが、なぜそう<ruby>考<rt>かんが</rt></ruby>えられるのか。</strong><div class="sent-id" id="s-q62-q">62. Dikatakan ② "setiap kali menonton rasanya bertambah", mengapa bisa dikatakan begitu?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q62-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q62-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q62-c1">その<ruby>映画<rt>えいが</rt></ruby>をたくさん<ruby>観<rt>み</rt></ruby>ると、ストーリーが<ruby>記憶<rt>きおく</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>るから。<div class="sent-id" id="s-q62-c1">Karena jika menonton film itu berkali-kali, ceritanya tetap teringat.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q62-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q62-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q62-1',this)">答</button></div>
+<div class="ans-box" id="ans-q62-1"><strong class="batsu">（×）</strong>　<ruby>記憶<rt>きおく</rt></ruby>については<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak membahas ingatan.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q62-c2"><ruby>観<rt>み</rt></ruby>れば<ruby>観<rt>み</rt></ruby>るほど、<ruby>自分自身<rt>じぶんじしん</rt></ruby>の<ruby>知識<rt>ちしき</rt></ruby>や<ruby>経験<rt>けいけん</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えるから。<div class="sent-id" id="s-q62-c2">Karena semakin sering menonton, pengetahuan dan pengalaman diri sendiri semakin bertambah.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q62-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q62-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q62-2',this)">答</button></div>
+<div class="ans-box" id="ans-q62-2" data-hl-target="q62a" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>知識<rt>ちしき</rt></ruby>や<ruby>経験<rt>けいけん</rt></ruby>を「<ruby>見直<rt>みなお</rt></ruby>す」と<ruby>書<rt>か</rt></ruby>いてある。<ruby>観<rt>み</rt></ruby>るたびに<ruby>増<rt>ふ</rt></ruby>えるとは<ruby>言<rt>い</rt></ruby>っていない。<br><span class="ans-trans">(×) Teks menyebut pengetahuan dan pengalaman "ditinjau kembali". Tidak dikatakan bertambah setiap kali menonton.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q62-c3"><ruby>自分<rt>じぶん</rt></ruby>の<ruby>今<rt>いま</rt></ruby>までの<ruby>経験<rt>けいけん</rt></ruby>によって、<ruby>感<rt>かん</rt></ruby>じることが<ruby>変<rt>か</rt></ruby>わるから。<div class="sent-id" id="s-q62-c3">Karena apa yang dirasakan berubah sesuai pengalaman diri sendiri sampai saat ini.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q62-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q62-c3',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q62-3',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q62-3" data-hl-target="q62a" data-hl-type="correct"><strong class="maru">（○）</strong>　10<ruby>代<rt>だい</rt></ruby>で<ruby>観<rt>み</rt></ruby>た<ruby>映画<rt>えいが</rt></ruby>を20<ruby>代<rt>だい</rt></ruby>で<ruby>観<rt>み</rt></ruby>ると<ruby>感<rt>かん</rt></ruby>じ<ruby>方<rt>かた</rt></ruby>が<ruby>違<rt>ちが</rt></ruby>う。<ruby>経験<rt>けいけん</rt></ruby>によって<ruby>感<rt>かん</rt></ruby>じ<ruby>方<rt>かた</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる、という<ruby>意味<rt>いみ</rt></ruby>。<br><span class="ans-trans">(○) Film yang ditonton pada usia 10-an terasa berbeda saat ditonton pada usia 20-an. Artinya cara merasakan berubah karena pengalaman.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q62-c4">その<ruby>映画<rt>えいが</rt></ruby>に<ruby>飽<rt>あ</rt></ruby>きてもおもしろいところを<ruby>探<rt>さが</rt></ruby>そうとするから。<div class="sent-id" id="s-q62-c4">Karena meskipun bosan dengan film itu, kita berusaha mencari bagian yang menarik.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q62-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q62-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q62-4',this)">答</button></div>
+<div class="ans-box" id="ans-q62-4" data-hl-target="q62b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　「<ruby>飽<rt>あ</rt></ruby>きることなく」と<ruby>書<rt>か</rt></ruby>いてある。<ruby>飽<rt>あ</rt></ruby>きても、という<ruby>話<rt>はなし</rt></ruby>ではない。<br><span class="ans-trans">(×) Tertulis "tanpa bosan". Ceritanya bukan "meskipun bosan".</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q63-q"><strong>63　<ruby>筆者<rt>ひっしゃ</rt></ruby>によると、「いい<ruby>映画<rt>えいが</rt></ruby>」とはどのような<ruby>映画<rt>えいが</rt></ruby>か。</strong><div class="sent-id" id="s-q63-q">63. Menurut penulis, "film yang bagus" itu film yang seperti apa?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q63-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q63-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q63-c1"><ruby>誰<rt>だれ</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>にも<ruby>重<rt>かさ</rt></ruby>なるような<ruby>現実的<rt>げんじつてき</rt></ruby>な<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q63-c1">Film realistis yang bersinggungan dengan pengalaman siapa pun.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q63-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q63-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q63-1',this)">答</button></div>
+<div class="ans-box" id="ans-q63-1" data-hl-target="q63b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　「いい<ruby>映画<rt>えいが</rt></ruby>」は<ruby>人<rt>ひと</rt></ruby>それぞれ<ruby>違<rt>ちが</rt></ruby>うと<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(×) Tertulis bahwa "film yang bagus" berbeda bagi setiap orang.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q63-c2">その<ruby>人自身<rt>ひとじしん</rt></ruby>の<ruby>成長<rt>せいちょう</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて、<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>り<ruby>方<rt>かた</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q63-c2">Film yang cara menerimanya berubah sesuai pertumbuhan orang itu sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q63-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q63-c2',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q63-2',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q63-2" data-hl-target="q63a" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>社会<rt>しゃかい</rt></ruby>における<ruby>立場<rt>たちば</rt></ruby>や<ruby>人生<rt>じんせい</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>によって<ruby>見方<rt>みかた</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる<ruby>映画<rt>えいが</rt></ruby>がいい<ruby>映画<rt>えいが</rt></ruby>。<br><span class="ans-trans">(○) Film yang cara pandangnya berubah sesuai posisi di masyarakat dan pengalaman hidup adalah film yang bagus.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q63-c3"><ruby>人<rt>ひと</rt></ruby>の<ruby>心<rt>こころ</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かす<ruby>感動的<rt>かんどうてき</rt></ruby>なストーリーの<ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q63-c3">Film yang bisa membuat menangis dengan cerita mengharukan yang menggerakkan hati.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q63-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q63-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q63-3',this)">答</button></div>
+<div class="ans-box" id="ans-q63-3" data-hl-target="q61c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>泣<rt>な</rt></ruby>ける<ruby>映画<rt>えいが</rt></ruby>がいい<ruby>映画<rt>えいが</rt></ruby>とは<ruby>限<rt>かぎ</rt></ruby>らない。<ruby>最初<rt>さいしょ</rt></ruby>の<ruby>問<rt>と</rt></ruby>いかけに<ruby>対<rt>たい</rt></ruby>する<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>えは「<ruby>見方<rt>みかた</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる<ruby>映画<rt>えいが</rt></ruby>」。<br><span class="ans-trans">(×) Film yang membuat menangis belum tentu film yang bagus. Pendapat penulis adalah "film yang cara pandangnya berubah".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q63-c4"><ruby>非現実的<rt>ひげんじつてき</rt></ruby>でも<ruby>誰<rt>だれ</rt></ruby>もが<ruby>理解<rt>りかい</rt></ruby>できて、<ruby>人気<rt>にんき</rt></ruby>がある<ruby>映画<rt>えいが</rt></ruby><div class="sent-id" id="s-q63-c4">Film yang meskipun tidak realistis bisa dipahami semua orang dan populer.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q63-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q63-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q63-4',this)">答</button></div>
+<div class="ans-box" id="ans-q63-4" data-hl-target="q63c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>人気<rt>にんき</rt></ruby>については<ruby>書<rt>か</rt></ruby>いていない。<ruby>人<rt>ひと</rt></ruby>によって「いい<ruby>映画<rt>えいが</rt></ruby>」は<ruby>違<rt>ちが</rt></ruby>う。<br><span class="ans-trans">(×) Teks tidak membahas popularitas. "Film yang bagus" berbeda tergantung orang.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="q11-3" class="section">
+<div class="section-header">（3）　<ruby>問64<rt>もんろくじゅうよん</rt></ruby>〜<ruby>問66<rt>もんろくじゅうろく</rt></ruby></div>
+<div class="section-body">
+<div class="rei-box"><div class="rei-label">（3）</div>
+<div class="p9-cols">
+<div class="p9-left">
+<div class="p9-context-label" style="margin-bottom:6px">（3）</div>
+<div class="line-wrap"><div class="line-text" id="t-p3-a"><u><ruby>留学<rt>りゅうがく</rt></ruby>さえすれば<ruby>言語<rt>げんご</rt></ruby>が<ruby>習得<rt>しゅうとく</rt></ruby>できるというものではない</u>。<ruby>実際<rt>じっさい</rt></ruby>に<ruby>留学経験<rt>りゅうがくけいけん</rt></ruby>のある<ruby>私<rt>わたし</rt></ruby>は、それを<ruby>身<rt>み</rt></ruby>をもって<sup>（<ruby>注<rt>ちゅう</rt></ruby>1）</sup><ruby>感<rt>かん</rt></ruby>じた。<span data-hl="q64b"><ruby>赤<rt>あか</rt></ruby>ちゃんや<ruby>小<rt>ちい</rt></ruby>さな<ruby>子<rt>こ</rt></ruby>どもなら、その<ruby>環境<rt>かんきょう</rt></ruby>にいるだけで<ruby>言葉<rt>ことば</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せるようになるだろう。しかし、<ruby>私<rt>わたし</rt></ruby>たちはもう<ruby>大人<rt>おとな</rt></ruby>だ</span>。<span data-hl="q64a"><ruby>自分<rt>じぶん</rt></ruby>から<ruby>必死<rt>ひっし</rt></ruby>になって<ruby>言葉<rt>ことば</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>しようとする<ruby>姿勢<rt>しせい</rt></ruby>がなければ、<ruby>簡単<rt>かんたん</rt></ruby>に<ruby>言葉<rt>ことば</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せるようになるなんてことはありえない</span>のだ。<div class="sent-id" id="s-p3-a">Tidak berarti bahwa asal belajar ke luar negeri bahasa pasti dikuasai. Saya yang benar-benar pernah belajar di luar negeri merasakannya sendiri (catatan 1). Kalau bayi atau anak kecil, hanya dengan berada di lingkungan itu mereka akan bisa berbicara. Tetapi, kita sudah dewasa. Jika tidak ada sikap berusaha mati-matian menguasai bahasa atas kemauan sendiri, mustahil bisa dengan mudah menjadi bisa berbicara.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-a',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-a',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p3-b"><ruby>学生時代<rt>がくせいじだい</rt></ruby>、<ruby>初<rt>はじ</rt></ruby>めてアメリカへ<ruby>留学<rt>りゅうがく</rt></ruby>した<ruby>私<rt>わたし</rt></ruby>は「<ruby>一年<rt>いちねん</rt></ruby>くらい<ruby>経<rt>た</rt></ruby>てば<ruby>勝手<rt>かって</rt></ruby>に<ruby>英語<rt>えいご</rt></ruby>が<ruby>話<rt>はな</rt></ruby>せるようになっているだろう」と<ruby>楽観的<rt>らっかんてき</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>2）</sup>に<ruby>考<rt>かんが</rt></ruby>えていた。<ruby>勉強<rt>べんきょう</rt></ruby>は<ruby>周<rt>まわ</rt></ruby>りの<ruby>友人<rt>ゆうじん</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じくらいはしていたが、<ruby>特<rt>とく</rt></ruby>に<ruby>努力<rt>どりょく</rt></ruby>したとは<ruby>言<rt>い</rt></ruby>えない<ruby>毎日<rt>まいにち</rt></ruby>を<ruby>送<rt>おく</rt></ruby>っていた。<span data-hl="q65b"><ruby>一年後<rt>いちねんご</rt></ruby>、やはり<ruby>私<rt>わたし</rt></ruby>の<ruby>英語力<rt>えいごりょく</rt></ruby>はそれほど<ruby>伸<rt>の</rt></ruby>びないまま<ruby>日本<rt>にほん</rt></ruby>へ<ruby>帰国<rt>きこく</rt></ruby>することとなった</span>。<div class="sent-id" id="s-p3-b">Pada masa pelajar, saya yang pertama kali belajar ke Amerika berpikir dengan optimis (catatan 2), "Kira-kira setelah satu tahun, saya pasti akan bisa berbicara bahasa Inggris dengan sendirinya." Saya belajar sama seperti teman-teman di sekitar, tetapi menjalani hari-hari yang tidak bisa dikatakan berusaha keras. Setelah satu tahun, ternyata kemampuan bahasa Inggris saya tidak banyak meningkat dan saya pulang ke Jepang.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-b',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-b',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p3-c">そんな<ruby>苦<rt>にが</rt></ruby>い<ruby>経験<rt>けいけん</rt></ruby>から5<ruby>年後<rt>ねんご</rt></ruby>、<ruby>私<rt>わたし</rt></ruby>は<ruby>再<rt>ふたた</rt></ruby>びアメリカへ<ruby>行<rt>い</rt></ruby>くことになった。<ruby>海外赴任<rt>かいがいふにん</rt></ruby><sup>（<ruby>注<rt>ちゅう</rt></ruby>3）</sup>が<ruby>決<rt>き</rt></ruby>まったのである。<ruby>私<rt>わたし</rt></ruby>の<ruby>英語力<rt>えいごりょく</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>のころのままだったが、<ruby>会社<rt>かいしゃ</rt></ruby>から<ruby>命令<rt>めいれい</rt></ruby>されては<ruby>断<rt>ことわ</rt></ruby>るわけにもいかず、アメリカでの<ruby>生活<rt>せいかつ</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まった。<div class="sent-id" id="s-p3-c">Lima tahun setelah pengalaman pahit itu, saya kembali pergi ke Amerika. Penugasan ke luar negeri (catatan 3) sudah ditetapkan. Kemampuan bahasa Inggris saya masih seperti saat pelajar, tetapi karena diperintah perusahaan, saya tidak bisa menolak, dan kehidupan di Amerika pun dimulai.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-c',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-c',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p3-d"><ruby>英語<rt>えいご</rt></ruby>でのコミュニケーションは<ruby>本当<rt>ほんとう</rt></ruby>に<ruby>大変<rt>たいへん</rt></ruby>だった。<span data-hl="q65d"><ruby>特<rt>とく</rt></ruby>に<ruby>会社<rt>かいしゃ</rt></ruby>では<ruby>失敗<rt>しっぱい</rt></ruby>が<ruby>許<rt>ゆる</rt></ruby>されないため、<ruby>情報<rt>じょうほう</rt></ruby>を<ruby>正<rt>ただ</rt></ruby>しく<ruby>相手<rt>あいて</rt></ruby>に<ruby>伝<rt>つた</rt></ruby>えなければならない</span>。そこで<ruby>私<rt>わたし</rt></ruby>は、<span data-hl="q65a"><ruby>誰<rt>だれ</rt></ruby>に<ruby>何<rt>なに</rt></ruby>を<ruby>話<rt>はな</rt></ruby>したいかを<ruby>文字<rt>もじ</rt></ruby>で<ruby>書<rt>か</rt></ruby>いて、それを<ruby>何度<rt>なんど</rt></ruby>も<ruby>練習<rt>れんしゅう</rt></ruby>してから<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>くようにした</span>。これを<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>していくうちに、<span data-hl="q65c"><ruby>私<rt>わたし</rt></ruby>の<ruby>英語<rt>えいご</rt></ruby>はたった3か<ruby>月<rt>げつ</rt></ruby>で<ruby>驚<rt>おどろ</rt></ruby>くほど<ruby>上達<rt>じょうたつ</rt></ruby>した</span>。<div class="sent-id" id="s-p3-d">Komunikasi dalam bahasa Inggris benar-benar sulit. Terutama di perusahaan, kegagalan tidak diizinkan, sehingga informasi harus disampaikan dengan benar kepada lawan bicara. Maka saya menuliskan dengan huruf apa yang ingin saya katakan kepada siapa, dan berlatih berkali-kali sebelum pergi ke kantor. Sambil mengulang hal ini, bahasa Inggris saya meningkat pesat hanya dalam 3 bulan.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-d',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-d',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p3-e">この<ruby>経験<rt>けいけん</rt></ruby>から、やはり<ruby>言語<rt>げんご</rt></ruby>の<ruby>習得<rt>しゅうとく</rt></ruby>には、<span data-hl="q66a"><ruby>必死<rt>ひっし</rt></ruby>になって<ruby>学<rt>まな</rt></ruby>ぼうと<ruby>思<rt>おも</rt></ruby>える<ruby>環境<rt>かんきょう</rt></ruby>にいることが<ruby>大切<rt>たいせつ</rt></ruby>だとわかった。そして<ruby>何<rt>なに</rt></ruby>より、「<ruby>伝<rt>つた</rt></ruby>えたいことがある」ということが<ruby>大切<rt>たいせつ</rt></ruby>なのだ</span>。<span data-hl="q66b"><ruby>伝<rt>つた</rt></ruby>えたいという<ruby>気持<rt>きも</rt></ruby>ちが<ruby>強<rt>つよ</rt></ruby>ければ<ruby>強<rt>つよ</rt></ruby>いほど、<ruby>言語<rt>げんご</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>するのにかかる<ruby>時間<rt>じかん</rt></ruby>は<ruby>短<rt>みじか</rt></ruby>くなるだろう</span>。<div class="sent-id" id="s-p3-e">Dari pengalaman ini, saya kembali menyadari bahwa dalam menguasai bahasa, penting berada di lingkungan yang membuat kita ingin belajar dengan sungguh-sungguh. Dan di atas segalanya, penting bahwa "ada hal yang ingin disampaikan". Semakin kuat keinginan untuk menyampaikan, semakin singkat waktu yang diperlukan untuk menguasai bahasa.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-e',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-e',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p3-n1">（<ruby>注<rt>ちゅう</rt></ruby>1）<ruby>身<rt>み</rt></ruby>をもって：<ruby>自分<rt>じぶん</rt></ruby>の<ruby>体<rt>からだ</rt></ruby>で<div class="sent-id" id="s-p3-n1">(Catatan 1) Mi o motte: dengan tubuh sendiri (mengalami sendiri).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-n1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-n1',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p3-n2">（<ruby>注<rt>ちゅう</rt></ruby>2）<ruby>楽観的<rt>らっかんてき</rt></ruby>：<ruby>物事<rt>ものごと</rt></ruby>がうまく<ruby>進<rt>すす</rt></ruby>むだろうと<ruby>考<rt>かんが</rt></ruby>えて、<ruby>心配<rt>しんぱい</rt></ruby>しない<ruby>様子<rt>ようす</rt></ruby><div class="sent-id" id="s-p3-n2">(Catatan 2) Optimis: keadaan berpikir bahwa segala sesuatu akan berjalan lancar sehingga tidak khawatir.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-n2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-n2',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p3-n3">（<ruby>注<rt>ちゅう</rt></ruby>3）<ruby>海外赴任<rt>かいがいふにん</rt></ruby>：<ruby>会社<rt>かいしゃ</rt></ruby>からの<ruby>命令<rt>めいれい</rt></ruby>によって<ruby>海外<rt>かいがい</rt></ruby>で<ruby>勤務<rt>きんむ</rt></ruby>をすること<div class="sent-id" id="s-p3-n3">(Catatan 3) Penugasan ke luar negeri: bekerja di luar negeri atas perintah perusahaan.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3-n3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3-n3',this)">文</button></div></div>
+</div>
+<div class="p9-right">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q64-q"><strong>64　<u><ruby>留学<rt>りゅうがく</rt></ruby>さえすれば<ruby>言語<rt>げんご</rt></ruby>が<ruby>習得<rt>しゅうとく</rt></ruby>できるというものではない</u>と<ruby>筆者<rt>ひっしゃ</rt></ruby>が<ruby>考<rt>かんが</rt></ruby>えるのはなぜか。</strong><div class="sent-id" id="s-q64-q">64. Mengapa penulis berpendapat bahwa "tidak berarti asal belajar ke luar negeri bahasa pasti dikuasai"?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q64-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q64-q',this)">文</button></div>
+<ol class="p9-choices">
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q64-c1"><ruby>留学<rt>りゅうがく</rt></ruby>したとしても、<ruby>積極的<rt>せっきょくてき</rt></ruby>に<ruby>勉強<rt>べんきょう</rt></ruby>に<ruby>取<rt>と</rt></ruby>り<ruby>組<rt>く</rt></ruby>まなければ<ruby>言語<rt>げんご</rt></ruby>は<ruby>習得<rt>しゅうとく</rt></ruby>できないから。<div class="sent-id" id="s-q64-c1">Karena meskipun belajar ke luar negeri, bahasa tidak akan dikuasai jika tidak aktif belajar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q64-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q64-c1',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q64-1',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q64-1" data-hl-target="q64a" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>自分<rt>じぶん</rt></ruby>から<ruby>必死<rt>ひっし</rt></ruby>になって<ruby>習得<rt>しゅうとく</rt></ruby>しようとする<ruby>姿勢<rt>しせい</rt></ruby>がなければ、<ruby>簡単<rt>かんたん</rt></ruby>に<ruby>話<rt>はな</rt></ruby>せるようにはならない、と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(○) Tertulis bahwa tanpa sikap berusaha mati-matian dari diri sendiri, tidak akan mudah bisa berbicara.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q64-c2"><ruby>留学<rt>りゅうがく</rt></ruby>するためには、<ruby>自分<rt>じぶん</rt></ruby>から<ruby>学<rt>まな</rt></ruby>ぼうとする<ruby>姿勢<rt>しせい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>だから。<div class="sent-id" id="s-q64-c2">Karena untuk bisa belajar ke luar negeri, diperlukan sikap mau belajar atas kemauan sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q64-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q64-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q64-2',this)">答</button></div>
+<div class="ans-box" id="ans-q64-2" data-hl-target="q64a" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>姿勢<rt>しせい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>なのは「<ruby>留学<rt>りゅうがく</rt></ruby>するため」ではなく「<ruby>言語<rt>げんご</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>するため」。<br><span class="ans-trans">(×) Sikap itu diperlukan bukan "untuk belajar ke luar negeri", melainkan "untuk menguasai bahasa".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q64-c3"><ruby>留学先<rt>りゅうがくさき</rt></ruby>の<ruby>環境<rt>かんきょう</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて、<ruby>赤<rt>あか</rt></ruby>ちゃんのように<ruby>必要<rt>ひつよう</rt></ruby>な<ruby>言語<rt>げんご</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>することができるから。<div class="sent-id" id="s-q64-c3">Karena sesuai lingkungan tempat belajar, seseorang bisa menguasai bahasa yang diperlukan seperti bayi.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q64-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q64-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q64-3',this)">答</button></div>
+<div class="ans-box" id="ans-q64-3" data-hl-target="q64b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>赤<rt>あか</rt></ruby>ちゃんは<ruby>環境<rt>かんきょう</rt></ruby>にいるだけで<ruby>話<rt>はな</rt></ruby>せるようになるが、<ruby>大人<rt>おとな</rt></ruby>はそうではない、という<ruby>内容<rt>ないよう</rt></ruby>。<br><span class="ans-trans">(×) Bayi bisa berbicara hanya dengan berada di lingkungan, tetapi orang dewasa tidak begitu. Itulah isinya.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q64-c4"><ruby>留学先<rt>りゅうがくさき</rt></ruby>によっては、<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>いて<ruby>勉強<rt>べんきょう</rt></ruby>できる<ruby>環境<rt>かんきょう</rt></ruby>ではない<ruby>可能性<rt>かのうせい</rt></ruby>があるから。<div class="sent-id" id="s-q64-c4">Karena tergantung tempat belajarnya, mungkin lingkungannya tidak tenang untuk belajar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q64-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q64-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q64-4',this)">答</button></div>
+<div class="ans-box" id="ans-q64-4"><strong class="batsu">（×）</strong>　<ruby>留学先<rt>りゅうがくさき</rt></ruby>の<ruby>環境<rt>かんきょう</rt></ruby>が<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>かないことは<ruby>本文<rt>ほんぶん</rt></ruby>に<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak menyebut bahwa lingkungan tempat belajar tidak tenang.</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q65-q"><strong>65　<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>英語力<rt>えいごりょく</rt></ruby>が<ruby>伸<rt>の</rt></ruby>びたのはなぜか。</strong><div class="sent-id" id="s-q65-q">65. Mengapa kemampuan bahasa Inggris penulis meningkat?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q65-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q65-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q65-c1">アメリカへ<ruby>留学<rt>りゅうがく</rt></ruby>して、<ruby>一年間<rt>いちねんかん</rt></ruby><ruby>周<rt>まわ</rt></ruby>りの<ruby>友達<rt>ともだち</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じように<ruby>勉強<rt>べんきょう</rt></ruby>したから。<div class="sent-id" id="s-q65-c1">Karena belajar ke Amerika dan belajar selama satu tahun sama seperti teman-teman sekitar.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q65-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q65-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q65-1',this)">答</button></div>
+<div class="ans-box" id="ans-q65-1" data-hl-target="q65b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　そのときは<ruby>英語力<rt>えいごりょく</rt></ruby>があまり<ruby>伸<rt>の</rt></ruby>びなかった。<br><span class="ans-trans">(×) Saat itu kemampuan bahasa Inggrisnya tidak banyak meningkat.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q65-c2"><ruby>海外赴任<rt>かいがいふにん</rt></ruby>が<ruby>決<rt>き</rt></ruby>まって、<ruby>仕事<rt>しごと</rt></ruby>のために3か<ruby>月間<rt>げつかん</rt></ruby>アメリカで<ruby>生活<rt>せいかつ</rt></ruby>したから。<div class="sent-id" id="s-q65-c2">Karena ditetapkan penugasan ke luar negeri dan tinggal di Amerika selama 3 bulan demi pekerjaan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q65-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q65-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q65-2',this)">答</button></div>
+<div class="ans-box" id="ans-q65-2" data-hl-target="q65c" data-hl-type="wrong"><strong class="batsu">（×）</strong>　3か<ruby>月<rt>げつ</rt></ruby>は<ruby>上達<rt>じょうたつ</rt></ruby>までの<ruby>期間<rt>きかん</rt></ruby>。<ruby>理由<rt>りゆう</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby><ruby>書<rt>か</rt></ruby>いて<ruby>練習<rt>れんしゅう</rt></ruby>して<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>ったこと。<br><span class="ans-trans">(×) 3 bulan adalah jangka waktu sampai ia meningkat. Alasannya adalah menulis dan berlatih lalu pergi ke kantor.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q65-c3"><ruby>失敗<rt>しっぱい</rt></ruby>して<ruby>恥<rt>は</rt></ruby>ずかしい<ruby>思<rt>おも</rt></ruby>いをしたくないという<ruby>気持<rt>きも</rt></ruby>ちで<ruby>毎日<rt>まいにち</rt></ruby><ruby>過<rt>す</rt></ruby>ごしていたから。<div class="sent-id" id="s-q65-c3">Karena setiap hari ia menjalani hidup dengan perasaan tidak ingin gagal dan merasa malu.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q65-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q65-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q65-3',this)">答</button></div>
+<div class="ans-box" id="ans-q65-3" data-hl-target="q65d" data-hl-type="wrong"><strong class="batsu">（×）</strong>　「<ruby>失敗<rt>しっぱい</rt></ruby>が<ruby>許<rt>ゆる</rt></ruby>されない」とは<ruby>書<rt>か</rt></ruby>いてあるが、<ruby>恥<rt>は</rt></ruby>ずかしい<ruby>思<rt>おも</rt></ruby>いをしたくないとは<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Memang tertulis "kegagalan tidak diizinkan", tetapi tidak tertulis "tidak ingin merasa malu".</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q65-c4">コミュニケーションをうまくとるために、<ruby>毎日<rt>まいにち</rt></ruby><ruby>準備<rt>じゅんび</rt></ruby>をして<ruby>出社<rt>しゅっしゃ</rt></ruby>していたから。<div class="sent-id" id="s-q65-c4">Karena agar komunikasi berjalan baik, setiap hari ia mempersiapkan diri lalu berangkat ke kantor.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q65-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q65-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q65-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q65-4" data-hl-target="q65a" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>誰<rt>だれ</rt></ruby>に<ruby>何<rt>なに</rt></ruby>を<ruby>話<rt>はな</rt></ruby>したいかを<ruby>書<rt>か</rt></ruby>いて<ruby>何度<rt>なんど</rt></ruby>も<ruby>練習<rt>れんしゅう</rt></ruby>してから<ruby>会社<rt>かいしゃ</rt></ruby>に<ruby>行<rt>い</rt></ruby>くようにした。<br><span class="ans-trans">(○) Ia menuliskan apa yang ingin dikatakan kepada siapa, berlatih berkali-kali, lalu pergi ke kantor.</span></div>
+</li>
+</ol>
+</div>
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q66-q"><strong>66　<ruby>筆者<rt>ひっしゃ</rt></ruby>によると、<ruby>言語<rt>げんご</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>する<ruby>上<rt>うえ</rt></ruby>で<ruby>大切<rt>たいせつ</rt></ruby>なことは<ruby>何<rt>なに</rt></ruby>か。</strong><div class="sent-id" id="s-q66-q">66. Menurut penulis, apa yang penting dalam menguasai bahasa?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q66-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q66-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q66-c1">できるだけ<ruby>短<rt>みじか</rt></ruby>い<ruby>時間<rt>じかん</rt></ruby>で、<ruby>集中<rt>しゅうちゅう</rt></ruby>して<ruby>言語<rt>げんご</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>すること。<div class="sent-id" id="s-q66-c1">Menguasai bahasa dengan konsentrasi dalam waktu sesingkat mungkin.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q66-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q66-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q66-1',this)">答</button></div>
+<div class="ans-box" id="ans-q66-1" data-hl-target="q66b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>時間<rt>じかん</rt></ruby>が<ruby>短<rt>みじか</rt></ruby>くなるのは<ruby>伝<rt>つた</rt></ruby>えたい<ruby>気持<rt>きも</rt></ruby>ちが<ruby>強<rt>つよ</rt></ruby>い<ruby>結果<rt>けっか</rt></ruby>。<ruby>短<rt>みじか</rt></ruby>くすること<ruby>自体<rt>じたい</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>とは<ruby>言<rt>い</rt></ruby>っていない。<br><span class="ans-trans">(×) Waktu yang singkat adalah hasil dari kuatnya keinginan menyampaikan. Penulis tidak mengatakan bahwa mempersingkat itu sendiri yang penting.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q66-c2"><ruby>伝<rt>つた</rt></ruby>えたいという<ruby>気持<rt>きも</rt></ruby>ちを<ruby>持<rt>も</rt></ruby>ち、それを<ruby>実現<rt>じつげん</rt></ruby>するために<ruby>積極的<rt>せっきょくてき</rt></ruby>に<ruby>学<rt>まな</rt></ruby>ぶこと。<div class="sent-id" id="s-q66-c2">Memiliki keinginan untuk menyampaikan, dan belajar dengan aktif untuk mewujudkannya.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q66-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q66-c2',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q66-2',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q66-2" data-hl-target="q66a" data-hl-type="correct"><strong class="maru">（○）</strong>　「<ruby>伝<rt>つた</rt></ruby>えたいことがある」ことが<ruby>大切<rt>たいせつ</rt></ruby>で、<ruby>必死<rt>ひっし</rt></ruby>になって<ruby>学<rt>まな</rt></ruby>ぼうと<ruby>思<rt>おも</rt></ruby>える<ruby>環境<rt>かんきょう</rt></ruby>も<ruby>大切<rt>たいせつ</rt></ruby>、と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(○) Tertulis bahwa "ada hal yang ingin disampaikan" itu penting, dan lingkungan yang membuat kita mau belajar sungguh-sungguh juga penting.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q66-c3"><ruby>少<rt>すこ</rt></ruby>しでもいいから、とにかく<ruby>毎日<rt>まいにち</rt></ruby>その<ruby>言語<rt>げんご</rt></ruby>に<ruby>触<rt>ふ</rt></ruby>れること。<div class="sent-id" id="s-q66-c3">Meskipun sedikit, pokoknya bersentuhan dengan bahasa itu setiap hari.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q66-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q66-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q66-3',this)">答</button></div>
+<div class="ans-box" id="ans-q66-3"><strong class="batsu">（×）</strong>　<ruby>毎日<rt>まいにち</rt></ruby><ruby>触<rt>ふ</rt></ruby>れることを<ruby>大切<rt>たいせつ</rt></ruby>とは<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak menyebut bahwa bersentuhan dengan bahasa setiap hari itu penting.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q66-c4"><ruby>背中<rt>せなか</rt></ruby>が<ruby>曲<rt>ま</rt></ruby>がらないように、<ruby>勉強<rt>べんきょう</rt></ruby>するときの<ruby>姿勢<rt>しせい</rt></ruby>を<ruby>良<rt>よ</rt></ruby>くすること。<div class="sent-id" id="s-q66-c4">Memperbaiki postur saat belajar agar punggung tidak membungkuk.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q66-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q66-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q66-4',this)">答</button></div>
+<div class="ans-box" id="ans-q66-4"><strong class="batsu">（×）</strong>　<ruby>本文<rt>ほんぶん</rt></ruby>の「<ruby>姿勢<rt>しせい</rt></ruby>」は<ruby>体<rt>からだ</rt></ruby>の<ruby>姿勢<rt>しせい</rt></ruby>ではなく、<ruby>学<rt>まな</rt></ruby>ぼうとする<ruby>態度<rt>たいど</rt></ruby>のこと。<br><span class="ans-trans">(×) "Sikap" (shisei) dalam teks bukan postur tubuh, melainkan sikap ingin belajar.</span></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<script>
+(function(){var h=document.querySelector('header'),n=document.getElementById('main-nav');function s(){if(h&&n)n.style.top=h.offsetHeight+'px';}s();window.addEventListener('resize',s);})();
+function toggleRuby(id,btn){var el=document.getElementById(id);if(!el)return;var on=btn.classList.toggle('open');el.querySelectorAll('ruby').forEach(function(r){r.classList.toggle('show',on);});}
+function toggleSent(id,btn){var el=document.getElementById(id);if(!el)return;el.classList.toggle('show');btn.classList.toggle('open');}
+function toggleAnsBox(id,btn){
+  var box=document.getElementById(id);if(!box)return;
+  var opening=!box.classList.contains('show');
+  box.classList.toggle('show');btn.classList.toggle('open');
+  var li=btn.closest('li');
+  if(li&&btn.classList.contains('btn-ans-correct')){li.classList.toggle('p9-ans-correct',opening);}
+  var t=box.getAttribute('data-hl-target'),ty=box.getAttribute('data-hl-type');
+  if(!t)return;
+  t.split(' ').forEach(function(k){
+    document.querySelectorAll('[data-hl="'+k+'"]').forEach(function(sp){
+      if(opening){sp.classList.add(ty==='correct'?'hl-correct':'hl-wrong');}
+      else{sp.classList.remove('hl-correct','hl-wrong');}
+    });
+  });
+}
+function closePops(){document.querySelectorAll('.kanji-wrap.open').forEach(function(w){w.classList.remove('open');});}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.kanji-btn');
+  if(b){var w=b.closest('.kanji-wrap');var o=w.classList.contains('open');closePops();if(!o)w.classList.add('open');return;}
+  closePops();
+});
+</script>
+</body>
+</html>

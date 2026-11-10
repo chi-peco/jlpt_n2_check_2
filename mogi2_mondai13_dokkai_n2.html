@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模擬試験第2回｜N2 読解 問題13</title>
+<style>
+:root{--bg:#f8f8f6;--surface:#fff;--surface2:#f0f0ee;--border:#d8d8d4;--text:#222;--text-light:#666;--accent:#3a6b8a;--accent-light:#e8f0f5;--tag-bg:#222;--tag-text:#fff;--btn:#bbb;--btn-text:#555;--ruby-color:#3a6b8a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.85}
+header{background:var(--accent);color:#fff;padding:20px 24px 16px;position:sticky;top:0;z-index:100}
+header h1{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+header p{font-size:.78rem;opacity:.8;margin-top:2px}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;gap:8px;flex-wrap:wrap;font-size:.75rem;position:sticky;top:57px;z-index:99}
+nav a{color:var(--accent);text-decoration:none;padding:3px 8px;border-radius:3px;border:1px solid var(--accent-light)}
+nav a:hover{background:var(--accent-light)}
+main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+main.wide{max-width:1100px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:6px;margin-bottom:28px;overflow:hidden}
+.section-header{background:var(--accent);color:#fff;padding:10px 18px;font-size:1rem;font-weight:700}
+.section-body{padding:18px}
+.mondai-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 4px;background:var(--tag-bg);color:#fff;border-radius:3px;font-size:.85rem;font-weight:700;margin-right:6px;flex-shrink:0}
+.important-box{background:#fff8e1;border-left:3px solid #f0a500;padding:12px 16px;border-radius:0 4px 4px 0;font-size:.9rem;font-weight:700;margin:12px 0}
+.rei-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:14px 16px;margin:10px 0 16px;font-size:.93rem}
+.rei-label{display:inline-block;background:var(--tag-bg);color:#fff;font-size:.72rem;padding:1px 8px;border-radius:2px;margin-bottom:8px}
+.line-wrap{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px}
+.line-text{flex:1;min-width:0}
+.btn-group{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding-top:2px}
+.btn-r,.btn-s{font-size:.65rem;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:1px 5px;cursor:pointer;line-height:1.4;white-space:nowrap}
+.btn-r:hover,.btn-s:hover{background:#eee}
+.btn-r.open,.btn-s.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+ruby rt{display:none;font-size:.6em;color:var(--ruby-color)}
+ruby.show rt{display:revert}
+.ans-box ruby rt{display:revert}
+.sent-id{display:none;font-size:.8rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:4px 8px;margin-top:4px;font-weight:400}
+.sent-id.show{display:block}
+u{text-decoration-color:var(--accent);text-underline-offset:3px}
+sup{font-size:.7em}
+.note-box{font-size:.82rem;color:var(--text-light);margin-top:8px;padding-left:4px}
+.chuu-box{background:var(--surface2);border-left:3px solid var(--border);border-radius:0 4px 4px 0;padding:8px 14px;margin:8px 0 0;font-size:.85rem;color:var(--text-light)}
+.p9-cols{display:grid;grid-template-columns:54% 46%;gap:0;align-items:start;margin:12px 0}
+.p9-left{padding-right:18px;border-right:2px solid var(--border);font-size:.93rem;line-height:1.85}
+.p9-right{padding-left:22px;font-size:.9rem}
+.p9-context-label{font-size:.82rem;color:var(--text-light);border-bottom:1px dashed var(--border);padding-bottom:6px}
+.p9-btn-row{display:flex;gap:4px;margin:4px 0 8px}
+.p9-q-label{font-size:.93rem;font-weight:700;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:4px}
+.p9-q-label .sent-id{color:#1a3a6b}
+.p9-qblock{margin-bottom:22px}
+.p9-choices{list-style:none;padding:0;margin:8px 0 0;counter-reset:cc}
+.p9-choices li{counter-increment:cc;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.7}
+.p9-choices li:last-child{border-bottom:none}
+.p9-choices li::before{content:counter(cc);display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;background:var(--surface2);border:1px solid var(--border);border-radius:50%;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.p9-choices li.p9-ans-correct::before{background:#27ae60;color:#fff;border-color:#27ae60}
+.p9-choice-text{flex:1;min-width:0}
+.p9-choice-btns{display:flex;flex-direction:row;align-items:flex-start;gap:3px;flex-shrink:0}
+.p9-choices li .ans-box{flex-basis:100%;margin-left:26px;margin-top:4px}
+.btn-ans{font-size:.68rem;font-weight:700;color:var(--btn-text);background:transparent;border:1px solid var(--btn);border-radius:3px;padding:2px 6px;cursor:pointer;white-space:nowrap;margin-top:1px}
+.btn-ans:hover{background:#eee}
+.btn-ans.open{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ans-correct.open{background:#27ae60;color:#fff;border-color:#27ae60}
+.ans-box{display:none;margin-top:6px;background:var(--surface2);border-left:3px solid #bbb;border-radius:0 4px 4px 0;padding:8px 10px;font-size:.82rem;line-height:1.7;color:#555}
+.ans-box.show{display:block}
+.ans-box-correct{color:#1a5c2a;background:#edf7f0;border-left-color:#27ae60}
+.maru{color:#27ae60;font-weight:700}
+.batsu{color:#c0392b;font-weight:700}
+.ans-trans{display:block;margin-top:5px;font-size:.78rem;color:#1a3a6b;background:#eaf0f8;border-radius:3px;padding:3px 7px}
+.hl-correct{background:#fff59d;border-radius:3px;padding:1px 2px}
+.hl-wrong{background:#ffcdd2;border-radius:3px;padding:1px 2px}
+.doc-box{border:1px solid var(--border);border-radius:4px;padding:14px 16px;margin-top:12px;background:#fafaf8;font-size:.9rem;line-height:1.9}
+.kanji-wrap{display:inline;position:relative}
+.kanji-btn{display:inline;cursor:pointer;border:none;border-bottom:1px dotted #aaa;color:inherit;background:none;padding:0;font:inherit;line-height:inherit}
+.kanji-btn:hover{background:#f0f5f0;border-radius:2px}
+.kanji-pop{display:none;position:absolute;left:0;top:100%;margin-top:4px;background:#1a6b3a;color:#fff;font-size:.75rem;line-height:1.5;padding:3px 8px;border-radius:4px;white-space:nowrap;z-index:200;pointer-events:none;font-weight:400}
+.kanji-wrap.open .kanji-pop{display:block}
+.q-header{display:flex;align-items:flex-start;gap:8px;margin:16px 0 10px}
+.q-header .line-text{flex:1;font-weight:700;font-size:.95rem}
+ol.content-list{padding-left:20px;margin-left:8px}
+ol.content-list li{margin-bottom:6px}
+.passage-para{text-indent:1em;margin-bottom:.7em}
+.passage-label{font-weight:700;font-size:1.05rem;margin-bottom:10px;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:4px}
+.poster-box{border:2px solid var(--border);border-radius:6px;overflow:hidden;margin:12px 0 16px;font-size:.9rem;background:#fff}
+.poster-title{background:var(--tag-bg);color:#fff;text-align:center;padding:12px 14px;font-weight:700;font-size:1.05rem;letter-spacing:.05em}
+.poster-info{padding:14px 18px;font-size:.88rem;line-height:1.9}
+.poster-info .sec-title{font-weight:700;background:var(--surface2);border-left:3px solid var(--accent);padding:3px 10px;border-radius:0 3px 3px 0;margin:10px 0 4px;font-size:.88rem}
+.poster-info hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.poster-contact{background:var(--surface2);border-top:1px solid var(--border);padding:8px 18px;font-size:.78rem;color:var(--text-light);text-align:right}
+table.fee{border-collapse:collapse;width:100%;font-size:.8rem;text-align:center;background:#fff}
+table.fee th,table.fee td{border:1px solid #555;padding:5px 6px}
+table.fee th{background:var(--surface2)}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+@media(max-width:700px){.p9-cols{grid-template-columns:1fr}.p9-left{border-right:none;border-bottom:2px solid var(--border);padding-right:0;padding-bottom:14px;margin-bottom:10px}.p9-right{padding-left:0}body{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>模擬試験 第2回｜N2 読解　問題13　内容理解（長文）</h1>
+  <p>内容理解（長文）｜Pemahaman Isi Teks (Panjang) — インドネシア語訳付き</p>
+</header>
+<nav id="main-nav"><a href="#intro">問題13について</a><a href="#passage">本文</a><a href="#q69">問69</a><a href="#q70">問70</a><a href="#q71">問71</a></nav>
+<main class="">
+<div id="intro" class="section">
+<div class="section-header">問題13｜内容理解（長文）</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-intro"><ruby>問題<rt>もんだい</rt></ruby>13　<ruby>次<rt>つぎ</rt></ruby>の<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、<ruby>後<rt>あと</rt></ruby>の<ruby>問<rt>と</rt></ruby>いに<ruby>対<rt>たい</rt></ruby>する<ruby>答<rt>こた</rt></ruby>えとして<ruby>最<rt>もっと</rt></ruby>もよいものを、1・2・3・4から<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>びなさい。<div class="sent-id" id="s-intro">Soal 13: Bacalah teks berikut, lalu pilih satu jawaban yang paling tepat dari 1・2・3・4 untuk pertanyaan setelahnya.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-intro',this)">ル</button><button class="btn-s" onclick="toggleSent('s-intro',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="passage" class="section">
+<div class="section-header">本文｜仕事の変化と技術の進歩</div>
+<div class="section-body">
+<div class="line-wrap"><div class="line-text" id="t-p1"><ruby>時代<rt>じだい</rt></ruby>が<ruby>変<rt>か</rt></ruby>わるとともに、<ruby>人々<rt>ひとびと</rt></ruby>の<ruby>生活<rt>せいかつ</rt></ruby>や<span class="kanji-wrap"><button class="kanji-btn"><ruby>価値観<rt>かちかん</rt></ruby></button><span class="kanji-pop">nilai-nilai / cara pandang</span></span>は<ruby>大<rt>おお</rt></ruby>きく<ruby>変<rt>か</rt></ruby>わり<ruby>続<rt>つづ</rt></ruby>けてきました。そして、<ruby>世<rt>よ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>必要<rt>ひつよう</rt></ruby>とされる<ruby>仕事<rt>しごと</rt></ruby>にも<ruby>大<rt>おお</rt></ruby>きな<ruby>変化<rt>へんか</rt></ruby>がありました。<ruby>時代<rt>じだい</rt></ruby>が<ruby>変<rt>か</rt></ruby>わったことによって、<ruby>世<rt>よ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>から<ruby>消<rt>き</rt></ruby>えた<span class="kanji-wrap"><button class="kanji-btn"><ruby>職業<rt>しょくぎょう</rt></ruby></button><span class="kanji-pop">profesi</span></span>や、<ruby>反対<rt>はんたい</rt></ruby>に<ruby>新<rt>あたら</rt></ruby>しく<ruby>生<rt>う</rt></ruby>まれた<ruby>職業<rt>しょくぎょう</rt></ruby>があります。<div class="sent-id" id="s-p1">Seiring berubahnya zaman, kehidupan dan nilai-nilai orang-orang terus berubah secara besar. Dan pekerjaan yang dibutuhkan di masyarakat pun mengalami perubahan besar. Karena zaman berubah, ada profesi yang hilang dari masyarakat, dan sebaliknya ada profesi yang baru lahir.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p1',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p2">「エレベーターガール」は、<ruby>時代<rt>じだい</rt></ruby>の<ruby>流<rt>なが</rt></ruby>れによって<ruby>消<rt>き</rt></ruby>えてしまった<ruby>職業<rt>しょくぎょう</rt></ruby>の<ruby>一<rt>ひと</rt></ruby>つです。「エレベーターガール」というのは、<ruby>百貨店<rt>ひゃっかてん</rt></ruby>などの<span class="kanji-wrap"><button class="kanji-btn"><ruby>商業施設<rt>しょうぎょうしせつ</rt></ruby></button><span class="kanji-pop">fasilitas komersial</span></span>についているエレベーターに<ruby>乗<rt>の</rt></ruby>って、お<ruby>客様<rt>きゃくさま</rt></ruby>を<ruby>案内<rt>あんない</rt></ruby>する<ruby>仕事<rt>しごと</rt></ruby>です。<ruby>女性<rt>じょせい</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い<ruby>職業<rt>しょくぎょう</rt></ruby>だったため、このような<ruby>名前<rt>なまえ</rt></ruby>がつけられました。<ruby>昔<rt>むかし</rt></ruby>のエレベーターは<ruby>今<rt>いま</rt></ruby>のように<ruby>誰<rt>だれ</rt></ruby>でも<ruby>簡単<rt>かんたん</rt></ruby>に<span class="kanji-wrap"><button class="kanji-btn"><ruby>操作<rt>そうさ</rt></ruby></button><span class="kanji-pop">mengoperasikan</span></span>できるものではありませんでした。<ruby>昇<rt>のぼ</rt></ruby>ったり<ruby>降<rt>お</rt></ruby>りたりするにも<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>操作<rt>そうさ</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>でしたし、とびらの<ruby>開<rt>あ</rt></ruby>け<ruby>閉<rt>し</rt></ruby>めも<ruby>自動<rt>じどう</rt></ruby>でできなかったため、それもエレベーターガールが<ruby>行<rt>おこな</rt></ruby>っていたそうです。<div class="sent-id" id="s-p2">"Elevator girl" adalah salah satu profesi yang hilang karena arus zaman. "Elevator girl" adalah pekerjaan menaiki lift yang ada di fasilitas komersial seperti department store dan memandu para pelanggan. Karena banyak perempuan dalam profesi ini, nama seperti itu diberikan. Lift zaman dahulu tidak seperti sekarang yang bisa dioperasikan dengan mudah oleh siapa saja. Untuk naik dan turun pun diperlukan pengoperasian khusus, dan karena membuka dan menutup pintu juga tidak bisa dilakukan otomatis, katanya hal itu pun dilakukan oleh elevator girl.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p2',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p3">しかしエレベーターの<span class="kanji-wrap"><button class="kanji-btn"><ruby>自動化<rt>じどうか</rt></ruby></button><span class="kanji-pop">otomatisasi</span></span>が<ruby>進<rt>すす</rt></ruby>んだことで、エレベーターガールという<ruby>仕事<rt>しごと</rt></ruby>は<ruby>必要<rt>ひつよう</rt></ruby>なくなってしまいました。<ruby>操作<rt>そうさ</rt></ruby>が<ruby>簡単<rt>かんたん</rt></ruby>になったことで、<u><span data-hl="q69">お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>自分<rt>じぶん</rt></ruby>で<ruby>行<rt>い</rt></ruby>きたい<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>けるようになった</span></u><sup>①</sup>からです。このように、<span data-hl="q69b"><ruby>技術<rt>ぎじゅつ</rt></ruby>の<ruby>進歩<rt>しんぽ</rt></ruby>によって<ruby>消<rt>き</rt></ruby>えた<ruby>仕事<rt>しごと</rt></ruby>は<ruby>他<rt>ほか</rt></ruby>にもたくさんあります</span>。<div class="sent-id" id="s-p3">Namun, karena otomatisasi lift berkembang, pekerjaan elevator girl menjadi tidak diperlukan lagi. Karena pengoperasian menjadi mudah, para pelanggan menjadi bisa pergi sendiri ke tempat yang ingin mereka tuju (①). Seperti ini, ada banyak pekerjaan lain yang hilang karena kemajuan teknologi.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p3',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p4"><ruby>反対<rt>はんたい</rt></ruby>に、<ruby>技術<rt>ぎじゅつ</rt></ruby>の<ruby>進歩<rt>しんぽ</rt></ruby>によって<ruby>新<rt>あたら</rt></ruby>しく<ruby>生<rt>う</rt></ruby>まれた<ruby>職業<rt>しょくぎょう</rt></ruby>もあります。「プログラマー」は、コンピューターを<ruby>動<rt>うご</rt></ruby>かすための<span class="kanji-wrap"><button class="kanji-btn">プログラミング<ruby>言語<rt>げんご</rt></ruby></button><span class="kanji-pop">bahasa pemrograman</span></span>というものを<ruby>使<rt>つか</rt></ruby>って、<ruby>様々<rt>さまざま</rt></ruby>なシステムを<ruby>開発<rt>かいはつ</rt></ruby>する<ruby>職業<rt>しょくぎょう</rt></ruby>です。<span data-hl="q70">この<ruby>仕事<rt>しごと</rt></ruby>は、コンピューターというものが<ruby>誕生<rt>たんじょう</rt></ruby>しなければ<ruby>生<rt>う</rt></ruby>まれなかったものです</span>。<ruby>現在<rt>げんざい</rt></ruby>はプログラマーとして<ruby>働<rt>はたら</rt></ruby>く<ruby>人<rt>ひと</rt></ruby>は<ruby>数多<rt>かずおお</rt></ruby>くいますが、パソコンやインターネットが<span class="kanji-wrap"><button class="kanji-btn"><ruby>普及<rt>ふきゅう</rt></ruby></button><span class="kanji-pop">menyebar luas</span></span>する<ruby>前<rt>まえ</rt></ruby>の<ruby>時代<rt>じだい</rt></ruby>では<u><ruby>全<rt>まった</rt></ruby>く<ruby>想像<rt>そうぞう</rt></ruby>できなかった</u><sup>②</sup>ことだと<ruby>思<rt>おも</rt></ruby>います。<div class="sent-id" id="s-p4">Sebaliknya, ada juga profesi yang baru lahir karena kemajuan teknologi. "Programmer" adalah profesi yang mengembangkan berbagai sistem dengan menggunakan yang disebut bahasa pemrograman untuk menggerakkan komputer. Pekerjaan ini tidak akan lahir jika komputer tidak diciptakan. Sekarang banyak orang yang bekerja sebagai programmer, tetapi saya rasa pada zaman sebelum komputer pribadi dan internet menyebar luas, hal itu sama sekali tidak terbayangkan (②).</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p4',this)">文</button></div></div>
+<div class="line-wrap"><div class="line-text" id="t-p5"><ruby>時代<rt>じだい</rt></ruby>とともに<ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進<rt>すす</rt></ruby>むことで、<ruby>必要<rt>ひつよう</rt></ruby>な<ruby>仕事<rt>しごと</rt></ruby>も<ruby>変化<rt>へんか</rt></ruby>します。そして、<ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進歩<rt>しんぽ</rt></ruby>するスピードはどんどん<ruby>速<rt>はや</rt></ruby>くなっています。ほとんどの<ruby>仕事<rt>しごと</rt></ruby>が、<ruby>機械<rt>きかい</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>自動<rt>じどう</rt></ruby>でできる<ruby>時代<rt>じだい</rt></ruby>になりました。このまま<ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進<rt>すす</rt></ruby>むと、もはや<sup>（<ruby>注<rt>ちゅう</rt></ruby>）</sup><ruby>人間<rt>にんげん</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>されている<ruby>仕事<rt>しごと</rt></ruby>はゼロになるのではないかと<ruby>不安<rt>ふあん</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>をあげる<ruby>人<rt>ひと</rt></ruby>もいます。<span data-hl="q71a">ロボットに<ruby>人間<rt>にんげん</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>が<ruby>全<rt>すべ</rt></ruby>て<ruby>奪<rt>うば</rt></ruby>われてしまわないように<ruby>何<rt>なに</rt></ruby>か<ruby>対策<rt>たいさく</rt></ruby>をするべきだという<ruby>人<rt>ひと</rt></ruby>もいますが、<ruby>私<rt>わたし</rt></ruby>はその<ruby>必要<rt>ひつよう</rt></ruby>はないと<ruby>思<rt>おも</rt></ruby>っています</span>。<ruby>何<rt>なに</rt></ruby>も<ruby>焦<rt>あせ</rt></ruby>る<ruby>必要<rt>ひつよう</rt></ruby>はありません。<span data-hl="q71b"><ruby>機械<rt>きかい</rt></ruby>にできることは<ruby>機械<rt>きかい</rt></ruby>に<ruby>任<rt>まか</rt></ruby>せましょう。それによって<ruby>作<rt>つく</rt></ruby>られた<ruby>自由<rt>じゆう</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>で、<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>と<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>を<ruby>過<rt>す</rt></ruby>ごせば<ruby>良<rt>よ</rt></ruby>いのです</span>。<div class="sent-id" id="s-p5">Seiring zaman, dengan kemajuan teknologi, pekerjaan yang diperlukan pun berubah. Dan kecepatan kemajuan teknologi semakin lama semakin cepat. Sekarang sudah menjadi zaman di mana hampir semua pekerjaan bisa dilakukan secara otomatis dengan mesin. Jika teknologi terus maju seperti ini, ada orang yang menyuarakan kekhawatiran bahwa pekerjaan yang tersisa bagi manusia akan menjadi nol (catatan). Ada juga yang mengatakan harus ada upaya agar semua pekerjaan manusia tidak direbut robot, tetapi saya berpikir hal itu tidak perlu. Tidak perlu terburu-buru sama sekali. Serahkan saja hal yang bisa dilakukan mesin kepada mesin. Dengan waktu luang yang tercipta karenanya, lebih baik habiskan waktu berharga bersama orang yang berharga.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p5',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p5',this)">文</button></div></div>
+<div class="line-wrap" style="font-size:.82rem;color:#666;"><div class="line-text" id="t-p-n">（<ruby>注<rt>ちゅう</rt></ruby>）もはや：もうすでに<div class="sent-id" id="s-p-n">(Catatan) Mohaya: sudah; sekarang sudah.</div></div><div class="btn-group"><button class="btn-r" onclick="toggleRuby('t-p-n',this)">ル</button><button class="btn-s" onclick="toggleSent('s-p-n',this)">文</button></div></div>
+
+</div>
+</div>
+<div id="q69" class="section">
+<div class="section-header">問69</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q69-q"><strong>69　①<u>お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>自分<rt>じぶん</rt></ruby>で<ruby>行<rt>い</rt></ruby>きたい<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>けるようになった</u>とはどういうことか。</strong><div class="sent-id" id="s-q69-q">69. Apa maksud ① "para pelanggan menjadi bisa pergi sendiri ke tempat yang ingin mereka tuju"?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q69-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q69-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q69-c1">エレベーターがなくても、お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>目的<rt>もくてき</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>まで<ruby>自分<rt>じぶん</rt></ruby>で<ruby>行<rt>い</rt></ruby>けるようになったということ<div class="sent-id" id="s-q69-c1">Bahwa meskipun tidak ada lift, pelanggan menjadi bisa pergi sendiri ke tempat tujuan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q69-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q69-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q69-1',this)">答</button></div>
+<div class="ans-box" id="ans-q69-1" data-hl-target="q69" data-hl-type="wrong"><strong class="batsu">（×）</strong>　エレベーターを<ruby>使<rt>つか</rt></ruby>う<ruby>話<rt>はなし</rt></ruby>。エレベーターがなくてもという<ruby>意味<rt>いみ</rt></ruby>ではない。<br><span class="ans-trans">(×) Ini cerita tentang menggunakan lift. Artinya bukan "meskipun tidak ada lift".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q69-c2">お<ruby>客<rt>きゃく</rt></ruby>さんがエレベーターの<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>して、<ruby>自分<rt>じぶん</rt></ruby>で<ruby>動<rt>うご</rt></ruby>かせるようになったということ<div class="sent-id" id="s-q69-c2">Bahwa pelanggan mempelajari cara menggunakan lift sehingga bisa menjalankannya sendiri.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q69-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q69-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q69-2',this)">答</button></div>
+<div class="ans-box" id="ans-q69-2" data-hl-target="q69" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>勉強<rt>べんきょう</rt></ruby>したとは<ruby>書<rt>か</rt></ruby>いていない。<ruby>操作<rt>そうさ</rt></ruby>が<ruby>簡単<rt>かんたん</rt></ruby>になったから。<br><span class="ans-trans">(×) Tidak tertulis bahwa mereka belajar. Alasannya adalah pengoperasian menjadi mudah.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q69-c3">エレベーターガールのおかげで、お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>目的<rt>もくてき</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>まで<ruby>行<rt>い</rt></ruby>けるようになったということ<div class="sent-id" id="s-q69-c3">Bahwa berkat elevator girl, pelanggan menjadi bisa pergi ke tempat tujuan.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q69-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q69-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q69-3',this)">答</button></div>
+<div class="ans-box" id="ans-q69-3" data-hl-target="q69b" data-hl-type="wrong"><strong class="batsu">（×）</strong>　エレベーターガールは<ruby>必要<rt>ひつよう</rt></ruby>なくなった。<ruby>逆<rt>ぎゃく</rt></ruby>の<ruby>内容<rt>ないよう</rt></ruby>。<br><span class="ans-trans">(×) Elevator girl menjadi tidak diperlukan. Isinya berlawanan.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q69-c4"><ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進<rt>すす</rt></ruby>んだことで、お<ruby>客<rt>きゃく</rt></ruby>さんでも<ruby>簡単<rt>かんたん</rt></ruby>にエレベーターを<ruby>動<rt>うご</rt></ruby>かせるようになったということ<div class="sent-id" id="s-q69-c4">Bahwa karena teknologi maju, pelanggan pun bisa menjalankan lift dengan mudah.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q69-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q69-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q69-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q69-4" data-hl-target="q69" data-hl-type="correct"><strong class="maru">（○）</strong>　<ruby>自動化<rt>じどうか</rt></ruby>が<ruby>進<rt>すす</rt></ruby>み<ruby>操作<rt>そうさ</rt></ruby>が<ruby>簡単<rt>かんたん</rt></ruby>になったので、お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>自分<rt>じぶん</rt></ruby>でエレベーターを<ruby>使<rt>つか</rt></ruby>って<ruby>行<rt>い</rt></ruby>きたい<ruby>場所<rt>ばしょ</rt></ruby>に<ruby>行<rt>い</rt></ruby>けるようになった。<br><span class="ans-trans">(○) Otomatisasi berkembang dan pengoperasian menjadi mudah, sehingga pelanggan bisa menggunakan lift sendiri dan pergi ke tempat yang diinginkan.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+<div id="q70" class="section">
+<div class="section-header">問70</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q70-q"><strong>70　②<u><ruby>全<rt>まった</rt></ruby>く<ruby>想像<rt>そうぞう</rt></ruby>できなかった</u>のはなぜか。</strong><div class="sent-id" id="s-q70-q">70. Mengapa ② "sama sekali tidak terbayangkan"?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q70-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q70-q',this)">文</button></div>
+<ol class="p9-choices">
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q70-c1">プログラマーは、<ruby>昔<rt>むかし</rt></ruby>は<ruby>存在<rt>そんざい</rt></ruby>しなかったものを<ruby>使<rt>つか</rt></ruby>って<ruby>仕事<rt>しごと</rt></ruby>をするから。<div class="sent-id" id="s-q70-c1">Karena programmer bekerja dengan menggunakan sesuatu yang dahulu tidak ada.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q70-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q70-c1',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q70-1',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q70-1" data-hl-target="q70" data-hl-type="correct"><strong class="maru">（○）</strong>　コンピューターが<ruby>誕生<rt>たんじょう</rt></ruby>しなければ<ruby>生<rt>う</rt></ruby>まれなかった<ruby>仕事<rt>しごと</rt></ruby>。パソコンやインターネットが<ruby>普及<rt>ふきゅう</rt></ruby>する<ruby>前<rt>まえ</rt></ruby>は<ruby>存在<rt>そんざい</rt></ruby>しなかった。<br><span class="ans-trans">(○) Pekerjaan yang tidak akan lahir tanpa komputer. Sebelum komputer pribadi dan internet menyebar, semuanya belum ada.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q70-c2">プログラマーという<ruby>職業<rt>しょくぎょう</rt></ruby>に<ruby>就<rt>つ</rt></ruby>いている<ruby>人<rt>ひと</rt></ruby>がとても<ruby>少<rt>すく</rt></ruby>なかったから。<div class="sent-id" id="s-q70-c2">Karena orang yang menjalani profesi programmer sangat sedikit.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q70-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q70-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q70-2',this)">答</button></div>
+<div class="ans-box" id="ans-q70-2"><strong class="batsu">（×）</strong>　<ruby>人数<rt>にんずう</rt></ruby>については<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak membahas jumlah orang.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q70-c3">ウェブサイトやソフトウェアの<ruby>作<rt>つく</rt></ruby>り<ruby>方<rt>かた</rt></ruby>について、<ruby>誰<rt>だれ</rt></ruby>も<ruby>知<rt>し</rt></ruby>らなかったから。<div class="sent-id" id="s-q70-c3">Karena tidak ada yang tahu cara membuat situs web atau perangkat lunak.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q70-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q70-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q70-3',this)">答</button></div>
+<div class="ans-box" id="ans-q70-3"><strong class="batsu">（×）</strong>　ウェブサイトやソフトウェアについては<ruby>書<rt>か</rt></ruby>いていない。<br><span class="ans-trans">(×) Teks tidak membahas situs web atau perangkat lunak.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q70-c4">プログラマーという<ruby>仕事<rt>しごと</rt></ruby>がどういうものか、<ruby>誰<rt>だれ</rt></ruby>も<ruby>理解<rt>りかい</rt></ruby>していなかったから。<div class="sent-id" id="s-q70-c4">Karena tidak ada yang memahami pekerjaan programmer itu seperti apa.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q70-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q70-c4',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q70-4',this)">答</button></div>
+<div class="ans-box" id="ans-q70-4" data-hl-target="q70" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>理解<rt>りかい</rt></ruby>されていなかったからではなく、<ruby>仕事<rt>しごと</rt></ruby>そのものがまだ<ruby>存在<rt>そんざい</rt></ruby>しなかったから。<br><span class="ans-trans">(×) Bukan karena tidak dipahami, melainkan karena pekerjaannya sendiri belum ada.</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+<div id="q71" class="section">
+<div class="section-header">問71</div>
+<div class="section-body">
+<div class="p9-qblock">
+<div class="p9-q-label" id="t-q71-q"><strong>71　この<ruby>文章<rt>ぶんしょう</rt></ruby>で<ruby>筆者<rt>ひっしゃ</rt></ruby>が<ruby>最<rt>もっと</rt></ruby>も<ruby>言<rt>い</rt></ruby>いたいことは<ruby>何<rt>なに</rt></ruby>か。</strong><div class="sent-id" id="s-q71-q">71. Apa yang paling ingin dikatakan penulis dalam teks ini?</div></div>
+<div class="p9-btn-row"><button class="btn-r" onclick="toggleRuby('t-q71-q',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q71-q',this)">文</button></div>
+<ol class="p9-choices">
+<li>
+<div class="p9-choice-text" id="t-q71-c1"><ruby>機械<rt>きかい</rt></ruby>に<ruby>仕事<rt>しごと</rt></ruby>を<ruby>取<rt>と</rt></ruby>られてしまう<ruby>前<rt>まえ</rt></ruby>に、<ruby>新<rt>あたら</rt></ruby>しい<ruby>知識<rt>ちしき</rt></ruby>や<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>手<rt>て</rt></ruby>に<ruby>入<rt>い</rt></ruby>れる<ruby>努力<rt>どりょく</rt></ruby>をするべきだ。<div class="sent-id" id="s-q71-c1">Sebelum pekerjaan diambil mesin, kita harus berusaha memperoleh pengetahuan dan teknologi baru.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q71-c1',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q71-c1',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q71-1',this)">答</button></div>
+<div class="ans-box" id="ans-q71-1" data-hl-target="q71a" data-hl-type="wrong"><strong class="batsu">（×）</strong>　「<ruby>対策<rt>たいさく</rt></ruby>をする<ruby>必要<rt>ひつよう</rt></ruby>はない」と<ruby>筆者<rt>ひっしゃ</rt></ruby>は<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(×) Penulis menyatakan "tidak perlu mengambil langkah".</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q71-c2"><ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進歩<rt>しんぽ</rt></ruby>し<ruby>続<rt>つづ</rt></ruby>けると、<ruby>世<rt>よ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>存在<rt>そんざい</rt></ruby>する<ruby>仕事<rt>しごと</rt></ruby>は<ruby>全<rt>すべ</rt></ruby>てロボットが<ruby>行<rt>おこな</rt></ruby>うようになるはずだ。<div class="sent-id" id="s-q71-c2">Jika teknologi terus maju, semua pekerjaan di dunia pasti akan dilakukan robot.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q71-c2',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q71-c2',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q71-2',this)">答</button></div>
+<div class="ans-box" id="ans-q71-2"><strong class="batsu">（×）</strong>　これは<ruby>不安<rt>ふあん</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>をあげる<ruby>人<rt>ひと</rt></ruby>の<ruby>意見<rt>いけん</rt></ruby>。<ruby>筆者<rt>ひっしゃ</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>えではない。<br><span class="ans-trans">(×) Itu pendapat orang yang menyuarakan kekhawatiran, bukan pendapat penulis.</span></div>
+</li>
+<li>
+<div class="p9-choice-text" id="t-q71-c3"><ruby>将来<rt>しょうらい</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>を<ruby>心配<rt>しんぱい</rt></ruby>している<ruby>人<rt>ひと</rt></ruby>のために、できる<ruby>限<rt>かぎ</rt></ruby>りの<ruby>対策<rt>たいさく</rt></ruby>をとるべきだ。<div class="sent-id" id="s-q71-c3">Demi orang yang mengkhawatirkan pekerjaan di masa depan, harus diambil langkah sebanyak mungkin.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q71-c3',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q71-c3',this)">文</button><button class="btn-ans" onclick="toggleAnsBox('ans-q71-3',this)">答</button></div>
+<div class="ans-box" id="ans-q71-3" data-hl-target="q71a" data-hl-type="wrong"><strong class="batsu">（×）</strong>　<ruby>対策<rt>たいさく</rt></ruby>は<ruby>必要<rt>ひつよう</rt></ruby>ないと<ruby>述<rt>の</rt></ruby>べている。<br><span class="ans-trans">(×) Penulis menyatakan langkah tidak diperlukan.</span></div>
+</li>
+<li class="p9-ans-correct-target">
+<div class="p9-choice-text" id="t-q71-c4"><ruby>機械<rt>きかい</rt></ruby>ができる<ruby>仕事<rt>しごと</rt></ruby>は<ruby>人間<rt>にんげん</rt></ruby>がやらないようにして、<ruby>他<rt>ほか</rt></ruby>のことに<ruby>時間<rt>じかん</rt></ruby>を<ruby>使<rt>つか</rt></ruby>った<ruby>方<rt>ほう</rt></ruby>が<ruby>良<rt>よ</rt></ruby>い。<div class="sent-id" id="s-q71-c4">Pekerjaan yang bisa dilakukan mesin sebaiknya tidak dilakukan manusia, dan waktunya dipakai untuk hal lain.</div></div>
+<div class="p9-choice-btns"><button class="btn-r" onclick="toggleRuby('t-q71-c4',this)">ル</button><button class="btn-s" onclick="toggleSent('s-q71-c4',this)">文</button><button class="btn-ans btn-ans-correct" onclick="toggleAnsBox('ans-q71-4',this)">答</button></div>
+<div class="ans-box ans-box-correct" id="ans-q71-4" data-hl-target="q71b" data-hl-type="correct"><strong class="maru">（○）</strong>　「<ruby>機械<rt>きかい</rt></ruby>にできることは<ruby>機械<rt>きかい</rt></ruby>に<ruby>任<rt>まか</rt></ruby>せましょう。<ruby>自由<rt>じゆう</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>で、<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>と<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>を<ruby>過<rt>す</rt></ruby>ごせば<ruby>良<rt>よ</rt></ruby>い」と<ruby>書<rt>か</rt></ruby>いてある。<br><span class="ans-trans">(○) Tertulis: "Serahkan hal yang bisa dilakukan mesin kepada mesin. Dengan waktu luang, lebih baik habiskan waktu berharga bersama orang yang berharga."</span></div>
+</li>
+</ol>
+</div>
+
+</div>
+</div>
+
+</main>
+<script>
+(function(){var h=document.querySelector('header'),n=document.getElementById('main-nav');function s(){if(h&&n)n.style.top=h.offsetHeight+'px';}s();window.addEventListener('resize',s);})();
+function toggleRuby(id,btn){var el=document.getElementById(id);if(!el)return;var on=btn.classList.toggle('open');el.querySelectorAll('ruby').forEach(function(r){r.classList.toggle('show',on);});}
+function toggleSent(id,btn){var el=document.getElementById(id);if(!el)return;el.classList.toggle('show');btn.classList.toggle('open');}
+function toggleAnsBox(id,btn){
+  var box=document.getElementById(id);if(!box)return;
+  var opening=!box.classList.contains('show');
+  box.classList.toggle('show');btn.classList.toggle('open');
+  var li=btn.closest('li');
+  if(li&&btn.classList.contains('btn-ans-correct')){li.classList.toggle('p9-ans-correct',opening);}
+  var t=box.getAttribute('data-hl-target'),ty=box.getAttribute('data-hl-type');
+  if(!t)return;
+  t.split(' ').forEach(function(k){
+    document.querySelectorAll('[data-hl="'+k+'"]').forEach(function(sp){
+      if(opening){sp.classList.add(ty==='correct'?'hl-correct':'hl-wrong');}
+      else{sp.classList.remove('hl-correct','hl-wrong');}
+    });
+  });
+}
+function closePops(){document.querySelectorAll('.kanji-wrap.open').forEach(function(w){w.classList.remove('open');});}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.kanji-btn');
+  if(b){var w=b.closest('.kanji-wrap');var o=w.classList.contains('open');closePops();if(!o)w.classList.add('open');return;}
+  closePops();
+});
+</script>
+</body>
+</html>

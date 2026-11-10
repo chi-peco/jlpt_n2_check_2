@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N2 模擬試験 第2回 言語知識（文字・語彙）</title>
+<style>
+  :root {
+    --bg: #f8f8f6; --surface: #ffffff; --surface2: #f0f0ee; --border: #d8d8d4;
+    --text: #222222; --text-light: #666666; --accent: #3a6b8a; --accent-light: #e8f0f5;
+    --tag-bg: #222222; --btn: #bbbbbb; --btn-text: #555555; --ruby-color: #3a6b8a;
+    --correct: #27ae60; --wrong: #c0392b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.85; }
+  header { background: var(--accent); color: #fff; padding: 20px 24px 16px; position: sticky; top: 0; z-index: 100; }
+  header h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.05em; }
+  header p { font-size: 0.78rem; opacity: 0.8; margin-top: 2px; }
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 8px 16px; display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.75rem; position: sticky; top: 57px; z-index: 99; }
+  nav a { color: var(--accent); text-decoration: none; padding: 3px 8px; border-radius: 3px; border: 1px solid var(--accent-light); }
+  nav a:hover { background: var(--accent-light); }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .part-title { font-size: 1.05rem; font-weight: 700; color: var(--accent); border-bottom: 2px solid var(--accent); margin: 8px 0 18px; padding-bottom: 4px; }
+  .section { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin-bottom: 28px; overflow: hidden; }
+  .section-header { background: var(--accent); color: #fff; padding: 10px 18px; font-size: 1rem; font-weight: 700; }
+  .section-body { padding: 18px; }
+  .rei-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; padding: 14px 16px; margin: 4px 0 16px; font-size: 0.93rem; }
+  .rei-label { display: inline-block; background: var(--tag-bg); color: #fff; font-size: 0.72rem; padding: 1px 8px; border-radius: 2px; margin-bottom: 8px; }
+  .mondai-card { border: 1px solid var(--border); border-radius: 4px; margin: 10px 0; overflow: hidden; }
+  .mondai-head { background: var(--surface2); padding: 8px 14px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 8px; }
+  .mondai-num { display: inline-flex; align-items: center; justify-content: center; min-width: 26px; height: 26px; padding: 0 4px; background: var(--accent); color: #fff; border-radius: 13px; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .mondai-body { padding: 10px 14px; }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin: 8px 0; font-size: 0.9rem; }
+  .choice-item { padding: 3px 0; }
+  .ans-btn { display: inline-block; margin-top: 8px; padding: 4px 14px; background: var(--accent); color: #fff; border: none; border-radius: 3px; font-size: 0.8rem; cursor: pointer; }
+  .ans-btn:hover { opacity: 0.85; }
+  .ans-area { display: none; margin-top: 8px; background: var(--accent-light); border: 1px solid var(--accent); border-radius: 4px; padding: 8px 12px; font-size: 0.88rem; }
+  .ans-area.show { display: block; }
+  .correct-mark { color: var(--correct); font-weight: 700; }
+  .line-wrap { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 4px; }
+  .line-text { flex: 1; }
+  .btn-group { display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; padding-top: 2px; }
+  .btn-r, .btn-s { font-size: 0.65rem; color: var(--btn-text); background: transparent; border: 1px solid var(--btn); border-radius: 3px; padding: 1px 5px; cursor: pointer; line-height: 1.4; white-space: nowrap; }
+  .btn-r:hover, .btn-s:hover { background: #eeeeee; }
+  ruby rt { display: none; font-size: 0.6em; color: var(--ruby-color); }
+  ruby.show rt { display: revert; }
+  .sent-id { display: none; font-size: 0.8rem; color: #1a3a6b; background: #eaf0f8; border-radius: 3px; padding: 4px 8px; margin-top: 4px; font-weight: 400; }
+  .sent-id.show { display: block; }
+  .choices-ruby-btn { font-size: 0.65rem; color: var(--btn-text); background: transparent; border: 1px solid var(--btn); border-radius: 3px; padding: 1px 5px; cursor: pointer; margin-bottom: 4px; display: inline-block; }
+  .choices-ruby-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+  .sent-choice { margin-bottom: 6px; }
+  .word-head { font-weight: 700; font-size: 1rem; }
+  @media (max-width: 600px) { .section-body { padding: 12px; } body { font-size: 15px; } .choices { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>N2 模擬試験 第2回｜言語知識（文字・語彙）</h1>
+</header>
+
+<nav id="nav"></nav>
+
+<main id="app"></main>
+
+<script>
+/* =====================================================
+   データ構造
+   ルビ記法： {漢字|かんじ}   下線：<u>…</u>
+   PARTS ＝ 大きな区分（文字・語彙／文法／読解…）。後から追加できます。
+   各セクション type:
+     "choice" … 4択（選択肢が文字列）
+     "usage"  … 問題6（語＋4つの文）
+   ===================================================== */
+
+var PARTS = [];
+
+/* ---------- 言語知識（文字・語彙） ---------- */
+PARTS.push({
+  id: "p-moji",
+  title: "言語知識（文字・語彙）",
+  sections: [
+
+  /* ===== 問題1 ===== */
+  { id: "s1", nav: "問題1 漢字読み", title: "問題1｜漢字読み", type: "choice",
+    inst: "＿＿＿の{言葉|ことば}の{読|よ}み{方|かた}として{最|もっと}もよいものを、1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu jawaban yang paling tepat untuk cara membaca kata yang bergaris bawah, dari pilihan 1・2・3・4.",
+    items: [
+      { n: 1, q: "{社長|しゃちょう}が{記者|きしゃ}の{質問|しつもん}に<u>{応|おう}じる</u>。",
+        tr: "Direktur menanggapi pertanyaan wartawan.",
+        ch: ["とうじる","こうじる","おうじる","そうじる"], a: 3,
+        exs: ["とうじる　×　（kata ini tidak ada）","こうじる　×　講じる（こうじる）＝menempuh/mengambil（langkah）例）対策（たいさく）を講じる＝mengambil langkah penanggulangan","おうじる　○　応じる（おうじる）＝menanggapi/menjawab","そうじる　×　（kata ini tidak ada）"] },
+      { n: 2, q: "{料理|りょうり}を<u>{追加|ついか}</u>で{注文|ちゅうもん}する。",
+        tr: "Memesan hidangan sebagai tambahan.",
+        ch: ["ついが","ついか","づいか","づいが"], a: 2,
+        exs: ["ついが　×　（kata ini tidak ada）","ついか　○　追加（ついか）＝tambahan","づいか　×　（kata ini tidak ada）","づいが　×　（kata ini tidak ada）"] },
+      { n: 3, q: "{運転|うんてん}{免許|めんきょ}を<u>{取得|しゅとく}</u>した。",
+        tr: "Saya memperoleh SIM (surat izin mengemudi).",
+        ch: ["しゅうとう","しゅうとく","しゅとう","しゅとく"], a: 4,
+        exs: ["しゅうとう　×　周到（しゅうとう）＝cermat/teliti 例）用意周到（よういしゅうとう）＝persiapan yang matang","しゅうとく　×　習得（しゅうとく）＝menguasai（keterampilan）例）技術（ぎじゅつ）を習得する＝menguasai teknik","しゅとう　×　（kata ini tidak ada）","しゅとく　○　取得（しゅとく）＝memperoleh/mendapatkan"] },
+      { n: 4, q: "{今日|きょう}の{空|そら}は、<u>{鮮|あざ}やか</u>な{青色|あおいろ}だ。",
+        tr: "Langit hari ini berwarna biru cerah.",
+        ch: ["あざやか","さわやか","しなやか","おだやか"], a: 1,
+        exs: ["あざやか　○　鮮やか（あざやか）＝cerah/mencolok","さわやか　×　爽やか（さわやか）＝segar/menyenangkan 例）爽やかな朝（あさ）＝pagi yang segar","しなやか　×　しなやか＝lentur/luwes 例）しなやかな体（からだ）＝tubuh yang lentur","おだやか　×　穏やか（おだやか）＝tenang/damai 例）穏やかな海（うみ）＝laut yang tenang"] },
+      { n: 5, q: "{一|ひと}つのテーマについて<u>{討論|とうろん}</u>する。",
+        tr: "Berdiskusi tentang satu tema.",
+        ch: ["とろん","とうろん","ていろん","てろん"], a: 2,
+        exs: ["とろん　×　（kata ini tidak ada）","とうろん　○　討論（とうろん）＝diskusi/debat","ていろん　×　（kata ini tidak ada）","てろん　×　（kata ini tidak ada）"] }
+    ]
+  },
+
+  /* ===== 問題2 ===== */
+  { id: "s2", nav: "問題2 表記", title: "問題2｜表記", type: "choice",
+    inst: "＿＿＿の{言葉|ことば}を{漢字|かんじ}で{書|か}くとき、{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu jawaban yang paling tepat saat menulis kata yang bergaris bawah dalam kanji, dari pilihan 1・2・3・4.",
+    items: [
+      { n: 6, q: "{捕|つか}まえた{金魚|きんぎょ}を{川|かわ}に<u>はなす</u>。",
+        tr: "Melepaskan ikan mas yang tertangkap ke sungai.",
+        ch: ["防す","改す","放す","訪す"], a: 3,
+        ex: "放す（はなす）＝melepaskan" },
+      { n: 7, q: "{病気|びょうき}の{人|ひと}を<u>かんご</u>するのが{仕事|しごと}だ。",
+        tr: "Pekerjaan saya adalah merawat orang yang sakit.",
+        ch: ["看穫","看護","観護","観穫"], a: 2,
+        ex: "看護（かんご）＝perawatan (pasien)" },
+      { n: 8, q: "{会場|かいじょう}への{入場|にゅうじょう}を<u>せいげん</u>する。",
+        tr: "Membatasi masuk ke tempat acara.",
+        ch: ["製限","制郎","制限","製郎"], a: 3,
+        ex: "制限（せいげん）＝pembatasan" },
+      { n: 9, q: "{子|こ}どもの{手|て}をしっかりと<u>にぎる</u>。",
+        tr: "Menggenggam tangan anak dengan erat.",
+        ch: ["握る","揺る","振る","採る"], a: 1,
+        ex: "握る（にぎる）＝menggenggam" },
+      { n: 10, q: "{貯金|ちょきん}を{全|すべ}て{病院|びょういん}に<u>きふ</u>した。",
+        tr: "Saya menyumbangkan seluruh tabungan kepada rumah sakit.",
+        ch: ["奇付","寄付","寄布","奇布"], a: 2,
+        ex: "寄付（きふ）＝donasi/sumbangan" }
+    ]
+  },
+
+  /* ===== 問題3 ===== */
+  { id: "s3", nav: "問題3 語形成", title: "問題3｜語形成", type: "choice",
+    inst: "（　　）に{入|い}れるのに{最|もっと}もよいものを、1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu jawaban yang paling tepat untuk dimasukkan ke dalam (　　), dari pilihan 1・2・3・4.",
+    items: [
+      { n: 11, q: "（　　）{企画|きかく}を{提案|ていあん}するための{資料|しりょう}を{作|つく}る。",
+        tr: "Membuat materi untuk mengajukan rencana baru.",
+        ch: ["好","最","高","新"], a: 4,
+        exs: ["好（こう）×　好成績（こうせいせき）＝hasil yang bagus（bukan 好企画）","最（さい）×　最先端（さいせんたん）＝paling mutakhir（bukan 最企画）","高（こう）×　高性能（こうせいのう）＝berkinerja tinggi（bukan 高企画）","新（しん）○　新企画（しんきかく）＝rencana/proyek baru"] },
+      { n: 12, q: "{携帯電話|けいたいでんわ}を{落|お}としてしまい、{画面|がめん}の{修理|しゅうり}（　　）に{一万円|いちまんえん}かかった。",
+        tr: "Ponsel saya jatuh, dan biaya perbaikan layarnya saja mencapai 10.000 yen.",
+        ch: ["費","金","料","賃"], a: 1,
+        exs: ["費（ひ）○　修理費（しゅうりひ）＝biaya perbaikan","金（きん）×　保証金（ほしょうきん）＝uang jaminan（bukan 修理金）","料（りょう）×　使用料（しようりょう）＝biaya pemakaian（bukan 修理料）","賃（ちん）×　家賃（やちん）＝sewa rumah（bukan 修理賃）"] },
+      { n: 13, q: "{連休|れんきゅう}の{最中|さいちゅう}なので、{映画館|えいがかん}には{親子|おやこ}（　　）が{多|おお}い。",
+        tr: "Karena sedang libur panjang, di bioskop banyak orang tua yang datang bersama anaknya.",
+        ch: ["{行|い}き","{連|づ}れ","{組|ぐ}み","{巻|ま}き"], a: 2,
+        exs: ["行き（ゆき）×　東京行き（とうきょうゆき）＝tujuan Tokyo（bukan 親子行き）","連れ（づれ）○　親子連れ（おやこづれ）＝orang tua bersama anaknya","組み（ぐみ）×　二人組（ふたりぐみ）＝kelompok berdua（bukan 親子組み）","巻き（まき）×　海苔巻き（のりまき）＝gulungan nori（bukan 親子巻き）"] }
+    ]
+  },
+
+  /* ===== 問題4 ===== */
+  { id: "s4", nav: "問題4 文脈規定", title: "問題4｜文脈規定", type: "choice",
+    inst: "（　　）に{入|い}れるのに{最|もっと}もよいものを、1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu jawaban yang paling tepat untuk dimasukkan ke dalam (　　), dari pilihan 1・2・3・4.",
+    items: [
+      { n: 14, q: "ダイエットを{成功|せいこう}させたいなら、（　　）のとれた{食事|しょくじ}をとることが{重要|じゅうよう}だ。",
+        tr: "Jika ingin berhasil diet, penting untuk makan makanan yang seimbang.",
+        ch: ["プロセス","ポイント","バランス","システム"], a: 3,
+        exs: ["プロセス＝proses","ポイント＝poin/titik penting","バランス＝keseimbangan","システム＝sistem"] },
+      { n: 15, q: "{新|あたら}しい{会社|かいしゃ}に{入|はい}ってから{本当|ほんとう}に{忙|いそが}しかったが、やっと（　　）する{時間|じかん}がとれた。",
+        tr: "Sejak masuk perusahaan baru saya benar-benar sibuk, tetapi akhirnya bisa meluangkan waktu untuk beristirahat.",
+        ch: ["{休息|きゅうそく}","{廃止|はいし}","{休業|きゅうぎょう}","{解消|かいしょう}"], a: 1,
+        exs: ["休息（きゅうそく）＝istirahat","廃止（はいし）＝penghapusan/pembatalan","休業（きゅうぎょう）＝libur usaha/tutup sementara","解消（かいしょう）＝penghilangan/penyelesaian"] },
+      { n: 16, q: "{弟|おとうと}はお{母|かあ}さんにしかられて{一日中|いちにちじゅう}（　　）していた。",
+        tr: "Adik laki-laki dimarahi ibu dan seharian murung/lesu.",
+        ch: ["ぐったり","しょんぼり","ぐっすり","びっしょり"], a: 2,
+        exs: ["ぐったり＝lemas karena lelah","しょんぼり＝murung/lesu (sedih)","ぐっすり＝(tidur) nyenyak","びっしょり＝basah kuyup"] },
+      { n: 17, q: "{彼女|かのじょ}は{試験|しけん}が{終|お}わってから、もっと{勉強|べんきょう}したらよかったと（　　）している。",
+        tr: "Setelah ujian selesai, dia menyesal karena tidak belajar lebih giat.",
+        ch: ["{誤解|ごかい}","{苦戦|くせん}","{後悔|こうかい}","{対抗|たいこう}"], a: 3,
+        exs: ["誤解（ごかい）＝salah paham","苦戦（くせん）＝berjuang keras/pertarungan berat","後悔（こうかい）＝penyesalan","対抗（たいこう）＝perlawanan/persaingan"] },
+      { n: 18, q: "{母|はは}から{電話|でんわ}がかかってきたが{会議中|かいぎちゅう}だったので、{終|お}わってから（　　）。",
+        tr: "Ibu menelepon tetapi saya sedang rapat, jadi setelah selesai saya menelepon balik.",
+        ch: ["{折|お}り{返|かえ}した","くり{返|かえ}した","{追|お}い{返|かえ}した","{引|ひ}き{返|かえ}した"], a: 1,
+        exs: ["折り返した（おりかえした）＝menelepon balik/membalas","くり返した（くりかえした）＝mengulang","追い返した（おいかえした）＝mengusir/menyuruh pulang","引き返した（ひきかえした）＝berbalik arah/kembali"] },
+      { n: 19, q: "{都心|としん}は{家賃|やちん}が{高|たか}いので、{少|すこ}し{会社|かいしゃ}から{遠|とお}くても（　　）に{引|ひ}っ{越|こ}したほうが{良|よ}い。",
+        tr: "Sewa di pusat kota mahal, jadi sebaiknya pindah ke pinggiran kota meskipun agak jauh dari kantor.",
+        ch: ["{外側|そとがわ}","{屋外|おくがい}","{郊外|こうがい}","{外部|がいぶ}"], a: 3,
+        exs: ["外側（そとがわ）＝sisi luar","屋外（おくがい）＝luar ruangan","郊外（こうがい）＝pinggiran kota","外部（がいぶ）＝bagian luar/pihak luar"] },
+      { n: 20, q: "どんなに{好|す}きだと{思|おも}っていても、{彼|かれ}は（　　）なので{私|わたし}の{気持|きも}ちに{気付|きづ}かない。",
+        tr: "Sekeras apa pun aku menyukainya, dia tidak peka sehingga tidak menyadari perasaanku.",
+        ch: ["{敏感|びんかん}","{鈍感|どんかん}","{短気|たんき}","{気楽|きらく}"], a: 2,
+        exs: ["敏感（びんかん）＝peka","鈍感（どんかん）＝tidak peka","短気（たんき）＝mudah marah/tidak sabar","気楽（きらく）＝santai/tanpa beban"] }
+    ]
+  },
+
+  /* ===== 問題5 ===== */
+  { id: "s5", nav: "問題5 言い換え類義", title: "問題5｜言い換え類義", type: "choice",
+    inst: "＿＿＿の{言葉|ことば}に{意味|いみ}が{最|もっと}も{近|ちか}いものを、1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu kata yang paling dekat artinya dengan kata bergaris bawah, dari pilihan 1・2・3・4.",
+    items: [
+      { n: 21, q: "{好|す}きな{人|ひと}に{告白|こくはく}するときは、<u>タイミング</u>をよく{考|かんが}えるべきだ。",
+        tr: "Saat menyatakan cinta kepada orang yang disukai, sebaiknya pikirkan baik-baik waktunya (timing).",
+        ch: ["{気持|きも}ち","{内容|ないよう}","{相手|あいて}","{時期|じき}"], a: 4,
+        exs: ["気持ち（きもち）＝perasaan","内容（ないよう）＝isi/konten","相手（あいて）＝lawan bicara/pasangan","時期（じき）＝waktu/saat yang tepat"] },
+      { n: 22, q: "{上司|じょうし}が{私|わたし}を<u>にらんでいる</u>ような{気|き}がする。",
+        tr: "Aku merasa atasan sedang melotot ke arahku.",
+        ch: ["するどい{目|め}で{見|み}ている","{心配|しんぱい}そうに{見|み}ている","{期待|きたい}して{見|み}ている","たまに{見|み}ている"], a: 1,
+        exs: ["するどい目で見ている＝memandang dengan tatapan tajam","心配そうに見ている＝memandang dengan cemas","期待して見ている＝memandang dengan penuh harap","たまに見ている＝sesekali melihat"] },
+      { n: 23, q: "{彼女|かのじょ}の{髪色|かみいろ}はいつも<u>{派手|はで}だ</u>。",
+        tr: "Warna rambut dia selalu mencolok.",
+        ch: ["きれい","{明|あか}るい","すてき","{汚|きたな}い"], a: 2,
+        exs: ["きれい＝cantik/bersih","明るい＝terang/cerah","すてき＝bagus/menawan","汚い＝kotor"] },
+      { n: 24, q: "<u>{寝坊|ねぼう}した</u>せいで、{母|はは}に{怒|おこ}られてしまった。",
+        tr: "Karena bangun kesiangan, saya dimarahi ibu.",
+        ch: ["{寝|ね}るのが{遅|おそ}かった","{授業中|じゅぎょうちゅう}に{寝|ね}てしまった","{起|お}きるのが{遅|おそ}かった","すぐ{寝|ね}てしまった"], a: 3,
+        exs: ["寝るのが遅かった＝tidur terlambat (larut malam)","授業中に寝てしまった＝tertidur saat pelajaran","起きるのが遅かった＝bangun terlambat","すぐ寝てしまった＝langsung tertidur"] },
+      { n: 25, q: "{私|わたし}の{母|はは}はとても<u>そそっかしい</u>{人|ひと}だ。",
+        tr: "Ibu saya adalah orang yang sangat ceroboh.",
+        ch: ["{落|お}ち{着|つ}きがない","{忙|いそが}しい","{口|くち}が{悪|わる}い","{適当|てきとう}な"], a: 1,
+        exs: ["落ち着きがない＝tidak tenang/ceroboh","忙しい＝sibuk","口が悪い＝bicaranya kasar","適当な＝asal-asalan/seadanya"] }
+    ]
+  },
+
+  /* ===== 問題6 ===== */
+  { id: "s6", nav: "問題6 用法", title: "問題6｜用法", type: "usage",
+    inst: "{次|つぎ}の{言葉|ことば}の{使|つか}い{方|かた}として{最|もっと}もよいものを、1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
+    instTr: "Pilih satu kalimat yang paling tepat penggunaan kata berikut, dari pilihan 1・2・3・4.",
+    items: [
+      { n: 26, word: "{中断|ちゅうだん}", wordTr: "中断（ちゅうだん）＝menghentikan sementara di tengah proses",
+        s: [
+          { q: "{雨|あめ}が{降|ふ}ってきたので、{試合|しあい}を<u>{中断|ちゅうだん}</u>してしばらく{様子|ようす}を{見|み}ることにした。",
+            tr: "Karena hujan mulai turun, pertandingan dihentikan sementara dan kami memutuskan melihat situasi sebentar.",
+            ex: "✓　中断＝menghentikan sementara di tengah proses" },
+          { q: "このケーキは<u>{中断|ちゅうだん}</u>すると、{中|なか}からチョコレートが{出|で}てくるように{作|つく}られている。",
+            tr: "Kue ini dibuat sedemikian rupa sehingga jika dipotong, cokelat akan keluar dari dalamnya.",
+            ex: "×　「中断」bukan untuk memotong/membelah benda" },
+          { q: "イベントに{誘|さそ}われたが、{参加|さんか}できるかどうかはっきりわからなかったので<u>{中断|ちゅうだん}</u>した。",
+            tr: "Saya diundang ke sebuah acara, tetapi karena belum jelas apakah bisa ikut atau tidak, saya \"menghentikannya sementara\".",
+            ex: "×　「中断」bukan untuk menunda keputusan/jawaban" },
+          { q: "{仕事帰|しごとがえ}りに{少|すこ}し<u>{中断|ちゅうだん}</u>して、{友達|ともだち}と3人で{新|あたら}しくできたカフェに{行|い}った。",
+            tr: "Sepulang kerja saya \"menghentikan perjalanan\" sebentar, lalu pergi ke kafe yang baru dibuka bertiga dengan teman.",
+            ex: "×　Maksudnya「寄り道（mampir）」, bukan「中断」" }
+        ], a: 1 },
+      { n: 27, word: "あわただしい", wordTr: "あわただしい＝sibuk dan serba terburu-buru (suasana tidak tenang)",
+        s: [
+          { q: "{雨|あめ}が{降|ふ}った{後|あと}は、{川|かわ}の{流|なが}れが<u>あわただしく</u>なるので{注意|ちゅうい}してください。",
+            tr: "Setelah hujan turun, aliran sungai menjadi \"あわただしい\" sehingga harap berhati-hati.",
+            ex: "×　Untuk arus sungai tidak dipakai「あわただしい」(contoh yang pas: 激しい／速い)" },
+          { q: "{今日|きょう}は、{電話|でんわ}の{対応|たいおう}に<u>あわただしくて</u>{昼食|ちゅうしょく}をとる{時間|じかん}もなかった。",
+            tr: "Hari ini saya begitu sibuk menerima telepon sampai tidak sempat makan siang.",
+            ex: "×　「あわただしい」menggambarkan suasana/waktu, bukan alasan seseorang sibuk (yang pas: 忙しくて)" },
+          { q: "6{時|じ}から7{時|じ}の{間|あいだ}はお{客|きゃく}さんがたくさん{来|く}るので、{一番|いちばん}<u>あわただしい</u>{時間|じかん}だ。",
+            tr: "Antara jam 6 sampai jam 7 banyak pelanggan datang, jadi itulah waktu yang paling sibuk.",
+            ex: "✓　あわただしい＝sibuk dan serba terburu-buru" },
+          { q: "{留守|るす}にしている{間|あいだ}に、{知|し}らない{人|ひと}が{家|いえ}に{入|はい}っているなんて{考|かんが}えるだけで<u>あわただしい</u>。",
+            tr: "Hanya dengan membayangkan orang tak dikenal masuk ke rumah saat kita pergi, rasanya \"あわただしい\".",
+            ex: "×　Untuk rasa takut/cemas tidak dipakai「あわただしい」" }
+        ], a: 3 },
+      { n: 28, word: "{日課|にっか}", wordTr: "日課（にっか）＝rutinitas harian",
+        s: [
+          { q: "{平日|へいじつ}のお{昼|ひる}の{時間|じかん}は<u>{日課|にっか}</u>なら{会社|かいしゃ}で{仕事|しごと}をしているが、{今日|きょう}は{休|やす}みをとって{家|いえ}で{過|す}ごしている。",
+            tr: "Pada jam makan siang di hari kerja, rutinitasnya saya bekerja di kantor, tetapi hari ini saya cuti dan berada di rumah.",
+            ex: "×　Maksudnya「普段（biasanya）」, bukan「日課」" },
+          { q: "{朝|あさ}は{太陽|たいよう}が{出|で}るまでに{起|お}きて、{犬|いぬ}の{散歩|さんぽ}をしてからコーヒーを{飲|の}むのが<u>{日課|にっか}</u>だ。",
+            tr: "Pagi hari bangun sebelum matahari terbit, mengajak anjing berjalan-jalan, lalu minum kopi, itulah rutinitas harian saya.",
+            ex: "✓　日課＝rutinitas yang dilakukan setiap hari" },
+          { q: "{交通事故|こうつうじこ}にあって{少|すこ}し{入院|にゅういん}したが、<u>{日課|にっか}</u>の{生活|せいかつ}では{困|こま}らないくらいのけがで{済|す}んだ。",
+            tr: "Saya mengalami kecelakaan lalu dirawat sebentar, tetapi lukanya tidak sampai mengganggu kehidupan sehari-hari.",
+            ex: "×　Maksudnya「日常（sehari-hari）」, bukan「日課」" },
+          { q: "{上司|じょうし}から{突然|とつぜん}{苦情|くじょう}の{対応|たいおう}をするよう{指示|しじ}されたが、その{仕事|しごと}は{私|わたし}の<u>{日課|にっか}</u>ではない。",
+            tr: "Atasan tiba-tiba menyuruh saya menangani keluhan, tetapi pekerjaan itu bukan rutinitas harian saya.",
+            ex: "×　Maksudnya「担当（tanggung jawab/bagian)」, bukan「日課」" }
+        ], a: 2 },
+      { n: 29, word: "{妥当|だとう}", wordTr: "妥当（だとう）＝wajar/pantas/tepat",
+        s: [
+          { q: "{今日|きょう}は{雨|あめ}が{降|ふ}ると{予想|よそう}していたが、やっぱり<u>{妥当|だとう}</u>した。",
+            tr: "Hari ini saya memperkirakan akan hujan, dan ternyata perkiraan itu memang \"だとう\".",
+            ex: "×　Untuk perkiraan yang tepat dipakai「的中した」, bukan「妥当した」" },
+          { q: "<u>{妥当|だとう}</u>な{大学生|だいがくせい}は、3{年生|ねんせい}の{秋|あき}から{就職活動|しゅうしょくかつどう}の{準備|じゅんび}を{始|はじ}めるらしい。",
+            tr: "Mahasiswa yang \"だとう\" katanya mulai mempersiapkan kegiatan mencari kerja dari musim gugur tahun ketiga.",
+            ex: "×　Maksudnya「一般的な（pada umumnya）」, bukan「妥当な」" },
+          { q: "この{性能|せいのう}なら、{安|やす}くもなく{高|たか}くもなく<u>{妥当|だとう}</u>な{金額|きんがく}と{言|い}えるだろう。",
+            tr: "Dengan performa seperti ini, bisa dikatakan harganya wajar, tidak murah dan tidak mahal.",
+            ex: "✓　妥当＝wajar/pantas/sesuai" },
+          { q: "{彼|かれ}は{目|め}が{赤|あか}く{顔|かお}も{疲|つか}れていて、<u>{妥当|だとう}</u>な{健康状態|けんこうじょうたい}のようには{見|み}えなかった。",
+            tr: "Matanya merah dan wajahnya tampak lelah, sehingga tidak terlihat dalam kondisi kesehatan yang \"だとう\".",
+            ex: "×　Maksudnya「正常な／良い（normal/baik）」, bukan「妥当な」" }
+        ], a: 3 },
+      { n: 30, word: "{捉|とら}え{直|なお}す", wordTr: "捉え直す（とらえなおす）＝memandang/menilai ulang dari sudut pandang lain",
+        s: [
+          { q: "リモコンの{電池|でんち}がなくなったので、{新|あたら}しいものに<u>{捉|とら}え{直|なお}した</u>。",
+            tr: "Baterai remote habis, jadi saya \"とらえなおした\" dengan yang baru.",
+            ex: "×　Maksudnya「取り替えた（mengganti）」" },
+          { q: "{壁|かべ}に{飾|かざ}っている{絵|え}が{傾|かたむ}いていたので、{正|ただ}しい{位置|いち}に<u>{捉|とら}え{直|なお}した</u>。",
+            tr: "Lukisan yang dipajang di dinding miring, jadi saya \"とらえなおした\" ke posisi yang benar.",
+            ex: "×　Maksudnya「直した（membetulkan）」" },
+          { q: "{問題点|もんだいてん}を{正|ただ}しく<u>{捉|とら}え{直|なお}す</u>ことで、{新|あたら}しい{改善点|かいぜんてん}が{見|み}えてくるはずだ。",
+            tr: "Dengan memandang ulang masalah secara tepat, seharusnya poin perbaikan yang baru akan terlihat.",
+            ex: "✓　捉え直す＝memandang/menilai ulang" },
+          { q: "{彼|かれ}とは{性格|せいかく}が{合|あ}わないので{別|わか}れようと{思|おも}っていたが、やっぱりもう{一度|いちど}<u>{捉|とら}え{直|なお}す</u>ことにした。",
+            tr: "Karena sifat kami tidak cocok, saya sempat berpikir untuk putus, tetapi akhirnya memutuskan untuk \"とらえなおす\" sekali lagi.",
+            ex: "×　Maksudnya「考え直す（memikirkan ulang）」" }
+        ], a: 3 }
+    ]
+  }
+
+  ]
+});
+
+/* ---------- ここに「言語知識（文法）」「読解」を PARTS.push({...}) で追加します ---------- */
+
+/* =====================================================
+   描画
+   ===================================================== */
+function R(s) {
+  return s.replace(/\{([^|}]+)\|([^}]+)\}/g, "<ruby>$1<rt>$2</rt></ruby>");
+}
+function strip(s) { return s.replace(/<[^>]+>/g, "").replace(/\{([^|}]+)\|([^}]+)\}/g, "$1"); }
+function hasRuby(s) { return s.indexOf("{") >= 0; }
+
+function lineBlock(html, id, tr) {
+  return '<div class="line-wrap"><div class="line-text">' + html +
+    '<div class="sent-id" id="' + id + '">' + tr + '</div></div>' +
+    '<div class="btn-group"><button class="btn-r" onclick="toggleRuby(this)">ル</button>' +
+    '<button class="btn-s" onclick="toggleSent(\'' + id + '\',this)">訳</button></div></div>';
+}
+
+function choicesBlock(ch) {
+  var withRuby = ch.some(hasRuby);
+  var h = withRuby ? '<button class="btn-r choices-ruby-btn" onclick="toggleChoiceRuby(this)">ル</button>' : '';
+  h += '<div class="choices">';
+  ch.forEach(function (c, i) { h += '<div class="choice-item">' + (i + 1) + '　' + R(c) + '</div>'; });
+  return h + '</div>';
+}
+
+function ansBlock(id, mark, inner) {
+  return '<button class="ans-btn" onclick="toggleAns(\'' + id + '\')">答えを見る</button>' +
+    '<div class="ans-area" id="' + id + '"><span class="correct-mark">' + mark + '</span>' +
+    '<div class="sent-id show">' + inner + '</div></div>';
+}
+
+function renderChoiceItem(it) {
+  var id = "q" + it.n;
+  var head = '<div class="mondai-head"><span class="mondai-num">' + it.n + '</span>' + lineBlock(R(it.q), "id-" + id, it.tr) + '</div>';
+  var ch = it.ch[it.a - 1];
+  var mark = "正答：" + it.a + "　" + strip(ch);
+  var inner;
+  if (it.exs) {
+    inner = it.exs.map(function (e, i) { return (i + 1 === it.a) ? "<b>" + (i + 1) + "　" + e + " ✓</b>" : (i + 1) + "　" + e; }).join("<br>");
+  } else {
+    inner = "<b>Jawaban: " + it.a + "　" + it.ex + "</b>";
+  }
+  return '<div class="mondai-card">' + head + '<div class="mondai-body">' + choicesBlock(it.ch) +
+    ansBlock("ans-" + id, mark, inner) + '</div></div>';
+}
+
+function renderUsageItem(it) {
+  var id = "q" + it.n;
+  var head = '<div class="mondai-head"><span class="mondai-num">' + it.n + '</span>' +
+    '<div class="line-wrap" style="margin:0;"><div class="line-text"><span class="word-head">' + R(it.word) + '</span>' +
+    '<div class="sent-id" id="id-' + id + '">' + it.wordTr + '</div></div>' +
+    '<div class="btn-group"><button class="btn-r" onclick="toggleRuby(this)">ル</button>' +
+    '<button class="btn-s" onclick="toggleSent(\'id-' + id + '\',this)">訳</button></div></div></div>';
+  var body = '';
+  var inner = [];
+  it.s.forEach(function (s, i) {
+    body += '<div class="sent-choice">' + lineBlock((i + 1) + "　" + R(s.q), "id-" + id + "-" + (i + 1), s.tr) + '</div>';
+    inner.push((i + 1 === it.a ? "<b>" + (i + 1) + "　" + s.ex + "</b>" : (i + 1) + "　" + s.ex));
+  });
+  return '<div class="mondai-card">' + head + '<div class="mondai-body">' + body +
+    ansBlock("ans-" + id, "正答：" + it.a, inner.join("<br>")) + '</div></div>';
+}
+
+function renderSection(sec) {
+  var h = '<div id="' + sec.id + '" class="section"><div class="section-header">' + sec.title + '</div><div class="section-body">';
+  h += '<div class="rei-box"><span class="rei-label">問題文</span>' +
+    lineBlock("<b>" + sec.title.split("｜")[0] + "</b>　" + R(sec.inst), "id-" + sec.id + "-inst", sec.instTr) + '</div>';
+  var first = sec.items[0].n, last = sec.items[sec.items.length - 1].n;
+  h += '<p style="font-size:0.85rem; color:var(--text-light); margin-bottom:8px;">▼ ' + sec.title.split("｜")[0] + '（' + first + '〜' + last + '）</p>';
+  sec.items.forEach(function (it) { h += (sec.type === "usage") ? renderUsageItem(it) : renderChoiceItem(it); });
+  return h + '</div></div>';
+}
+
+(function build() {
+  var app = document.getElementById("app");
+  var nav = document.getElementById("nav");
+  var html = "", navHtml = "";
+  PARTS.forEach(function (p) {
+    html += '<div class="part-title" id="' + p.id + '">' + p.title + '</div>';
+    p.sections.forEach(function (s) {
+      html += renderSection(s);
+      navHtml += '<a href="#' + s.id + '">' + s.nav + '</a>';
+    });
+  });
+  app.innerHTML = html;
+  nav.innerHTML = navHtml;
+  var header = document.querySelector("header");
+  if (header) nav.style.top = header.offsetHeight + "px";
+})();
+
+/* =====================================================
+   ボタン動作（サンプルと同じ）
+   ===================================================== */
+function toggleChoiceRuby(btn) {
+  var choices = btn.nextElementSibling;
+  if (!choices || !choices.classList.contains("choices")) return;
+  var rubies = choices.querySelectorAll("ruby");
+  if (rubies.length === 0) return;
+  var anyShown = Array.from(rubies).some(function (r) { return r.classList.contains("show"); });
+  rubies.forEach(function (r) { r.classList.toggle("show", !anyShown); });
+  btn.classList.toggle("active", !anyShown);
+}
+function toggleRuby(btn) {
+  var lineWrap = btn.closest(".line-wrap");
+  if (!lineWrap) return;
+  var rubies = lineWrap.querySelectorAll("ruby");
+  if (rubies.length === 0) return;
+  var anyShown = Array.from(rubies).some(function (r) { return r.classList.contains("show"); });
+  rubies.forEach(function (r) { r.classList.toggle("show", !anyShown); });
+}
+function toggleSent(id, btn) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle("show");
+}
+function toggleAns(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle("show");
+  var btn = el.previousElementSibling;
+  if (btn && btn.classList.contains("ans-btn")) {
+    btn.textContent = el.classList.contains("show") ? "答えを隠す" : "答えを見る";
+  }
+}
+</script>
+
+</body>
+</html>
